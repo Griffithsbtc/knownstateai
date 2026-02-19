@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Maturity Assessment — Find Your KnownState | KnownStateAI Brisbane</title>
+    <meta name="description" content="Self-assess your business AI maturity in 2 minutes. Find out if your AI usage is Ad Hoc, Aware, or Assessed — and get a clear path forward. Free AI assessment from KnownStateAI Brisbane.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .page-wrapper {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .logo-icon { width: 50px; height: 50px; }
+
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #022B3A;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .site-nav a {
+            color: #022B3A;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .site-nav a:hover { color: #1F7A8C; }
+        .site-nav a.active { color: #1F7A8C; }
+
+        /* ==================== PAGE HERO ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-hero p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .page-hero .hero-meta {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.6;
+        }
+
+        /* ==================== ASSESSMENT CONTAINER ==================== */
+        .assessment-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Progress bar */
+        .progress-wrapper {
+            margin-bottom: 48px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .progress-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            color: #999;
+            letter-spacing: 0.05em;
+        }
+
+        .progress-count {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            color: #1F7A8C;
+            font-weight: 500;
+        }
+
+        .progress-track {
+            height: 4px;
+            background: #e5e5e5;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1F7A8C, #022B3A);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        /* Question blocks */
+        .question-block {
+            margin-bottom: 48px;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.4s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-block:nth-child(1) { animation-delay: 0s; }
+        .question-block:nth-child(2) { animation-delay: 0.05s; }
+        .question-block:nth-child(3) { animation-delay: 0.1s; }
+        .question-block:nth-child(4) { animation-delay: 0.15s; }
+        .question-block:nth-child(5) { animation-delay: 0.2s; }
+        .question-block:nth-child(6) { animation-delay: 0.25s; }
+
+        .question-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em;
+            color: #1F7A8C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+
+        /* Multiple choice options */
+        .mc-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mc-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            border: 1.5px solid #e5e5e5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .mc-option:hover {
+            border-color: #1F7A8C;
+            background: #f8fcfb;
+        }
+
+        .mc-option.selected {
+            border-color: #1F7A8C;
+            background: #f0f9f7;
+        }
+
+        .mc-radio {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            flex-shrink: 0;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .mc-option:hover .mc-radio {
+            border-color: #1F7A8C;
+        }
+
+        .mc-option.selected .mc-radio {
+            border-color: #1F7A8C;
+        }
+
+        .mc-option.selected .mc-radio::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #1F7A8C;
+        }
+
+        .mc-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mc-stage {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            color: #bbb;
+            letter-spacing: 0.05em;
+            margin-bottom: 3px;
+            transition: color 0.2s;
+        }
+
+        .mc-option.selected .mc-stage { color: #1F7A8C; }
+
+        .mc-text {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .mc-option.selected .mc-text { color: #333; }
+
+        /* ==================== RESULTS SECTION ==================== */
+        .results-section {
+            display: none;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .results-section.visible {
+            display: block;
+        }
+
+        .results-card {
+            background: #fafafa;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+        }
+
+        .results-card h2 {
+            font-size: 0.8em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        /* Stage indicators */
+        .stage-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stage-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            transition: all 0.4s;
+        }
+
+        .stage-circle.inactive {
+            border: 2px solid #e0e0e0;
+            color: #ccc;
+            background: white;
+        }
+
+        .stage-circle.passed {
+            border: 2px solid #1F7A8C;
+            color: #1F7A8C;
+            background: white;
+        }
+
+        .stage-circle.current {
+            border: 3px solid #1F7A8C;
+            color: white;
+            background: #1F7A8C;
+            transform: scale(1.2);
+            box-shadow: 0 4px 16px rgba(31, 122, 140, 0.3);
+        }
+
+        .stage-connector {
+            width: 40px;
+            height: 2px;
+            background: #e0e0e0;
+            transition: background 0.4s;
+        }
+
+        .stage-connector.filled {
+            background: #1F7A8C;
+        }
+
+        .stage-labels {
+            display: flex;
+            justify-content: center;
+            gap: 56px;
+            margin-bottom: 36px;
+        }
+
+        .stage-label-item {
+            text-align: center;
+            width: 80px;
+        }
+
+        .stage-label-name {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #bbb;
+            transition: color 0.3s;
+        }
+
+        .stage-label-item.active .stage-label-name {
+            color: #1F7A8C;
+        }
+
+        /* Result text */
+        .result-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #022B3A;
+            margin-bottom: 12px;
+        }
+
+        .result-description {
+            font-size: 1.05em;
+            color: #666;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto 36px;
+        }
+
+        /* Breakdown */
+        .breakdown-title {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 36px;
+            text-align: left;
+        }
+
+        .breakdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .breakdown-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .breakdown-dot.s1 { background: #ccc; }
+        .breakdown-dot.s2 { background: #1F7A8C; }
+        .breakdown-dot.s3 { background: #022B3A; }
+
+        .breakdown-label {
+            font-size: 0.8em;
+            color: #555;
+            line-height: 1.3;
+        }
+
+        .breakdown-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em;
+            color: #999;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        /* Pathways */
+        .pathways {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 36px;
+        }
+
+        .pathway-card {
+            padding: 28px 24px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .pathway-card h3 {
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .pathway-card p {
+            font-size: 0.82em;
+            line-height: 1.5;
+        }
+
+        .pathway-card.explore {
+            background: white;
+            border: 1.5px solid #e0e0e0;
+            color: #022B3A;
+        }
+
+        .pathway-card.explore:hover {
+            border-color: #1F7A8C;
+            background: #f8fcfb;
+        }
+
+        .pathway-card.explore h3 { color: #022B3A; }
+        .pathway-card.explore p { color: #888; }
+
+        .pathway-card.engage {
+            background: #022B3A;
+            border: 1.5px solid #022B3A;
+            color: white;
+        }
+
+        .pathway-card.engage:hover {
+            background: #1F7A8C;
+            border-color: #1F7A8C;
+        }
+
+        .pathway-card.engage h3 { color: white; }
+        .pathway-card.engage p { color: rgba(255,255,255,0.7); }
+
+        /* Retake */
+        .retake-link {
+            display: inline-block;
+            margin-top: 28px;
+            font-size: 0.85em;
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .retake-link:hover { color: #1F7A8C; }
+
+        /* ==================== CTA SECTION ==================== */
+        .page-cta {
+            padding: 80px 60px 40px;
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .page-cta h3 { font-size: 2em; margin-bottom: 16px; }
+
+        .page-cta p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-cta .cta-button {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #022B3A;
+            border: none;
+            padding: 18px 36px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-cta .cta-button:hover {
+            background: #BFDBF7;
+            transform: translateY(-2px);
+        }
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-size: 1.3em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 32px;
+            font-size: 0.95em;
+        }
+
+        .footer-contact a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover { color: white; }
+        .footer-contact span { color: rgba(255,255,255,0.5); }
+
+        .footer-bottom {
+            padding: 12px 0 0;
+            text-align: center;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; justify-content: center; }
+            .site-nav { display: none; }
+
+            .page-hero { padding: 50px 30px; }
+            .page-hero h1 { font-size: 2em; }
+
+            .assessment-container { padding: 40px 20px; }
+            .results-section { padding: 0 20px 40px; }
+
+            .results-card { padding: 36px 24px; }
+
+            .result-title { font-size: 1.4em; }
+
+            .breakdown-grid { grid-template-columns: 1fr; }
+
+            .pathways { grid-template-columns: 1fr; }
+
+            .stage-labels { gap: 32px; }
+
+            .page-cta { padding: 60px 30px 30px; }
+
+            .footer-main {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <header>
+        <a href="index.html" class="logo-lockup">
+            <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
+                <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
+                <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
+                <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+                <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+            </svg>
+            <div class="logo-text">knownstateai</div>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html#approach">Our Approach</a>
+            <a href="prompt-examples.html">Prompt Examples</a>
+            <a href="ai-maturity.html" class="active">AI Assessment</a>
+            <a href="index.html#work-with-us">Work With Us</a>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Find Your KnownState</h1>
+        <p>A quick self-assessment to see where your business sits with AI — and what to do next.</p>
+        <div class="hero-meta">6 questions · 2 minutes to complete</div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <div class="assessment-container" id="assessment">
+        <div class="progress-wrapper">
+            <div class="progress-info">
+                <span class="progress-label">Progress</span>
+                <span class="progress-count" id="progress-count">0 of 6</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-number">Question 1 of 6</div>
+            <div class="question-text">How are AI tools being used in your business?</div>
+            <div class="mc-options" data-group="q1">
+                <div class="mc-option" onclick="selectOption(this, 1)" data-value="1">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 1 · Ad Hoc</span>
+                        <span class="mc-text">People experiment individually — there's no shared approach or visibility into who's using what</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 2)" data-value="2">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 2 · Aware</span>
+                        <span class="mc-text">We know some teams use AI tools, and there's been some conversation about how to use them better</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 3)" data-value="3">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 3 · Assessed</span>
+                        <span class="mc-text">We've mapped who uses what, for which tasks, and we review usage regularly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-number">Question 2 of 6</div>
+            <div class="question-text">How structured are the prompts your team uses?</div>
+            <div class="mc-options" data-group="q2">
+                <div class="mc-option" onclick="selectOption(this, 1)" data-value="1">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 1 · Ad Hoc</span>
+                        <span class="mc-text">Everyone writes their own prompts from scratch each time — no templates, no sharing</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 2)" data-value="2">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 2 · Aware</span>
+                        <span class="mc-text">Some people have their own go-to prompts, but they're not shared or standardised across the team</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 3)" data-value="3">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 3 · Assessed</span>
+                        <span class="mc-text">We have role-specific prompt templates that are tested, shared, and refined over time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-number">Question 3 of 6</div>
+            <div class="question-text">Can you measure the impact AI is having?</div>
+            <div class="mc-options" data-group="q3">
+                <div class="mc-option" onclick="selectOption(this, 1)" data-value="1">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 1 · Ad Hoc</span>
+                        <span class="mc-text">No — we have no idea if it's saving time or improving quality</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 2)" data-value="2">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 2 · Aware</span>
+                        <span class="mc-text">Anecdotally, yes — people say it helps, but we don't have data</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 3)" data-value="3">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 3 · Assessed</span>
+                        <span class="mc-text">We track time saved, output quality, and business impact from AI usage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-number">Question 4 of 6</div>
+            <div class="question-text">Is AI usage aligned to specific roles and tasks?</div>
+            <div class="mc-options" data-group="q4">
+                <div class="mc-option" onclick="selectOption(this, 1)" data-value="1">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 1 · Ad Hoc</span>
+                        <span class="mc-text">Everyone gets the same tools — there's no role-specific setup or guidance</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 2)" data-value="2">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 2 · Aware</span>
+                        <span class="mc-text">We've discussed different needs by team, but haven't tailored anything yet</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 3)" data-value="3">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 3 · Assessed</span>
+                        <span class="mc-text">Different roles have different AI setups, prompts, and workflows tailored to their actual tasks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-number">Question 5 of 6</div>
+            <div class="question-text">Is there any governance around AI usage?</div>
+            <div class="mc-options" data-group="q5">
+                <div class="mc-option" onclick="selectOption(this, 1)" data-value="1">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 1 · Ad Hoc</span>
+                        <span class="mc-text">No — people use whatever tools they want, however they want</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 2)" data-value="2">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 2 · Aware</span>
+                        <span class="mc-text">We've had conversations about what's appropriate, but nothing formal is in place</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 3)" data-value="3">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 3 · Assessed</span>
+                        <span class="mc-text">We have clear guidelines on approved tools, data handling, and quality review processes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-number">Question 6 of 6</div>
+            <div class="question-text">Do teams share what works?</div>
+            <div class="mc-options" data-group="q6">
+                <div class="mc-option" onclick="selectOption(this, 1)" data-value="1">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 1 · Ad Hoc</span>
+                        <span class="mc-text">No — if someone finds a good prompt or workflow, it stays with them</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 2)" data-value="2">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 2 · Aware</span>
+                        <span class="mc-text">Sometimes informally — a few people share tips, but it's not systematic</span>
+                    </div>
+                </div>
+                <div class="mc-option" onclick="selectOption(this, 3)" data-value="3">
+                    <div class="mc-radio"></div>
+                    <div class="mc-label">
+                        <span class="mc-stage">Stage 3 · Assessed</span>
+                        <span class="mc-text">We have a process for capturing, testing, and distributing what works across teams</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-section" id="results">
+        <div class="results-card">
+            <h2>Your AI KnownState</h2>
+
+            <div class="stage-display">
+                <div class="stage-circle inactive" id="rc-1">1</div>
+                <div class="stage-connector" id="conn-1"></div>
+                <div class="stage-circle inactive" id="rc-2">2</div>
+                <div class="stage-connector" id="conn-2"></div>
+                <div class="stage-circle inactive" id="rc-3">3</div>
+            </div>
+
+            <div class="stage-labels">
+                <div class="stage-label-item" id="sl-1"><span class="stage-label-name">Ad Hoc</span></div>
+                <div class="stage-label-item" id="sl-2"><span class="stage-label-name">Aware</span></div>
+                <div class="stage-label-item" id="sl-3"><span class="stage-label-name">Assessed</span></div>
+            </div>
+
+            <div class="result-title" id="result-title"></div>
+            <div class="result-description" id="result-desc"></div>
+
+            <div class="breakdown-title">Your scores by dimension</div>
+            <div class="breakdown-grid" id="breakdown-grid"></div>
+
+            <div class="pathways">
+                <a href="prompt-examples.html" class="pathway-card explore">
+                    <h3>Find your knownstate</h3>
+                    <p>Explore prompt examples and resources to start improving on your own</p>
+                </a>
+                <a href="index.html#work-with-us" class="pathway-card engage">
+                    <h3>Establish your knownstate</h3>
+                    <p>A guided engagement — we work with you to build a structured approach</p>
+                </a>
+            </div>
+
+            <a class="retake-link" onclick="retakeAssessment()">↻ Retake assessment</a>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="page-cta">
+        <h3>This is just the starting point.</h3>
+        <p>A 20-minute conversation about where AI fits in your business.</p>
+        <button class="cta-button" onclick="window.location.href='index.html#work-with-us'">Start a Conversation</button>
+
+        <div class="footer-main">
+            <div class="footer-brand">knownstateai</div>
+            <div class="footer-contact">
+                <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
+                <span>Brisbane, QLD</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 KnownStateAI. All rights reserved.
+        </div>
+    </section>
+
+</div>
+
+<script>
+    const stageData = {
+        1: {
+            title: 'Stage 1: Ad Hoc',
+            desc: "AI tools are available but usage is unstructured. Individual staff experiment independently, prompts aren't shared or refined, and there's no visibility into what's working or what's not. This is where most businesses start — and where the biggest gains are waiting."
+        },
+        2: {
+            title: 'Stage 2: Aware',
+            desc: "Some AI usage is deliberate. Your teams have identified specific use cases, but prompts are inconsistent, there's no measurement in place, and adoption varies significantly across roles. You're past the starting line — the next step is structure."
+        },
+        3: {
+            title: 'Stage 3: Assessed',
+            desc: "AI usage is mapped to roles and responsibilities. Prompts are structured, outcomes are tracked, and continuous improvement is built into how the business operates. This is the knownstate — and the foundation for scaling AI impact."
+        }
+    };
+
+    const questionLabels = [
+        'AI tool usage',
+        'Prompt structure',
+        'Impact measurement',
+        'Role alignment',
+        'Governance',
+        'Knowledge sharing'
+    ];
+
+    const answers = {};
+
+    function selectOption(el, value) {
+        const group = el.closest('.mc-options');
+        const groupName = group.dataset.group;
+
+        group.querySelectorAll('.mc-option').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+
+        answers[groupName] = value;
+        updateProgress();
+
+        if (Object.keys(answers).length === 6) {
+            setTimeout(showResults, 400);
+        }
+    }
+
+    function updateProgress() {
+        const count = Object.keys(answers).length;
+        document.getElementById('progress-count').textContent = count + ' of 6';
+        document.getElementById('progress-fill').style.width = (count / 6 * 100) + '%';
+    }
+
+    function showResults() {
+        const values = Object.values(answers);
+        const total = values.reduce((a, b) => a + b, 0);
+        const avg = total / values.length;
+        const stage = avg < 1.67 ? 1 : avg < 2.34 ? 2 : 3;
+
+        // Update stage circles
+        [1, 2, 3].forEach(s => {
+            const circle = document.getElementById('rc-' + s);
+            circle.className = 'stage-circle';
+            if (s === stage) circle.classList.add('current');
+            else if (s < stage) circle.classList.add('passed');
+            else circle.classList.add('inactive');
+
+            const label = document.getElementById('sl-' + s);
+            label.classList.toggle('active', s === stage);
+        });
+
+        // Connectors
+        document.getElementById('conn-1').classList.toggle('filled', stage >= 2);
+        document.getElementById('conn-2').classList.toggle('filled', stage >= 3);
+
+        // Title and description
+        document.getElementById('result-title').textContent = stageData[stage].title;
+        document.getElementById('result-desc').textContent = stageData[stage].desc;
+
+        // Breakdown
+        const grid = document.getElementById('breakdown-grid');
+        grid.innerHTML = '';
+        const stageNames = { 1: 'Ad Hoc', 2: 'Aware', 3: 'Assessed' };
+        Object.keys(answers).forEach((key, i) => {
+            const val = answers[key];
+            const item = document.createElement('div');
+            item.className = 'breakdown-item';
+            item.innerHTML = `
+                <div class="breakdown-dot s${val}"></div>
+                <span class="breakdown-label">${questionLabels[i]}</span>
+                <span class="breakdown-value">${stageNames[val]}</span>
+            `;
+            grid.appendChild(item);
+        });
+
+        // Show results
+        const resultsEl = document.getElementById('results');
+        resultsEl.classList.add('visible');
+
+        // Scroll to results
+        setTimeout(() => {
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
+
+    function retakeAssessment() {
+        // Reset
+        Object.keys(answers).forEach(k => delete answers[k]);
+        document.querySelectorAll('.mc-option').forEach(o => o.classList.remove('selected'));
+        document.getElementById('results').classList.remove('visible');
+        updateProgress();
+        document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

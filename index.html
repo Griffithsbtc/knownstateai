@@ -6,7 +6,7 @@
     
     <!-- SEO OPTIMIZED META TAGS -->
     <title>Brisbane AI Training That Actually Works | AI Consulting for Small Businesses | KnownStateAI</title>
-    <meta name="description" content="Brisbane-based AI training and consulting for small businesses. We help you implement ChatGPT, Copilot & AI tools with measurable outcomes. Expert AI implementation with proven ROI tracking. Free consultation.">
+    <meta name="description" content="Brisbane-based AI training and consulting for small businesses. We help you implement ChatGPT, Copilot & AI tools with measurable outcomes. Expert AI implementation with proven ROI tracking.">
     <meta name="keywords" content="AI training Brisbane, AI consultant Brisbane, ChatGPT training, Copilot implementation, small business AI, AI automation Brisbane, AI strategy Queensland">
     
     <!-- Local Business Schema for SEO -->
@@ -39,6 +39,11 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             background: #f5f5f5;
@@ -58,6 +63,25 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            text-decoration: none;
+        }
+        
+        .site-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .site-nav a {
+            color: #022B3A;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .site-nav a:hover {
+            color: #1F7A8C;
         }
         
         .logo-with-tagline {
@@ -319,7 +343,7 @@
         
         
         .cta-section {
-            padding: 100px 60px;
+            padding: 100px 60px 40px;
             background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
             text-align: center;
             color: white;
@@ -343,6 +367,53 @@
         
         .cta-section .cta-button:hover {
             background: #BFDBF7;
+        }
+        
+        /* ==================== FOOTER (inside CTA section) ==================== */
+        
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-brand {
+            font-size: 1.3em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+        
+        .footer-contact {
+            display: flex;
+            gap: 32px;
+            font-size: 0.95em;
+        }
+        
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-contact a:hover {
+            color: white;
+        }
+        
+        .footer-contact span {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .footer-bottom {
+            padding: 12px 0 0;
+            text-align: center;
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.3);
         }
         
         /* ==================== MODAL ==================== */
@@ -450,6 +521,30 @@
                 display: none;
             }
             
+            .site-nav {
+                display: none;
+            }
+            
+            header {
+                justify-content: center;
+            }
+            
+            .footer-main {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 30px 30px;
+            }
+            
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .footer-bottom {
+                padding: 16px 30px;
+            }
+            
             .problem-section {
                 padding: 60px 30px;
             }
@@ -464,7 +559,7 @@
     <div class="page-wrapper">
         
         <header>
-                <div class="logo-lockup">
+                <a href="#top" class="logo-lockup">
                     <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
                         <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
                         <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
@@ -472,12 +567,17 @@
                         <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
                     </svg>
                     <div class="logo-text-option2">knownstateai</div>
-                </div>
-                <button class="cta-button" onclick="openModal()">Book a Free Consultation</button>
+                </a>
+                <nav class="site-nav">
+                    <a href="#approach">Our Approach</a>
+                    <a href="prompt-examples.html">Prompt Examples</a>
+                    <a href="ai-maturity.html">AI Assessment</a>
+                    <a href="#work-with-us">Work With Us</a>
+                </nav>
             </header>
             
             <!-- HERO SECTION -->
-            <section class="hero-section">
+            <section id="top" class="hero-section">
                 <h1>Brisbane AI Training That Actually Works</h1>
                 <p class="subtitle">Your team has ChatGPT, Copilot, and AI tools — but can you measure the results?</p>
             </section>
@@ -498,7 +598,7 @@
                             <li>We align AI usage to your real roles and responsibilities</li>
                             <li>We improve it continuously — not once, not randomly</li>
                         </ul>
-                        <button class="cta-button" onclick="openModal()">Book a Free AI Assessment</button>
+                        <button class="cta-button" onclick="openModal()">Start a Conversation</button>
                     </div>
                 </div>
             </section>
@@ -508,39 +608,39 @@
                 <h2>Sound Familiar?</h2>
                 <div class="problem-grid">
                     <div class="problem-card">
-                        <h3>No One Tracks What Doesn't Work</h3>
-                        <p>Failed prompts get tweaked or abandoned. No system, no memory — just the same problems on repeat.</p>
+                        <h3>No One Remembers What Doesn't Work</h3>
+                        <p>When AI prompts fail, people either keep tweaking until they're frustrated — or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
                     </div>
                     
                     <div class="problem-card">
                         <h3>Can't Measure AI ROI</h3>
-                        <p>Your staff are using AI tools, but you can't track time saved, quality gains, or actual business impact.</p>
+                        <p>Your staff are using AI tools, but you can't track time saved, quality improvements, or actual business impact.</p>
                     </div>
                     
                     <div class="problem-card">
                         <h3>Generic Training That Doesn't Stick</h3>
-                        <p>One-off workshops and YouTube links. No follow-up, no accountability, nothing changes.</p>
+                        <p>You've sent YouTube links or run one-off workshops, but nothing changes. No follow-up, no accountability.</p>
                     </div>
                     
                     <div class="problem-card">
                         <h3>Shadow AI Usage</h3>
-                        <p>Employees using ChatGPT without governance, creating compliance and quality risks you can't see.</p>
+                        <p>Employees are using ChatGPT and other AI tools without governance, creating compliance and quality risks.</p>
                     </div>
                     
                     <div class="problem-card">
                         <h3>No Clear Strategy</h3>
-                        <p>You know AI could help — but which tools, for which teams, and where's the ROI?</p>
+                        <p>You know AI could help, but which tools? For which teams? Where's the ROI? No one has answers.</p>
                     </div>
                     
                     <div class="problem-card">
                         <h3>Tools Don't Match Roles</h3>
-                        <p>Sales, admin, and operations all need different AI solutions — but they're getting the same generic advice.</p>
+                        <p>Your sales team, admin team, and operations team all need different AI solutions — but they're getting generic advice.</p>
                     </div>
                 </div>
             </section>
             
             <!-- SOLUTION SECTION -->
-            <section class="solution-section">
+            <section id="approach" class="solution-section">
                 <h2>The KnownState Method: Practical AI Implementation</h2>
                 
                 <div class="solution-grid">
@@ -607,18 +707,29 @@
             <!-- LOCAL SEO SECTION (NEW) -->
             
             <!-- CTA SECTION -->
-            <section class="cta-section">
+            <section id="work-with-us" class="cta-section">
                 <h3>Start with a knownstate.</h3>
-                <p>Book a free AI assessment for your Brisbane business. No sales pitch — just a 20-minute conversation about your current AI usage and where you could improve.</p>
-                <button class="cta-button" onclick="openModal()">Book Your Free Consultation</button>
+                <p>A 20-minute conversation about where AI fits in your business.</p>
+                <button class="cta-button" onclick="openModal()">Start a Conversation</button>
+                
+                <div class="footer-main">
+                    <div class="footer-brand">knownstateai</div>
+                    <div class="footer-contact">
+                        <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
+                        <span>Brisbane, QLD</span>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    &copy; 2025 KnownStateAI. All rights reserved.
+                </div>
             </section>
-        
+
         <!-- MODAL -->
         <div id="consultationModal" class="modal">
             <div class="modal-content calendly-modal">
                 <button class="modal-close" onclick="closeModal()">&times;</button>
-                <h2>Book Your Free AI Assessment</h2>
-                <p class="modal-subtitle">Pick a time that works for you. No obligation, no sales pitch — just a 20-minute conversation about your AI challenges.</p>
+                <h2>Let's Talk</h2>
+                <p class="modal-subtitle">Pick a time that works — a 20-minute conversation about where AI fits in your business.</p>
                 
                 <!-- Calendly inline widget begin -->
                 <div class="calendly-inline-widget" data-url="https://calendly.com/griffithsben-pm/30min?hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
