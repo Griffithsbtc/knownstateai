@@ -119,7 +119,7 @@
         .hero-section {
             background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
             color: white;
-            padding: 120px 60px;
+            padding: 80px 60px;
             text-align: center;
         }
         
@@ -207,29 +207,16 @@
             font-weight: bold;
         }
         
-        .philosophy-inline {
-            font-size: 1.1em;
-            color: #444;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .tagline {
-            font-size: 1em;
-            color: #888;
-            margin-top: 20px;
-            font-style: italic;
-        }
         
         .content-right {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
         }
         
-        .diagram-container {
-            width: 100%;
-            max-width: 500px;
+        .content-right .cta-button {
+            align-self: flex-start;
+            margin-top: 10px;
         }
         
         .problem-section {
@@ -254,20 +241,22 @@
         
         .problem-card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
+            padding: 24px 28px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #1F7A8C;
         }
         
         .problem-card h3 {
-            color: #1F7A8C;
-            font-size: 1.1em;
-            margin-bottom: 12px;
+            color: #022B3A;
+            font-size: 1.05em;
+            margin-bottom: 8px;
         }
         
         .problem-card p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.95em;
         }
         
         
@@ -454,7 +443,11 @@
             }
             
             .hero-section {
-                padding: 80px 30px;
+                padding: 50px 30px;
+            }
+            
+            header .cta-button {
+                display: none;
             }
             
             .problem-section {
@@ -489,46 +482,23 @@
                 <p class="subtitle">Your team has ChatGPT, Copilot, and AI tools — but can you measure the results?</p>
             </section>
             
-            <!-- CONTENT SECTION WITH DIAGRAM -->
+            <!-- CONTENT SECTION -->
             <section class="content-section">
                 <div class="content-wrapper">
                     <div class="content-left">
                         <h2>AI Training & Consulting for Brisbane Small Businesses</h2>
                         <p class="problem-statement">Most businesses didn't fail at AI. They were never set up to succeed.<br><strong>AI was added. Nothing changed.</strong></p>
                         <p class="solution-intro">We establish a knownstate.</p>
+                    </div>
+                    
+                    <div class="content-right">
                         <ul class="solution-points">
                             <li>We assess how AI is actually being used in your business today</li>
                             <li>We identify what's reliable, what's assumed, and what's broken</li>
                             <li>We align AI usage to your real roles and responsibilities</li>
                             <li>We improve it continuously — not once, not randomly</li>
                         </ul>
-                        <p class="philosophy-inline">Our philosophy is simple: <strong>if it's not known, we don't pretend it is.</strong> That's why every engagement starts by establishing your knownstate — your actual baseline for AI usage and outcomes.</p>
                         <button class="cta-button" onclick="openModal()">Book a Free AI Assessment</button>
-                        <p class="tagline">Start with a knownstate.</p>
-                    </div>
-                    
-                    <div class="content-right">
-                        <div class="diagram-container">
-                            <svg width="100%" viewBox="0 0 400 400">
-                                <!-- Outer circle (light) -->
-                                <circle cx="200" cy="200" r="180" fill="none" stroke="#BFDBF7" stroke-width="3" opacity="0.3"/>
-                                
-                                <!-- Middle circle -->
-                                <circle cx="200" cy="200" r="130" fill="none" stroke="#1F7A8C" stroke-width="4"/>
-                                
-                                <!-- Inner circle -->
-                                <circle cx="200" cy="200" r="80" fill="#BFDBF7" opacity="0.2"/>
-                                
-                                <!-- Center dot -->
-                                <circle cx="200" cy="200" r="15" fill="#022B3A"/>
-                                
-                                <!-- Labels -->
-                                <text x="200" y="60" text-anchor="middle" fill="#022B3A" font-size="16" font-weight="600">ASSESS</text>
-                                <text x="340" y="210" text-anchor="middle" fill="#022B3A" font-size="16" font-weight="600">IDENTIFY</text>
-                                <text x="200" y="350" text-anchor="middle" fill="#022B3A" font-size="16" font-weight="600">ALIGN</text>
-                                <text x="60" y="210" text-anchor="middle" fill="#022B3A" font-size="16" font-weight="600">IMPROVE</text>
-                            </svg>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -538,33 +508,33 @@
                 <h2>Sound Familiar?</h2>
                 <div class="problem-grid">
                     <div class="problem-card">
-                        <h3>❌ No One Remembers What Doesn't Work</h3>
-                        <p>When AI prompts fail, people either keep tweaking until they're frustrated — or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
+                        <h3>No One Tracks What Doesn't Work</h3>
+                        <p>Failed prompts get tweaked or abandoned. No system, no memory — just the same problems on repeat.</p>
                     </div>
                     
                     <div class="problem-card">
-                        <h3>❌ Can't Measure AI ROI</h3>
-                        <p>Your staff are using AI tools, but you can't track time saved, quality improvements, or actual business impact.</p>
+                        <h3>Can't Measure AI ROI</h3>
+                        <p>Your staff are using AI tools, but you can't track time saved, quality gains, or actual business impact.</p>
                     </div>
                     
                     <div class="problem-card">
-                        <h3>❌ Generic Training That Doesn't Stick</h3>
-                        <p>You've sent YouTube links or run one-off workshops, but nothing changes. No follow-up, no accountability.</p>
+                        <h3>Generic Training That Doesn't Stick</h3>
+                        <p>One-off workshops and YouTube links. No follow-up, no accountability, nothing changes.</p>
                     </div>
                     
                     <div class="problem-card">
-                        <h3>❌ Shadow AI Usage</h3>
-                        <p>Employees are using ChatGPT and other AI tools without governance, creating compliance and quality risks.</p>
+                        <h3>Shadow AI Usage</h3>
+                        <p>Employees using ChatGPT without governance, creating compliance and quality risks you can't see.</p>
                     </div>
                     
                     <div class="problem-card">
-                        <h3>❌ No Clear Strategy</h3>
-                        <p>You know AI could help, but which tools? For which teams? Where's the ROI? No one has answers.</p>
+                        <h3>No Clear Strategy</h3>
+                        <p>You know AI could help — but which tools, for which teams, and where's the ROI?</p>
                     </div>
                     
                     <div class="problem-card">
-                        <h3>❌ Tools Don't Match Roles</h3>
-                        <p>Your sales team, admin team, and operations team all need different AI solutions — but they're getting generic advice.</p>
+                        <h3>Tools Don't Match Roles</h3>
+                        <p>Sales, admin, and operations all need different AI solutions — but they're getting the same generic advice.</p>
                     </div>
                 </div>
             </section>
@@ -656,13 +626,13 @@
                 <!-- Calendly inline widget end -->
                 
                 <p style="text-align: center; color: #888; font-size: 0.9em; margin-top: 20px;">
-                    Prefer email? Reach us at <a href="mailto:hello@knownstateai.com" style="color: #1F7A8C; text-decoration: none;">hello@knownstateai.com</a>
+                    Prefer email? Reach us at <a href="/cdn-cgi/l/email-protection#d2bab7bebebd92b9bcbda5bca1a6b3a6b7b3bbfcb1bdbf" style="color: #1F7A8C; text-decoration: none;"><span class="__cf_email__" data-cfemail="afc7cac3c3c0efc4c1c0d8c1dcdbcedbcacec681ccc0c2">[email&#160;protected]</span></a>
                 </p>
             </div>
         </div>
     </div>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function openModal() {
             document.getElementById('consultationModal').classList.add('active');
         }
@@ -671,12 +641,4 @@
             document.getElementById('consultationModal').classList.remove('active');
         }
         
-        // Close modal when clicking outside
-        document.getElementById('consultationModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-    </script>
-</body>
-</html>
+        // C
