@@ -100,20 +100,25 @@
             background: #1F7A8C;
         }
 
-        /* Hamburger menu */
+        /* Hamburger menu - CSS only */
+        .menu-toggle {
+            display: none;
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
             padding: 10px;
-            z-index: 100;
+            z-index: 101;
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
             min-width: 44px;
             min-height: 44px;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .hamburger span {
@@ -123,17 +128,21 @@
             background: #022B3A;
             transition: all 0.3s;
             border-radius: 2px;
+            pointer-events: none;
         }
 
-        .hamburger.open span:nth-child(1) {
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(1),
+        .menu-toggle:checked ~ header .hamburger span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
 
-        .hamburger.open span:nth-child(2) {
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(2),
+        .menu-toggle:checked ~ header .hamburger span:nth-child(2) {
             opacity: 0;
         }
 
-        .hamburger.open span:nth-child(3) {
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(3),
+        .menu-toggle:checked ~ header .hamburger span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
@@ -145,14 +154,14 @@
             right: 0;
             bottom: 0;
             background: white;
-            z-index: 95;
+            z-index: 99;
             padding: 100px 40px 40px;
             flex-direction: column;
             gap: 0;
             overflow-y: auto;
         }
 
-        .mobile-menu.open {
+        .menu-toggle:checked ~ .mobile-menu {
             display: flex;
         }
 
@@ -895,6 +904,7 @@
     </style>
 </head>
 <body>
+    <input type="checkbox" id="menuToggle" class="menu-toggle">
     <div class="page-wrapper">
         
         <header>
@@ -913,9 +923,9 @@
                     <a href="ai-maturity.html">AI Assessment</a>
                     <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
                 </nav>
-                <div class="hamburger" onclick="toggleMobileMenu()">
+                <label for="menuToggle" class="hamburger">
                     <span></span><span></span><span></span>
-                </div>
+                </label>
             </header>
             
             <!-- HERO SECTION -->
@@ -1108,23 +1118,18 @@
 
     <!-- Mobile menu (outside page-wrapper for proper fixed positioning) -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#approach" onclick="closeMobileMenu()">Our Approach</a>
+        <a href="#approach">Our Approach</a>
         <a href="learn.html">Learn</a>
         <a href="ai-maturity.html">AI Assessment</a>
-        <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});closeMobileMenu();return false;">Work With Us</a>
+        <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
     </div>
     
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMobileMenu() {
-            document.querySelector('.hamburger').classList.toggle('open');
-            document.getElementById('mobileMenu').classList.toggle('open');
-            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
-        }
-
-        function closeMobileMenu() {
-            document.querySelector('.hamburger').classList.remove('open');
-            document.getElementById('mobileMenu').classList.remove('open');
-            document.body.style.overflow = '';
-        }
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('menuToggle').checked = false;
+            });
+        });
         
         // C
