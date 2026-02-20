@@ -32,6 +32,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <style>
         * {
             margin: 0;
@@ -105,16 +106,23 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding: 6px;
+            padding: 10px;
             z-index: 100;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .hamburger span {
             display: block;
             width: 24px;
-            height: 2px;
+            height: 2.5px;
             background: #022B3A;
             transition: all 0.3s;
+            border-radius: 2px;
         }
 
         .hamburger.open span:nth-child(1) {
@@ -141,6 +149,7 @@
             padding: 100px 40px 40px;
             flex-direction: column;
             gap: 0;
+            overflow-y: auto;
         }
 
         .mobile-menu.open {
@@ -511,72 +520,247 @@
             color: rgba(255, 255, 255, 0.3);
         }
         
-        /* ==================== MODAL ==================== */
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
+        /* ==================== TIMELINE SECTION ==================== */
+        .timeline-section {
+            padding: 80px 60px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
-        
-        .modal.active {
-            display: flex;
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 56px;
         }
-        
-        .modal-content {
-            background: white;
-            padding: 50px;
-            border-radius: 16px;
-            max-width: 900px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        
-        .modal-content.calendly-modal {
-            padding: 40px 30px;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 2em;
-            color: #888;
-            cursor: pointer;
-            padding: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-close:hover {
+
+        .timeline-header h2 {
+            font-size: 2.2em;
+            font-weight: 600;
             color: #022B3A;
+            margin-bottom: 12px;
         }
-        
-        .modal h2 {
-            font-size: 2em;
+
+        .timeline-header p {
+            font-size: 1.05em;
+            color: #888;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 16.66%;
+            right: 16.66%;
+            height: 2px;
+            background: #e5e5e5;
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step:nth-child(1) .step-number {
+            background: #f0f9f7;
+            border: 2px solid #1F7A8C;
+        }
+
+        .step:nth-child(2) .step-number {
+            background: #e5f4f0;
+            border: 2px solid #1F7A8C;
+        }
+
+        .step:nth-child(3) .step-number {
+            background: #022B3A;
+            border: 2px solid #022B3A;
+        }
+
+        .step-icon { font-size: 1.6em; }
+
+        .step-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            color: #1F7A8C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .step h3 {
+            font-size: 1.15em;
+            font-weight: 600;
             color: #022B3A;
             margin-bottom: 10px;
+            line-height: 1.3;
         }
-        
-        .modal-subtitle {
-            color: #666;
-            margin-bottom: 30px;
+
+        .step p {
+            font-size: 0.88em;
+            color: #888;
+            line-height: 1.6;
         }
-        
+
+        .step-detail {
+            margin-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72em;
+            color: #bbb;
+        }
+
+        .deliverable-tag {
+            display: inline-block;
+            background: #022B3A;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 12px;
+        }
+
+        /* ==================== HOW IT WORKS TIMELINE ==================== */
+        .timeline-section {
+            padding: 80px 60px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .timeline-header h2 {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 12px;
+        }
+
+        .timeline-header p {
+            font-size: 1.05em;
+            color: #888;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 16.66%;
+            right: 16.66%;
+            height: 2px;
+            background: #e5e5e5;
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step:nth-child(1) .step-number { background: #f0f9f7; border: 2px solid #1F7A8C; }
+        .step:nth-child(2) .step-number { background: #e5f4f0; border: 2px solid #1F7A8C; }
+        .step:nth-child(3) .step-number { background: #022B3A; border: 2px solid #022B3A; }
+
+        .step-icon { font-size: 1.6em; }
+
+        .step-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            color: #1F7A8C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .step h3 {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .step p {
+            font-size: 0.88em;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .step-detail {
+            margin-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72em;
+            color: #bbb;
+        }
+
+        .deliverable-tag {
+            display: inline-block;
+            background: #022B3A;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 12px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -648,8 +832,64 @@
                 padding: 60px 30px;
             }
             
+            .timeline-section {
+                padding: 60px 30px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .steps::before {
+                top: 0;
+                bottom: 0;
+                left: 32px;
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+
+            .step {
+                text-align: left;
+                padding: 0 0 0 100px;
+            }
+
+            .step-number {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 0;
+                width: 64px;
+                height: 64px;
+            }
+
             .solution-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .timeline-section { padding: 50px 30px; }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .steps::before {
+                top: 0; bottom: 0; left: 40px; right: auto;
+                width: 2px; height: auto;
+            }
+
+            .step {
+                text-align: left;
+                padding: 0 0 0 100px;
+            }
+
+            .step-number {
+                position: absolute;
+                left: 0; top: 0;
+                margin: 0;
+                width: 64px; height: 64px;
             }
         }
     </style>
@@ -671,19 +911,12 @@
                     <a href="#approach">Our Approach</a>
                     <a href="learn.html">Learn</a>
                     <a href="ai-maturity.html">AI Assessment</a>
-                    <a href="#work-with-us" class="nav-cta">Work With Us</a>
+                    <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
                 </nav>
                 <div class="hamburger" onclick="toggleMobileMenu()">
                     <span></span><span></span><span></span>
                 </div>
             </header>
-
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="#approach" onclick="closeMobileMenu()">Our Approach</a>
-                <a href="learn.html">Learn</a>
-                <a href="ai-maturity.html">AI Assessment</a>
-                <a href="#work-with-us" class="nav-cta" onclick="closeMobileMenu()">Work With Us</a>
-            </div>
             
             <!-- HERO SECTION -->
             <section id="top" class="hero-section">
@@ -707,7 +940,7 @@
                             <li>We align AI usage to your real roles and responsibilities</li>
                             <li>We improve it continuously — not once, not randomly</li>
                         </ul>
-                        <button class="cta-button" onclick="openModal()">Start a Conversation</button>
+                        <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
                     </div>
                 </div>
             </section>
@@ -812,14 +1045,52 @@
                     Our philosophy is simple: <strong>if it's not known, we don't pretend it is.</strong> That's why every engagement starts by establishing your knownstate — your actual baseline for AI usage and outcomes.
                 </div>
             </section>
-            
-            <!-- LOCAL SEO SECTION (NEW) -->
+
+            <!-- HOW IT WORKS -->
+            <section class="timeline-section">
+                <div class="timeline-header">
+                    <h2>How It Works</h2>
+                    <p>Three steps. No lock-in. A clear outcome at every stage.</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">
+                            <span class="step-icon">💬</span>
+                        </div>
+                        <div class="step-label">Step 1</div>
+                        <h3>20-Minute Conversation</h3>
+                        <p>How your business uses AI today, what's working, and what isn't.</p>
+                        <div class="step-detail">Video call · No obligation</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">
+                            <span class="step-icon">🔍</span>
+                        </div>
+                        <div class="step-label">Step 2</div>
+                        <h3>AI Discovery Session</h3>
+                        <p>If there's a mutual fit, we work hands-on. We look at real workflows, real prompts, and real outputs across roles.</p>
+                        <div class="step-detail">Half day · On-site or remote</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">
+                            <span class="step-icon" style="filter: brightness(0) invert(1);">📋</span>
+                        </div>
+                        <div class="step-label">Step 3</div>
+                        <h3>The KnownState</h3>
+                        <p>Findings, recommendations, and a clear path forward.</p>
+                        <span class="deliverable-tag">Your deliverable</span>
+                    </div>
+                </div>
+            </section>
             
             <!-- CTA SECTION -->
             <section id="work-with-us" class="cta-section">
                 <h3>Start with a knownstate.</h3>
                 <p>A 20-minute conversation about where AI fits in your business.</p>
-                <button class="cta-button" onclick="openModal()">Start a Conversation</button>
+                <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
                 
                 <div class="footer-main">
                     <div class="footer-brand">knownstateai</div>
@@ -833,34 +1104,17 @@
                 </div>
             </section>
 
-        <!-- MODAL -->
-        <div id="consultationModal" class="modal">
-            <div class="modal-content calendly-modal">
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-                <h2>Let's Talk</h2>
-                <p class="modal-subtitle">Pick a time that works — a 20-minute conversation about where AI fits in your business.</p>
-                
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/griffithsben-pm/30min?hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                <!-- Calendly inline widget end -->
-                
-                <p style="text-align: center; color: #888; font-size: 0.9em; margin-top: 20px;">
-                    Prefer email? Reach us at <a href="/cdn-cgi/l/email-protection#d2bab7bebebd92b9bcbda5bca1a6b3a6b7b3bbfcb1bdbf" style="color: #1F7A8C; text-decoration: none;"><span class="__cf_email__" data-cfemail="afc7cac3c3c0efc4c1c0d8c1dcdbcedbcacec681ccc0c2">[email&#160;protected]</span></a>
-                </p>
-            </div>
         </div>
+
+    <!-- Mobile menu (outside page-wrapper for proper fixed positioning) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#approach" onclick="closeMobileMenu()">Our Approach</a>
+        <a href="learn.html">Learn</a>
+        <a href="ai-maturity.html">AI Assessment</a>
+        <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});closeMobileMenu();return false;">Work With Us</a>
     </div>
     
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function openModal() {
-            document.getElementById('consultationModal').classList.add('active');
-        }
-        
-        function closeModal() {
-            document.getElementById('consultationModal').classList.remove('active');
-        }
-
         function toggleMobileMenu() {
             document.querySelector('.hamburger').classList.toggle('open');
             document.getElementById('mobileMenu').classList.toggle('open');
