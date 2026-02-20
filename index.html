@@ -150,14 +150,16 @@
             display: none;
             position: fixed;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
+            width: 280px;
+            height: auto;
+            max-height: 100vh;
             background: white;
             z-index: 99;
-            padding: 100px 40px 40px;
+            padding: 80px 30px 30px;
             flex-direction: column;
             gap: 0;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.15);
             overflow-y: auto;
         }
 
@@ -165,12 +167,28 @@
             display: flex;
         }
 
+        /* Overlay behind menu */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 98;
+        }
+
+        .menu-toggle:checked ~ .menu-overlay {
+            display: block;
+        }
+
         .mobile-menu a {
             color: #022B3A;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.05em;
             font-weight: 500;
-            padding: 18px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #eee;
             transition: color 0.2s;
         }
@@ -183,9 +201,9 @@
             display: inline-block;
             background: #022B3A;
             color: white;
-            padding: 16px 28px;
+            padding: 14px 24px;
             border-radius: 8px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             text-align: center;
             margin-top: 16px;
@@ -770,6 +788,42 @@
             margin-top: 12px;
         }
 
+        /* ==================== SCROLL REVEAL ==================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slide from left */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Slide from right */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -937,13 +991,13 @@
             <!-- CONTENT SECTION -->
             <section class="content-section">
                 <div class="content-wrapper">
-                    <div class="content-left">
+                    <div class="content-left reveal-left">
                         <h2>AI Training & Consulting for Brisbane Small Businesses</h2>
                         <p class="problem-statement">Most businesses didn't fail at AI. They were never set up to succeed.<br><strong>AI was added. Nothing changed.</strong></p>
                         <p class="solution-intro">We establish a knownstate.</p>
                     </div>
                     
-                    <div class="content-right">
+                    <div class="content-right reveal-right">
                         <ul class="solution-points">
                             <li>We assess how AI is actually being used in your business today</li>
                             <li>We identify what's reliable, what's assumed, and what's broken</li>
@@ -957,34 +1011,34 @@
             
             <!-- PROBLEM SECTION (NEW - SEO-FOCUSED) -->
             <section class="problem-section">
-                <h2>Sound Familiar?</h2>
+                <h2 class="reveal">Sound Familiar?</h2>
                 <div class="problem-grid">
-                    <div class="problem-card">
+                    <div class="problem-card reveal">
                         <h3>No One Remembers What Doesn't Work</h3>
                         <p>When AI prompts fail, people either keep tweaking until they're frustrated — or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
                     </div>
                     
-                    <div class="problem-card">
+                    <div class="problem-card reveal">
                         <h3>Can't Measure AI ROI</h3>
                         <p>Your staff are using AI tools, but you can't track time saved, quality improvements, or actual business impact.</p>
                     </div>
                     
-                    <div class="problem-card">
+                    <div class="problem-card reveal">
                         <h3>Generic Training That Doesn't Stick</h3>
                         <p>You've sent YouTube links or run one-off workshops, but nothing changes. No follow-up, no accountability.</p>
                     </div>
                     
-                    <div class="problem-card">
+                    <div class="problem-card reveal">
                         <h3>Shadow AI Usage</h3>
                         <p>Employees are using ChatGPT and other AI tools without governance, creating compliance and quality risks.</p>
                     </div>
                     
-                    <div class="problem-card">
+                    <div class="problem-card reveal">
                         <h3>No Clear Strategy</h3>
                         <p>You know AI could help, but which tools? For which teams? Where's the ROI? No one has answers.</p>
                     </div>
                     
-                    <div class="problem-card">
+                    <div class="problem-card reveal">
                         <h3>Tools Don't Match Roles</h3>
                         <p>Your sales team, admin team, and operations team all need different AI solutions — but they're getting generic advice.</p>
                     </div>
@@ -993,10 +1047,10 @@
             
             <!-- SOLUTION SECTION -->
             <section id="approach" class="solution-section">
-                <h2>The KnownState Method: Practical AI Implementation</h2>
+                <h2 class="reveal">The KnownState Method: Practical AI Implementation</h2>
                 
                 <div class="solution-grid">
-                    <div class="solution-card">
+                    <div class="solution-card reveal">
                         <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
                             <!-- Assess icon: Magnifying glass over data -->
                             <circle cx="18" cy="18" r="12" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
@@ -1009,7 +1063,7 @@
                         <p>We assess how AI is actually being used in your business today. What tools are your teams using? ChatGPT? Microsoft Copilot? Custom prompts? We map your current state.</p>
                     </div>
                     
-                    <div class="solution-card">
+                    <div class="solution-card reveal">
                         <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
                             <!-- Identify icon: Target/crosshair -->
                             <circle cx="24" cy="24" r="18" fill="none" stroke="#BFDBF7" stroke-width="2"/>
@@ -1024,7 +1078,7 @@
                         <p>We identify what's working, what's assumed, and what's broken. Not all AI usage delivers value — we find your wins and fix the gaps. Clear ROI tracking starts here.</p>
                     </div>
                     
-                    <div class="solution-card">
+                    <div class="solution-card reveal">
                         <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
                             <!-- Align icon: Overlapping squares/alignment -->
                             <rect x="8" y="8" width="20" height="20" rx="3" fill="none" stroke="#BFDBF7" stroke-width="2"/>
@@ -1035,7 +1089,7 @@
                         <p>We align AI usage to your actual business roles and responsibilities. Sales teams need different AI tools than admin. We match AI to real work, not generic training.</p>
                     </div>
                     
-                    <div class="solution-card">
+                    <div class="solution-card reveal">
                         <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
                             <!-- Improve icon: Upward arrow with steps -->
                             <polyline points="8,32 16,28 24,20 32,16 40,8" fill="none" stroke="#1F7A8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1058,13 +1112,13 @@
 
             <!-- HOW IT WORKS -->
             <section class="timeline-section">
-                <div class="timeline-header">
+                <div class="timeline-header reveal">
                     <h2>How It Works</h2>
                     <p>Three steps. No lock-in. A clear outcome at every stage.</p>
                 </div>
 
                 <div class="steps">
-                    <div class="step">
+                    <div class="step reveal">
                         <div class="step-number">
                             <span class="step-icon">💬</span>
                         </div>
@@ -1074,7 +1128,7 @@
                         <div class="step-detail">Video call · No obligation</div>
                     </div>
 
-                    <div class="step">
+                    <div class="step reveal">
                         <div class="step-number">
                             <span class="step-icon">🔍</span>
                         </div>
@@ -1084,7 +1138,7 @@
                         <div class="step-detail">Half day · On-site or remote</div>
                     </div>
 
-                    <div class="step">
+                    <div class="step reveal">
                         <div class="step-number">
                             <span class="step-icon" style="filter: brightness(0) invert(1);">📋</span>
                         </div>
@@ -1098,8 +1152,8 @@
             
             <!-- CTA SECTION -->
             <section id="work-with-us" class="cta-section">
-                <h3>Start with a knownstate.</h3>
-                <p>A 20-minute conversation about where AI fits in your business.</p>
+                <h3 class="reveal">Start with a knownstate.</h3>
+                <p class="reveal">A 20-minute conversation about where AI fits in your business.</p>
                 <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
                 
                 <div class="footer-main">
@@ -1116,7 +1170,10 @@
 
         </div>
 
-    <!-- Mobile menu (outside page-wrapper for proper fixed positioning) -->
+    <!-- Mobile overlay (tap to close) -->
+    <label for="menuToggle" class="menu-overlay"></label>
+
+    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#approach">Our Approach</a>
         <a href="learn.html">Learn</a>
@@ -1131,5 +1188,28 @@
                 document.getElementById('menuToggle').checked = false;
             });
         });
-        
-        // C
+
+        // Scroll reveal with row-aware stagger
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    // Find siblings in same parent that are also reveal elements
+                    const parent = entry.target.parentElement;
+                    const siblings = parent.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+                    let index = 0;
+                    siblings.forEach(function(sib, i) {
+                        if (sib === entry.target) index = i;
+                    });
+                    // Stagger: each sibling gets 0.12s more delay
+                    entry.target.style.transitionDelay = (index * 0.12) + 's';
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
