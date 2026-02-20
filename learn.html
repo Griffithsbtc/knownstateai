@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn AI — Free Resources for Business | KnownStateAI Brisbane</title>
+    <meta name="description" content="Free AI learning resources for Australian businesses. Prompt examples, curated videos, articles, and tools to help you get real results from AI — from KnownStateAI Brisbane.">
+    <meta name="keywords" content="free AI training Brisbane, learn AI for business, AI resources small business, AI education Queensland">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 160px; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .page-wrapper {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .logo-icon { width: 50px; height: 50px; }
+
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #022B3A;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .site-nav a {
+            color: #022B3A;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .site-nav a:hover { color: #1F7A8C; }
+        .site-nav a.active { color: #1F7A8C; }
+
+        .site-nav .nav-cta {
+            background: #022B3A; color: white; padding: 10px 22px;
+            border-radius: 6px; font-size: 0.9em; font-weight: 600; transition: background 0.2s;
+        }
+        .site-nav .nav-cta:hover { color: white; background: #1F7A8C; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; z-index: 100; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #022B3A; transition: all 0.3s; }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: white; z-index: 95; padding: 100px 40px 40px; flex-direction: column; gap: 0; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { color: #022B3A; text-decoration: none; font-size: 1.2em; font-weight: 500; padding: 18px 0; border-bottom: 1px solid #eee; transition: color 0.2s; }
+        .mobile-menu a:hover { color: #1F7A8C; }
+        .mobile-menu .nav-cta { display: inline-block; background: #022B3A; color: white; padding: 16px 28px; border-radius: 8px; font-size: 1.1em; font-weight: 600; text-align: center; margin-top: 16px; border-bottom: none; }
+        .mobile-menu .nav-cta:hover { color: white; background: #1F7A8C; }
+
+        /* ==================== PAGE HERO ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-hero p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ==================== JUMP BAR ==================== */
+        .jump-bar {
+            position: sticky;
+            top: 91px;
+            z-index: 80;
+            background: white;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 14px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .jump-btn {
+            font-family: 'Inter', sans-serif;
+            padding: 8px 18px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 100px;
+            background: white;
+            color: #555;
+            font-size: 0.85em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .jump-btn:hover {
+            border-color: #1F7A8C;
+            color: #1F7A8C;
+            background: #f0f9f7;
+        }
+
+        /* ==================== SECTION LAYOUT ==================== */
+        .learn-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .learn-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em;
+            color: #1F7A8C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            font-size: 1em;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        /* ==================== PROMPT EXAMPLES LINK CARD ==================== */
+        .feature-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px;
+            background: #f0f9f7;
+            border: 1.5px solid #1F7A8C;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .feature-link:hover {
+            background: #e5f4f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(31, 122, 140, 0.15);
+        }
+
+        .feature-link-text h3 {
+            font-size: 1.2em;
+            color: #022B3A;
+            margin-bottom: 6px;
+        }
+
+        .feature-link-text p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .feature-link-arrow {
+            font-size: 1.5em;
+            color: #1F7A8C;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        /* ==================== VIDEO GRID ==================== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #eee;
+            transition: all 0.2s;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 16px 20px;
+        }
+
+        .video-info h4 {
+            font-size: 0.95em;
+            color: #022B3A;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .video-info .video-meta {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        /* ==================== RESOURCE LINKS ==================== */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .resource-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .resource-card:hover {
+            border-color: #1F7A8C;
+            background: #f8fcfb;
+        }
+
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2em;
+        }
+
+        .resource-icon.tool { background: #E8F4FD; }
+        .resource-icon.site { background: #E8F0E8; }
+        .resource-icon.guide { background: #FFF3E0; }
+
+        .resource-text h4 {
+            font-size: 0.95em;
+            color: #022B3A;
+            margin-bottom: 4px;
+        }
+
+        .resource-text p {
+            font-size: 0.82em;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        /* ==================== NEWS / ARTICLES ==================== */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-card {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+            align-items: flex-start;
+        }
+
+        .news-card:hover {
+            border-color: #1F7A8C;
+            background: #f8fcfb;
+        }
+
+        .news-date {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 56px;
+        }
+
+        .news-date .day {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #022B3A;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .news-content h4 {
+            font-size: 1em;
+            color: #022B3A;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .news-content p {
+            font-size: 0.88em;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .news-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .news-tag.article { background: #E8F4FD; color: #0B5394; }
+        .news-tag.video { background: #FCE4EC; color: #C62828; }
+        .news-tag.news { background: #E8F0E8; color: #38761D; }
+        .news-tag.tool { background: #FFF3E0; color: #E65100; }
+
+        /* ==================== HOW TO ADD TEMPLATE ==================== */
+        .template-note {
+            margin-top: 32px;
+            padding: 20px 24px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #1F7A8C;
+        }
+
+        .template-note p {
+            font-size: 0.85em;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .template-note code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #555;
+        }
+
+        /* ==================== CTA SECTION ==================== */
+        .page-cta {
+            padding: 80px 60px 40px;
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .page-cta h3 { font-size: 2em; margin-bottom: 16px; }
+
+        .page-cta p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-cta .cta-button {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #022B3A;
+            border: none;
+            padding: 18px 36px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-cta .cta-button:hover {
+            background: #BFDBF7;
+            transform: translateY(-2px);
+        }
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-size: 1.3em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 32px;
+            font-size: 0.95em;
+        }
+
+        .footer-contact a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover { color: white; }
+        .footer-contact span { color: rgba(255,255,255,0.5); }
+
+        .footer-bottom {
+            padding: 12px 0 0;
+            text-align: center;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; justify-content: space-between; }
+            .site-nav { display: none; }
+            .hamburger { display: flex; }
+
+            .jump-bar {
+                padding: 12px 16px;
+                top: 71px;
+                gap: 6px;
+            }
+
+            .jump-btn {
+                padding: 6px 14px;
+                font-size: 0.78em;
+            }
+
+            .page-hero { padding: 50px 30px; }
+            .page-hero h1 { font-size: 2em; }
+
+            .learn-section { padding: 40px 20px; }
+
+            .feature-link { flex-direction: column; gap: 12px; }
+            .feature-link-arrow { display: none; }
+
+            .video-grid { grid-template-columns: 1fr; }
+            .resource-grid { grid-template-columns: 1fr; }
+
+            .news-card { flex-direction: column; gap: 12px; }
+
+            .page-cta { padding: 60px 30px 30px; }
+
+            .footer-main {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <header>
+        <a href="index.html" class="logo-lockup">
+            <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
+                <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
+                <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
+                <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+                <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+            </svg>
+            <div class="logo-text">knownstateai</div>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html#approach">Our Approach</a>
+            <a href="learn.html" class="active">Learn</a>
+            <a href="ai-maturity.html">AI Assessment</a>
+            <a href="index.html#work-with-us" class="nav-cta">Work With Us</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#approach" onclick="closeMobileMenu()">Our Approach</a>
+        <a href="learn.html">Learn</a>
+        <a href="ai-maturity.html">AI Assessment</a>
+        <a href="index.html#work-with-us" class="nav-cta">Work With Us</a>
+    </div>
+
+    <section class="page-hero">
+        <h1>Free AI Learning Resources</h1>
+        <p>Practical guides, real examples, and curated content to help you get genuine results from AI.</p>
+    </section>
+
+    <div class="jump-bar">
+        <button class="jump-btn" onclick="document.getElementById('prompts').scrollIntoView({behavior:'smooth'})">Prompt Examples</button>
+        <button class="jump-btn" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">Videos</button>
+        <button class="jump-btn" onclick="document.getElementById('free-gpts').scrollIntoView({behavior:'smooth'})">Free GPTs</button>
+        <button class="jump-btn" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})">Resources</button>
+        <button class="jump-btn" onclick="document.getElementById('news').scrollIntoView({behavior:'smooth'})">News</button>
+    </div>
+
+    <div class="learn-section" id="prompts">
+        <div class="section-header">
+            <div class="section-tag">Hands-on examples</div>
+            <h2>Prompt Examples</h2>
+            <p>Real before-and-after comparisons across finance, HR, operations, and executive roles.</p>
+        </div>
+
+        <a href="prompt-examples.html" class="feature-link">
+            <div class="feature-link-text">
+                <h3>View All Prompt Examples</h3>
+                <p>6 examples with time savings, structured prompts, and output mockups</p>
+            </div>
+            <span class="feature-link-arrow">→</span>
+        </a>
+    </div>
+
+    <div class="learn-section" id="videos">
+        <div class="section-header">
+            <div class="section-tag">Watch & learn</div>
+            <h2>Recommended Videos</h2>
+            <p>Curated content from people doing practical AI education well.</p>
+        </div>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/Z0wb0y5BVIY" title="AI for Business" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI for Business — Getting Started</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/0teZqotpqT8" title="AI Prompting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI Prompting Techniques</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/IXp9YJYIJ1M" title="AI Live Session" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI Live Session</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/HiX6AxmF500" title="AI Tools Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI Tools Overview</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/7d6cnnK6kHY" title="AI Practical Tips" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI Practical Tips</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: FREE GPTs -->
+    <div class="learn-section" id="free-gpts">
+        <div class="section-header">
+            <div class="section-tag">Try them now</div>
+            <h2>Free GPTs</h2>
+            <p>Fully working AI agents you can use right now — no setup, no cost. Built by practitioners for real business tasks.</p>
+        </div>
+
+        <div class="section-subheader">
+            <h3 style="font-size: 1.1em; color: #022B3A; margin-bottom: 6px;">Mike Parsons — GrowthBooks & ProductBooks</h3>
+            <p style="font-size: 0.9em; color: #888; margin-bottom: 20px; line-height: 1.5;">Mike Parsons builds free AI agents for B2B founders. His GPTs evaluate your business strategy and give structured, actionable feedback — powered by proven frameworks.</p>
+        </div>
+
+        <div class="resource-grid">
+            <a href="https://chatgpt.com/g/g-696980a7387881918b844a20ed0cce93-growthbooks-demand-reality-evaluator" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #E8F4FD;">📊</div>
+                <div class="resource-text">
+                    <h4>GrowthBooks — Demand Reality Evaluator</h4>
+                    <p>Evaluate whether real demand exists for your product or service</p>
+                </div>
+            </a>
+
+            <a href="https://b2bgrowthbooks.com/" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #E8F0E8;">📘</div>
+                <div class="resource-text">
+                    <h4>B2B GrowthBooks</h4>
+                    <p>The full GrowthBooks framework and resources</p>
+                </div>
+            </a>
+
+            <a href="https://chatgpt.com/g/g-696198865c8881919a6bd0479a4deb4c-productbooks-problem-solution-fit-evaluator" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #FCE4EC;">🎯</div>
+                <div class="resource-text">
+                    <h4>ProductBooks — Problem-Solution Fit Evaluator</h4>
+                    <p>Test whether your solution actually fits the problem you're solving</p>
+                </div>
+            </a>
+
+            <a href="https://www.b2bproductbooks.com/" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #FFF3E0;">📙</div>
+                <div class="resource-text">
+                    <h4>B2B ProductBooks</h4>
+                    <p>The full ProductBooks framework and resources</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- SECTION 4: TOOLS & RESOURCES -->
+    <div class="learn-section" id="resources">
+        <div class="section-header">
+            <div class="section-tag">Useful tools</div>
+            <h2>AI Tools & Resources</h2>
+            <p>The major AI platforms and where they each fit. Most offer free tiers.</p>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+            <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">AI Assistants</h3>
+            <div class="resource-grid">
+                <a href="https://chat.openai.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F4FD;">💬</div>
+                    <div class="resource-text">
+                        <h4>ChatGPT</h4>
+                        <p>OpenAI's flagship. Strong all-rounder for writing, analysis, and code. Free tier available.</p>
+                    </div>
+                </a>
+
+                <a href="https://claude.ai" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #FFF3E0;">🧠</div>
+                    <div class="resource-text">
+                        <h4>Claude</h4>
+                        <p>Anthropic's model. Excels at long documents, nuanced writing, and careful reasoning.</p>
+                    </div>
+                </a>
+
+                <a href="https://gemini.google.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F0E8;">✨</div>
+                    <div class="resource-text">
+                        <h4>Gemini</h4>
+                        <p>Google's AI. Best when integrated with Google Workspace — Docs, Sheets, Gmail.</p>
+                    </div>
+                </a>
+
+                <a href="https://copilot.microsoft.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F4FD;">🤖</div>
+                    <div class="resource-text">
+                        <h4>Microsoft Copilot</h4>
+                        <p>Built into Microsoft 365. Strongest if your business runs on Word, Excel, Teams.</p>
+                    </div>
+                </a>
+
+                <a href="https://x.com/i/grok" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #F3E5F5;">⚡</div>
+                    <div class="resource-text">
+                        <h4>Grok</h4>
+                        <p>xAI's model on X (Twitter). Real-time access to trending topics and social data.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+            <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">AI Builders</h3>
+            <div class="resource-grid">
+                <a href="https://lovable.dev" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #FCE4EC;">🏗️</div>
+                    <div class="resource-text">
+                        <h4>Lovable</h4>
+                        <p>Build working web apps from a text description. No code required.</p>
+                    </div>
+                </a>
+
+                <a href="https://aistudio.google.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F0E8;">🧪</div>
+                    <div class="resource-text">
+                        <h4>Google AI Studio</h4>
+                        <p>Prototype and test prompts against Google's Gemini models. Free to experiment.</p>
+                    </div>
+                </a>
+
+                <a href="https://midjourney.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #FFF3E0;">🎨</div>
+                    <div class="resource-text">
+                        <h4>Midjourney</h4>
+                        <p>AI image generation. Create visuals, mockups, and design concepts from text prompts.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">Benchmarks & Comparisons</h3>
+            <div class="resource-grid">
+                <a href="https://lmarena.ai/" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F4FD;">📊</div>
+                    <div class="resource-text">
+                        <h4>LMSYS Chatbot Arena</h4>
+                        <p>Live rankings of AI models based on real user votes. The most trusted benchmark.</p>
+                    </div>
+                </a>
+
+                <a href="https://artificialanalysis.ai/" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F0E8;">📈</div>
+                    <div class="resource-text">
+                        <h4>Artificial Analysis</h4>
+                        <p>Compare AI models on speed, cost, and quality. Useful for picking the right tool.</p>
+                    </div>
+                </a>
+
+                <a href="https://apolloadvisor.com/ai-tools-for-b2b-marketing" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #F3E5F5;">🚀</div>
+                    <div class="resource-text">
+                        <h4>Apollo Advisor — AI Tools for B2B</h4>
+                        <p>Curated directory of AI tools specifically for B2B marketing teams.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: NEWS & ARTICLES -->
+    <div class="learn-section" id="news">
+        <div class="section-header">
+            <div class="section-tag">Latest updates</div>
+            <h2>News & Articles</h2>
+            <p>Curated articles and commentary on AI for business.</p>
+        </div>
+
+        <div class="news-list">
+
+            <!-- NEWS ITEM — Copy this block to add a new post. Paste at the TOP to keep newest first. -->
+            <a href="https://example.com/article-link" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">18</div>
+                    <div class="month">Feb 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>Why Most AI Training Fails — and What to Do Instead</h4>
+                    <p>A look at why generic AI workshops don't stick, and what assessment-driven implementation looks like in practice.</p>
+                    <span class="news-tag article">Article</span>
+                </div>
+            </a>
+
+            <a href="https://example.com/another-article" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">12</div>
+                    <div class="month">Feb 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>Microsoft Copilot Updates: What Changed in February 2025</h4>
+                    <p>Summary of the latest Copilot features and what they mean for small business users.</p>
+                    <span class="news-tag news">News</span>
+                </div>
+            </a>
+
+            <a href="https://youtube.com/watch?v=example" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">05</div>
+                    <div class="month">Feb 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>Nate Jones: The Prompt Framework That Actually Works</h4>
+                    <p>Nate breaks down a structured approach to business prompting that mirrors what we teach in our sessions.</p>
+                    <span class="news-tag video">Video</span>
+                </div>
+            </a>
+
+            <a href="https://aicred.ai" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">28</div>
+                    <div class="month">Jan 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>AICRED.AI — A Tool for Verifying AI Output</h4>
+                    <p>We've been testing AICRED.AI for checking AI-generated content. Here's how it works and when it's useful.</p>
+                    <span class="news-tag tool">Tool</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- TEMPLATE NOTE (remove from live site — this is just for your reference) -->
+        <div class="template-note">
+            <p><strong>How to add a new post:</strong> Copy any <code>&lt;a class="news-card"&gt;...&lt;/a&gt;</code> block above. Paste it at the top of the news-list div. Update the date, title, description, link, and tag type (<code>article</code>, <code>video</code>, <code>news</code>, or <code>tool</code>). Save and push.</p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="page-cta">
+        <h3>Ready for a structured approach?</h3>
+        <p>A 20-minute conversation about where AI fits in your business.</p>
+        <button class="cta-button" onclick="window.location.href='index.html#work-with-us'">Start a Conversation</button>
+
+        <div class="footer-main">
+            <div class="footer-brand">knownstateai</div>
+            <div class="footer-contact">
+                <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
+                <span>Brisbane, QLD</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 KnownStateAI. All rights reserved.
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function toggleMobileMenu() {
+        document.querySelector('.hamburger').classList.toggle('open');
+        document.getElementById('mobileMenu').classList.toggle('open');
+        document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMobileMenu() {
+        document.querySelector('.hamburger').classList.remove('open');
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+</script>
+</body>
+</html>
