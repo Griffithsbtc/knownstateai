@@ -585,9 +585,10 @@
 
     <div class="jump-bar">
         <button class="jump-btn" onclick="window.location.href='prompt-examples.html'">Prompt Examples</button>
+        <button class="jump-btn" onclick="window.location.href='beyond-prompts.html'">Beyond Prompts</button>
         <button class="jump-btn" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">Videos</button>
         <button class="jump-btn" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})">Resources</button>
-        <button class="jump-btn" onclick="document.getElementById('news').scrollIntoView({behavior:'smooth'})">News</button>
+        <button class="jump-btn" onclick="document.getElementById('benchmarks').scrollIntoView({behavior:'smooth'})">Benchmarks</button>
     </div>
 
     <div class="learn-section" id="prompts">
@@ -601,6 +602,22 @@
             <div class="feature-link-text">
                 <h3>View All Prompt Examples</h3>
                 <p>6 examples with time savings, structured prompts, and output mockups</p>
+            </div>
+            <span class="feature-link-arrow">→</span>
+        </a>
+    </div>
+
+    <div class="learn-section" id="agents">
+        <div class="section-header">
+            <div class="section-tag">The next level</div>
+            <h2>Beyond Prompts</h2>
+            <p>AI agents that run entire workflows — multiple steps, decisions, and systems, without you watching.</p>
+        </div>
+
+        <a href="beyond-prompts.html" class="feature-link">
+            <div class="feature-link-text">
+                <h3>Explore AI Agents</h3>
+                <p>6 real agent examples across productivity, finance, sales, HR, and operations — with live pipeline demos</p>
             </div>
             <span class="feature-link-arrow">→</span>
         </a>
@@ -798,7 +815,7 @@
             </div>
         </div>
 
-        <div>
+        <div id="benchmarks">
             <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">Benchmarks & Comparisons</h3>
             <div class="resource-grid">
                 <a href="https://lmarena.ai/" target="_blank" class="resource-card">
@@ -828,7 +845,7 @@
         </div>
     </div>
 
-    <!-- SECTION 4: NEWS & ARTICLES -->
+    <!-- NEWS SECTION - HIDDEN UNTIL CONTENT READY
     <div class="learn-section" id="news">
         <div class="section-header">
             <div class="section-tag">Latest updates</div>
@@ -838,7 +855,6 @@
 
         <div class="news-list">
 
-            <!-- NEWS ITEM — Copy this block to add a new post. Paste at the TOP to keep newest first. -->
             <a href="https://example.com/article-link" target="_blank" class="news-card">
                 <div class="news-date">
                     <div class="day">18</div>
@@ -889,11 +905,11 @@
 
         </div>
 
-        <!-- TEMPLATE NOTE (remove from live site — this is just for your reference) -->
         <div class="template-note">
-            <p><strong>How to add a new post:</strong> Copy any <code>&lt;a class="news-card"&gt;...&lt;/a&gt;</code> block above. Paste it at the top of the news-list div. Update the date, title, description, link, and tag type (<code>article</code>, <code>video</code>, <code>news</code>, or <code>tool</code>). Save and push.</p>
+            How to add a new post: Copy any news-card block above. Paste at the top of the news-list div. Update date, title, description, link, and tag type (article, video, news, or tool). Save and push.
         </div>
     </div>
+    END NEWS SECTION -->
 
     <!-- CTA -->
     <section class="page-cta">

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Prompts — AI Agents | KnownStateAI</title>
+    <meta name="description" content="AI agents automate entire workflows — not just answer questions. See real examples of agents handling finance, HR, sales, operations and more.">
+    <meta name="keywords" content="AI agents, AI automation, business AI agents, AI workflows, AI consulting Brisbane, AI consultant Australia">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #333; }
+
+        /* ==================== HEADER & NAV ==================== */
+        .page-wrapper { max-width: 1800px; margin: 0 auto; background: white; }
+        .logo-lockup { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        .logo-icon { width: 50px; height: 50px; }
+        .logo-text-option2 { font-size: 1.5em; font-weight: 600; color: #022B3A; letter-spacing: -0.02em; text-transform: lowercase; }
+        .site-nav { display: flex; gap: 32px; align-items: center; }
+        .site-nav a { color: #022B3A; text-decoration: none; font-size: 0.95em; font-weight: 500; transition: color 0.2s; }
+        .site-nav a:hover { color: #1F7A8C; }
+        .site-nav .nav-cta { background: #022B3A; color: white; padding: 10px 22px; border-radius: 6px; font-size: 0.9em; font-weight: 600; transition: background 0.2s; }
+        .site-nav .nav-cta:hover { color: white; background: #1F7A8C; }
+        header { padding: 30px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e5e5; background: white; position: sticky; top: 0; z-index: 90; }
+
+        /* Hamburger */
+        .menu-toggle { display: none; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; z-index: 110; -webkit-tap-highlight-color: transparent; touch-action: manipulation; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; position: relative; }
+        .hamburger span { display: block; width: 24px; height: 2.5px; background: #022B3A; transition: all 0.3s; border-radius: 2px; pointer-events: none; }
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(2) { opacity: 0; }
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile dropdown */
+        .mobile-sidebar { position: fixed; top: -400px; left: 0; right: 0; background: white; z-index: 89; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); transition: top 0.3s ease; overflow: hidden; }
+        .menu-toggle:checked ~ .mobile-sidebar { top: 80px; }
+        .sidebar-header { display: none; }
+        .sidebar-links { padding: 8px 0; }
+        .sidebar-links a { display: block; color: #333; text-decoration: none; font-size: 0.95em; font-weight: 500; padding: 14px 24px; transition: all 0.2s; border-bottom: 1px solid #f0f0f0; }
+        .sidebar-links a:last-child { border-bottom: none; }
+        .sidebar-links a:hover, .sidebar-links a:active { background: #f8f8f8; color: #1F7A8C; }
+        .sidebar-cta { padding: 12px 24px 16px; border-top: 1px solid #eee; }
+        .sidebar-cta a { display: block; background: #022B3A; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 0.95em; font-weight: 600; text-align: center; transition: background 0.2s; }
+        .sidebar-cta a:hover { background: #1F7A8C; }
+        .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 88; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .menu-toggle:checked ~ .menu-overlay { opacity: 1; pointer-events: auto; }
+
+        /* ==================== HERO BANNER ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+
+        .page-hero .hero-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero-crossed { color: rgba(255,255,255,0.4); text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 3px; opacity: 0; animation: fadeIn 0.6s 0.5s forwards; }
+        .hero-typed { color: #BFDBF7; opacity: 0; animation: fadeIn 0.5s 1.4s forwards; }
+        .hero-cursor-anim { display: inline-block; width: 3px; height: 0.9em; background: #BFDBF7; margin-left: 2px; vertical-align: baseline; opacity: 0; animation: fadeIn 0.1s 1.4s forwards, blink 1s 1.4s step-end infinite; }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .shift-text { font-size: 1.1em; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 16px; }
+        .shift-callout { font-size: 0.88em; color: rgba(255,255,255,0.6); line-height: 1.6; border-left: 2px solid rgba(255,255,255,0.3); padding-left: 16px; margin-top: 20px; text-align: left; }
+
+        /* ==================== COMPARISON ==================== */
+        .comparison {
+            max-width: 900px;
+            margin: -40px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .comparison-card {
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border: 1px solid #e5e5e5;
+        }
+
+        .comp-side { padding: 28px; }
+        .comp-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
+        .comp-prompt .comp-label { color: #999; }
+        .comp-agent .comp-label { color: #1F7A8C; }
+        .comp-prompt { background: #fafafa; }
+        .comp-task { font-size: 0.85em; font-weight: 600; color: #022B3A; margin-bottom: 16px; }
+        .comp-flow { font-family: 'JetBrains Mono', monospace; font-size: 0.72em; line-height: 2; }
+        .comp-prompt .comp-flow { color: #999; }
+        .comp-agent .comp-flow { color: #555; }
+        .comp-step-highlight { color: #1F7A8C; font-weight: 500; }
+        .comp-step-decision { color: #d97706; font-weight: 500; }
+        .comp-summary-prompt { color: #999; font-style: italic; }
+        .comp-summary-agent { color: #1F7A8C; font-style: italic; }
+        .comp-divider { display: flex; align-items: center; justify-content: center; background: #f5f5f5; border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; }
+        .comp-vs { font-family: 'JetBrains Mono', monospace; font-size: 0.6em; color: #ccc; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* ==================== JUMP BAR + FILTERS ==================== */
+        .jump-bar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .jump-btn {
+            font-family: 'Inter', sans-serif;
+            padding: 7px 16px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 100px;
+            background: white;
+            color: #555;
+            font-size: 0.8em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .jump-btn:hover { border-color: #1F7A8C; color: #1F7A8C; background: #f0f9f7; }
+
+        .filter-bar { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 20px 20px 0; max-width: 900px; margin: 0 auto; }
+        .filter-btn { font-family: 'JetBrains Mono', monospace; padding: 5px 12px; border: 1px solid #e0e0e0; border-radius: 6px; background: white; color: #888; font-size: 0.65em; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { border-color: #1F7A8C; color: #1F7A8C; background: #f0f9f7; }
+
+        /* ==================== AGENT CARDS ==================== */
+        .agents-container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 40px; }
+
+        .agent-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+
+        .agent-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+        .agent-card.hidden { display: none; }
+
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .agent-title { font-size: 1.2em; font-weight: 600; color: #022B3A; }
+        .agent-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 20px; background: #E8F4FD; color: #1F7A8C; }
+
+        .agent-body { display: grid; grid-template-columns: 1fr 1fr; min-height: 280px; }
+
+        /* Pipeline (left) */
+        .agent-pipeline {
+            padding: 28px;
+            border-right: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pipeline-label { font-family: 'JetBrains Mono', monospace; font-size: 0.55em; text-transform: uppercase; letter-spacing: 0.12em; color: #bbb; margin-bottom: 16px; }
+        .p-step { display: flex; align-items: center; gap: 14px; padding: 6px 0; }
+        .p-dot-wrap { display: flex; flex-direction: column; align-items: center; width: 36px; flex-shrink: 0; }
+        .p-dot { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9em; }
+        .p-dot.trigger { background: #E8F4FD; }
+        .p-dot.process { background: #f5f5f5; }
+        .p-dot.decision { background: #FFF3E0; }
+        .p-dot.output { background: #E8F5E9; }
+        .p-connector { width: 2px; height: 12px; background: #e5e5e5; margin: 0 auto; }
+        .p-text { font-size: 0.82em; color: #555; }
+
+        /* Terminal (right) */
+        .agent-terminal {
+            padding: 28px;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            background: #022B3A;
+        }
+
+        .terminal-label { font-size: 0.55em; text-transform: uppercase; letter-spacing: 0.12em; color: #7aa3b5; margin-bottom: 16px; }
+        .t-lines { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+
+        .t-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.75em;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .t-line.typed { opacity: 1; transform: translateY(0); }
+        .t-icon { width: 16px; text-align: center; flex-shrink: 0; margin-top: 2px; color: #475569; }
+        .t-trigger { color: #64748b; }
+        .t-process { color: #94a3b8; }
+        .t-decision { color: #f59e0b; }
+        .t-output { color: #10b981; }
+        .t-done { color: #1F7A8C; font-weight: 600; }
+
+        .cursor-blink { display: inline-block; width: 7px; height: 12px; background: #1F7A8C; margin-left: 4px; vertical-align: middle; animation: blink 1s step-end infinite; }
+
+        /* Footer bar */
+        .agent-footer {
+            padding: 20px 28px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background: #fafafa;
+        }
+
+        .agent-desc { font-size: 0.82em; color: #888; line-height: 1.5; flex: 1; }
+        .agent-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+        .agent-time { font-family: 'JetBrains Mono', monospace; font-size: 0.7em; color: #1F7A8C; white-space: nowrap; }
+        .time-saved { font-family: 'JetBrains Mono', monospace; font-size: 0.6em; color: #999; white-space: nowrap; }
+        .time-saved span { color: #059669; }
+
+        /* Subtle left-border accent */
+        .agent-card { border-left: 4px solid #1F7A8C; }
+
+        /* ==================== TRY ONE ==================== */
+        .try-section { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .try-header { text-align: center; margin-bottom: 32px; }
+        .try-header h2 { font-size: 1.6em; font-weight: 600; color: #022B3A; margin-bottom: 8px; }
+        .try-header p { font-size: 0.9em; color: #888; }
+        .try-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .try-card { background: white; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; text-decoration: none; transition: all 0.2s; }
+        .try-card:hover { border-color: #1F7A8C; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .try-card-icon { font-size: 1.4em; margin-bottom: 12px; }
+        .try-card h4 { font-size: 0.95em; font-weight: 600; color: #022B3A; margin-bottom: 6px; }
+        .try-card p { font-size: 0.78em; color: #888; line-height: 1.5; }
+        .try-card-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.55em; text-transform: uppercase; letter-spacing: 0.08em; color: #bbb; margin-top: 10px; display: block; }
+
+        /* ==================== CTA ==================== */
+        .agents-cta {
+            text-align: center;
+            padding: 60px 20px 80px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .agents-cta h2 { font-size: 1.8em; font-weight: 600; color: #022B3A; margin-bottom: 12px; line-height: 1.2; }
+        .agents-cta p { font-size: 0.95em; color: #888; margin-bottom: 28px; line-height: 1.6; }
+        .cta-btn { display: inline-block; background: #022B3A; color: white; text-decoration: none; padding: 16px 36px; border-radius: 8px; font-size: 1em; font-weight: 600; transition: all 0.2s; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
+        .cta-btn:hover { background: #1F7A8C; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(31,122,140,0.3); }
+
+        /* ==================== FOOTER ==================== */
+        .site-footer { background: white; border-top: 1px solid #e5e5e5; padding: 30px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand { font-size: 0.9em; color: #022B3A; font-weight: 500; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { color: #666; text-decoration: none; font-size: 0.85em; transition: color 0.2s; }
+        .footer-links a:hover { color: #1F7A8C; }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; }
+            .site-nav { display: none; }
+            .hamburger { display: flex; }
+
+            .page-hero { padding: 60px 20px 50px; }
+            .page-hero h1 { font-size: 2em; }
+            .comparison { margin-top: -30px; }
+            .comparison-card { grid-template-columns: 1fr; }
+            .comp-divider { padding: 12px; border-left: none; border-right: none; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+
+            .agent-body { grid-template-columns: 1fr; }
+            .agent-pipeline { border-right: none; border-bottom: 1px solid #f0f0f0; }
+            .agent-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .agent-meta { align-items: flex-start; flex-direction: row; gap: 16px; }
+
+            .try-grid { grid-template-columns: 1fr; }
+            .jump-bar { gap: 6px; padding: 10px 12px; }
+            .jump-btn { font-size: 0.7em; padding: 6px 12px; }
+
+            .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="menuToggle" class="menu-toggle">
+    <div class="page-wrapper">
+
+        <header>
+            <a href="index.html" class="logo-lockup">
+                <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
+                    <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
+                    <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
+                    <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+                    <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+                </svg>
+                <div class="logo-text-option2">knownstateai</div>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html">Our Approach</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai-maturity.html">AI Assessment</a>
+                <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
+            </nav>
+            <label for="menuToggle" class="hamburger"><span></span><span></span><span></span></label>
+        </header>
+
+        <!-- HERO -->
+        <div class="page-hero">
+            <div class="hero-inner">
+                <h1>Beyond <span class="hero-crossed">Prompts</span> <span class="hero-typed">Agents</span><span class="hero-cursor-anim"></span></h1>
+                <p class="shift-text">A prompt answers a question. An agent does a job. You define the role, set the rules, and let it run — across steps, tools, and decisions you'd normally handle yourself.</p>
+                <p class="shift-callout">A real agent does things a prompt can't: multiple steps, decisions between systems, running without you watching. If a single prompt could do it, it's not an agent — it's just a good prompt.</p>
+            </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="productivity">Productivity</button>
+            <button class="filter-btn" data-filter="finance">Finance</button>
+            <button class="filter-btn" data-filter="sales">Sales</button>
+            <button class="filter-btn" data-filter="strategy">Strategy</button>
+            <button class="filter-btn" data-filter="hr">HR</button>
+            <button class="filter-btn" data-filter="operations">Operations</button>
+        </div>
+
+        <!-- AGENT CARDS -->
+        <div class="agents-container">
+
+            <!-- EXECUTIVE ASSISTANT -->
+            <div class="agent-card" id="agent-pa" data-category="productivity">
+                <div class="agent-header"><span class="agent-title">Executive Assistant</span><span class="agent-tag">Productivity</span></div>
+                <div class="agent-body">
+                    <div class="agent-pipeline">
+                        <div class="pipeline-label">Pipeline</div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot trigger">⏰</div></div><div class="p-text">6:30am trigger — daily briefing</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📧</div></div><div class="p-text">Scan inbox — categorise & rank by urgency</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">✍️</div></div><div class="p-text">Draft replies for top-priority emails</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📅</div></div><div class="p-text">Pull today's calendar — prep notes per meeting</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot decision">📎</div></div><div class="p-text">Attach relevant docs & last meeting context</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📋</div></div><div class="p-text">Flag overdue tasks & upcoming deadlines</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot output">☕</div></div><div class="p-text">Deliver morning briefing before first coffee</div></div>
+                    </div>
+                    <div class="agent-terminal">
+                        <div class="terminal-label">Running...</div>
+                        <div class="t-lines">
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">Daily briefing triggered — 6:30am</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Scanning inbox... 34 new emails</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">3 urgent, 8 need reply, 23 informational</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Drafting reply: RE: Q1 Budget Sign-off</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Drafting reply: RE: Partner Meeting Reschedule</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Today: 4 meetings — 9am, 11am, 2pm, 4pm</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">9am Strategy Review — attaching last month's deck + action items</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-decision">⚠ 2pm Client Call — proposal draft still pending your review</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">3 tasks overdue, 2 deadlines this week</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-output">Morning briefing compiled</span></div>
+                            <div class="t-line"><span class="t-icon">✓</span> <span class="t-done">Delivered to inbox + Slack<span class="cursor-blink"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <span class="agent-desc">Your day, prepared before you start it. Emails triaged, replies drafted, meetings prepped with context, overdue tasks surfaced.</span>
+                    <div class="agent-meta"><span class="agent-time">~90 seconds</span><span class="time-saved">Manual: ~45 min → <span>Saved 43 min/day</span></span></div>
+                </div>
+            </div>
+
+            <!-- INVOICE PROCESSING -->
+            <div class="agent-card" id="agent-invoice" data-category="finance">
+                <div class="agent-header"><span class="agent-title">Invoice Processing</span><span class="agent-tag">Finance</span></div>
+                <div class="agent-body">
+                    <div class="agent-pipeline">
+                        <div class="pipeline-label">Pipeline</div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot trigger">📧</div></div><div class="p-text">Invoice email received</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📄</div></div><div class="p-text">Extract supplier, line items & totals</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">🔗</div></div><div class="p-text">Match to existing purchase order</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot decision">⚠️</div></div><div class="p-text">Flag mismatches or missing POs</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">🏷️</div></div><div class="p-text">Auto-code to GL account</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot output">✅</div></div><div class="p-text">Queue for approval with notes</div></div>
+                    </div>
+                    <div class="agent-terminal">
+                        <div class="terminal-label">Running...</div>
+                        <div class="t-lines">
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">Invoice received — Officeworks #INV-29841</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Extracting... 4 line items, total $1,847.20</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Matching to PO #4821...</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-decision">⚠ Line 3: $240 variance — expected $180</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Coded: GL 5200 — Office Supplies</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-output">Queued for approval — variance flagged</span></div>
+                            <div class="t-line"><span class="t-icon">✓</span> <span class="t-done">Complete — awaiting review<span class="cursor-blink"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <span class="agent-desc">Supplier invoices extracted, matched, coded, and queued without manual data entry. You only touch the exceptions.</span>
+                    <div class="agent-meta"><span class="agent-time">~30 seconds</span><span class="time-saved">Manual: ~15 min → <span>Saved 14 min/invoice</span></span></div>
+                </div>
+            </div>
+
+            <!-- LEAD QUALIFICATION -->
+            <div class="agent-card" id="agent-leads" data-category="sales">
+                <div class="agent-header"><span class="agent-title">Lead Qualification Pipeline</span><span class="agent-tag">Sales</span></div>
+                <div class="agent-body">
+                    <div class="agent-pipeline">
+                        <div class="pipeline-label">Pipeline</div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot trigger">📩</div></div><div class="p-text">New enquiry lands in inbox</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">🔍</div></div><div class="p-text">Research company — website, LinkedIn, size</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📊</div></div><div class="p-text">Score against ideal client criteria</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot decision">🔀</div></div><div class="p-text">Route: qualify → personalised reply, or decline</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">✍️</div></div><div class="p-text">Draft outreach referencing their pain points</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot output">📝</div></div><div class="p-text">Log to CRM with research summary</div></div>
+                    </div>
+                    <div class="agent-terminal">
+                        <div class="terminal-label">Running...</div>
+                        <div class="t-lines">
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">New enquiry — sarah@greenfield.com.au</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Researching Greenfield Logistics...</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">45 employees, Brisbane HQ, transport & warehousing</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">ICP score: 82/100 — strong match</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-decision">→ Qualified — routing to personalised reply</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Pain point identified: manual route scheduling</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Drafting reply referencing logistics automation</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-output">Logged to CRM — tagged Hot Lead</span></div>
+                            <div class="t-line"><span class="t-icon">✓</span> <span class="t-done">Reply ready for your review<span class="cursor-blink"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <span class="agent-desc">Every inbound lead researched, scored, and responded to — with a personalised reply drafted from their actual business context.</span>
+                    <div class="agent-meta"><span class="agent-time">~60 seconds</span><span class="time-saved">Manual: ~25 min → <span>Saved 24 min/lead</span></span></div>
+                </div>
+            </div>
+
+            <!-- COMPETITOR INTELLIGENCE -->
+            <div class="agent-card" id="agent-competitor" data-category="strategy">
+                <div class="agent-header"><span class="agent-title">Competitor Intelligence</span><span class="agent-tag">Strategy</span></div>
+                <div class="agent-body">
+                    <div class="agent-pipeline">
+                        <div class="pipeline-label">Pipeline</div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot trigger">📆</div></div><div class="p-text">Monday 7am — weekly scan triggered</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">🌐</div></div><div class="p-text">Check 3 competitor websites for changes</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">💼</div></div><div class="p-text">Scan their LinkedIn, socials & job listings</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot decision">🔎</div></div><div class="p-text">Detect pricing shifts, new products, hires</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📝</div></div><div class="p-text">Summarise changes & flag what matters</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot output">📊</div></div><div class="p-text">Deliver weekly competitor brief</div></div>
+                    </div>
+                    <div class="agent-terminal">
+                        <div class="terminal-label">Running...</div>
+                        <div class="t-lines">
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">Weekly scan — Monday 7:00am</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Checking Competitor A — acmecouriers.com.au...</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-decision">⚠ New pricing page detected — 12% rate increase</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Checking Competitor B — swiftfreight.com.au...</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">No website changes. 2 new job posts: ops manager, dev lead</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Checking Competitor C — primelogistics.com.au...</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-decision">⚠ New service launched: same-day metro delivery</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-output">Brief compiled — 2 items flagged for action</span></div>
+                            <div class="t-line"><span class="t-icon">✓</span> <span class="t-done">Delivered to inbox<span class="cursor-blink"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <span class="agent-desc">Every Monday you get a brief on what your competitors changed — pricing, products, hiring signals. No manual checking, no missed moves.</span>
+                    <div class="agent-meta"><span class="agent-time">~3 minutes</span><span class="time-saved">Manual: ~2 hours → <span>Saved 2 hrs/week</span></span></div>
+                </div>
+            </div>
+
+            <!-- EMPLOYEE ONBOARDING -->
+            <div class="agent-card" id="agent-onboarding" data-category="hr">
+                <div class="agent-header"><span class="agent-title">Employee Onboarding</span><span class="agent-tag">HR</span></div>
+                <div class="agent-body">
+                    <div class="agent-pipeline">
+                        <div class="pipeline-label">Pipeline</div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot trigger">🆕</div></div><div class="p-text">HR triggers "new starter" with name & role</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📄</div></div><div class="p-text">Generate personalised welcome pack</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📅</div></div><div class="p-text">Schedule day-one meetings & IT setup</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot decision">🎯</div></div><div class="p-text">Build training plan based on role type</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📧</div></div><div class="p-text">Send welcome email to starter + manager</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot output">🔄</div></div><div class="p-text">Auto check-ins at day 7, 30, 90</div></div>
+                    </div>
+                    <div class="agent-terminal">
+                        <div class="terminal-label">Running...</div>
+                        <div class="t-lines">
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">New starter: Jamie Chen — Marketing Coordinator</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Generating welcome pack — marketing team template</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Day 1 schedule created — 4 intro meetings booked</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">IT request sent — laptop + marketing tool licences</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-decision">Training plan: content tools, brand guidelines, CRM basics</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Welcome email sent to Jamie + manager</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-output">Check-ins scheduled: Feb 28, Mar 21, May 20</span></div>
+                            <div class="t-line"><span class="t-icon">✓</span> <span class="t-done">Onboarding complete — all systems active<span class="cursor-blink"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <span class="agent-desc">One trigger starts the entire onboarding chain — welcome pack, meetings, IT setup, training plan, and automated follow-ups. HR spends 5 minutes instead of 5 hours.</span>
+                    <div class="agent-meta"><span class="agent-time">~2 minutes</span><span class="time-saved">Manual: ~5 hours → <span>Saved 4.5 hrs/hire</span></span></div>
+                </div>
+            </div>
+
+            <!-- MEETING-TO-ACTION -->
+            <div class="agent-card" id="agent-meeting" data-category="operations">
+                <div class="agent-header"><span class="agent-title">Meeting-to-Action Pipeline</span><span class="agent-tag">Operations</span></div>
+                <div class="agent-body">
+                    <div class="agent-pipeline">
+                        <div class="pipeline-label">Pipeline</div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot trigger">🎙️</div></div><div class="p-text">Meeting recording uploaded</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📝</div></div><div class="p-text">Transcribe & identify speakers</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">🎯</div></div><div class="p-text">Extract commitments & deadlines</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">✅</div></div><div class="p-text">Create tasks & assign owners</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot process">📧</div></div><div class="p-text">Draft follow-up email to attendees</div></div>
+                        <div class="p-connector" style="margin-left:18px;"></div>
+                        <div class="p-step"><div class="p-dot-wrap"><div class="p-dot output">⏰</div></div><div class="p-text">Set reminders for items due within 7 days</div></div>
+                    </div>
+                    <div class="agent-terminal">
+                        <div class="terminal-label">Running...</div>
+                        <div class="t-lines">
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">Recording received — Client Call 18 Feb</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Transcribing... 3 speakers identified</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">5 action items extracted</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Task: "Send revised proposal" → Ben, due Feb 21</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Task: "Confirm budget range" → Sarah, due Feb 20</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Follow-up email drafted — summary + next steps</span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-output">2 reminders set — items due within 7 days</span></div>
+                            <div class="t-line"><span class="t-icon">✓</span> <span class="t-done">Pipeline complete — ready for review<span class="cursor-blink"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <span class="agent-desc">A meeting ends and everything that was agreed gets turned into tasks, emails, and reminders. Nothing falls through the cracks.</span>
+                    <div class="agent-meta"><span class="agent-time">~45 seconds</span><span class="time-saved">Manual: ~30 min → <span>Saved 29 min/meeting</span></span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TRY ONE -->
+        <div class="try-section">
+            <div class="try-header">
+                <h2>Try One Now</h2>
+                <p>Free agents you can test today — no setup, no cost.</p>
+            </div>
+            <div class="try-grid">
+                <a href="https://chatgpt.com/gpts" target="_blank" class="try-card">
+                    <div class="try-card-icon">🤖</div>
+                    <h4>ChatGPT Custom GPTs</h4>
+                    <p>Thousands of pre-built agents for specific business tasks. Browse by category or search for your use case.</p>
+                    <span class="try-card-tag">Free with ChatGPT account</span>
+                </a>
+                <a href="https://gemini.google.com/gems" target="_blank" class="try-card">
+                    <div class="try-card-icon">💎</div>
+                    <h4>Google Gems</h4>
+                    <p>Create custom AI personas with baked-in instructions. Great if your business runs on Google Workspace.</p>
+                    <span class="try-card-tag">Free with Google account</span>
+                </a>
+                <a href="https://claude.ai/projects" target="_blank" class="try-card">
+                    <div class="try-card-icon">📂</div>
+                    <h4>Claude Projects</h4>
+                    <p>Set up persistent instructions and reference documents. Your AI gets smarter about your business over time.</p>
+                    <span class="try-card-tag">Free tier available</span>
+                </a>
+                <a href="https://support.microsoft.com/en-us/copilot" target="_blank" class="try-card">
+                    <div class="try-card-icon">🧩</div>
+                    <h4>Microsoft Copilot Agents</h4>
+                    <p>Build agents inside the Microsoft 365 ecosystem — Outlook, Teams, SharePoint, Excel all connected.</p>
+                    <span class="try-card-tag">Requires M365 Copilot licence</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="agents-cta">
+            <h2>Which of these would change your Monday morning?</h2>
+            <p>These are examples. A custom agent built around your data, your processes, and your rules is where the real value lives.</p>
+            <button class="cta-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="site-footer">
+            <span class="footer-brand">© 2025 KnownStateAI</span>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai-maturity.html">AI Assessment</a>
+            </div>
+        </div>
+
+    </div>
+
+    <label for="menuToggle" class="menu-overlay"></label>
+    <div class="mobile-sidebar">
+        <a href="index.html" class="sidebar-header" style="text-decoration:none;"><svg viewBox="0 0 110 110"><rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/><circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/><circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/><circle cx="55" cy="55" r="17" fill="#BFDBF7"/></svg><span class="sidebar-brand">knownstateai</span></a>
+        <div class="sidebar-links">
+            <a href="index.html">Our Approach</a>
+            <a href="learn.html">Learn</a>
+            <a href="ai-maturity.html">AI Assessment</a>
+        </div>
+        <div class="sidebar-cta"><a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a></div>
+    </div>
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <script>
+        document.querySelectorAll('.sidebar-links a, .sidebar-cta a').forEach(function(link) {
+            link.addEventListener('click', function() { document.getElementById('menuToggle').checked = false; });
+        });
+
+        var terminalObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var lines = entry.target.querySelectorAll('.t-line');
+                    lines.forEach(function(line, i) {
+                        setTimeout(function() { line.classList.add('typed'); }, i * 180);
+                    });
+                    terminalObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.agent-terminal').forEach(function(terminal) {
+            terminalObserver.observe(terminal);
+        });
+
+        document.querySelectorAll('.filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.agent-card').forEach(function(card) {
+                    card.classList.toggle('hidden', filter !== 'all' && card.getAttribute('data-category') !== filter);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
