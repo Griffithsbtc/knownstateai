@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO OPTIMIZED META TAGS -->
-    <title>Brisbane AI Training That Actually Works | AI Consulting for Small Businesses | KnownStateAI</title>
-    <meta name="description" content="Brisbane-based AI training and consulting for small businesses. We help you implement ChatGPT, Copilot & AI tools with measurable outcomes. Expert AI implementation with proven ROI tracking.">
-    <meta name="keywords" content="AI training Brisbane, AI consultant Brisbane, ChatGPT training, Copilot implementation, small business AI, AI automation Brisbane, AI strategy Queensland">
+    <title>Brisbane AI Training That Actually Works | AI Consulting for Brisbane Businesses | KnownStateAI</title>
+    <meta name="description" content="Brisbane-based AI training and consulting for businesses. We help you implement ChatGPT, Copilot & AI tools with measurable outcomes. Expert AI implementation with proven ROI tracking.">
+    <meta name="keywords" content="AI training Brisbane, AI consultant Brisbane, ChatGPT training, Copilot implementation, business AI consulting, AI automation Brisbane, AI strategy Queensland, AI consultant Australia, AI training Australia">
     
     <!-- Local Business Schema for SEO -->
     <script type="application/ld+json">
@@ -15,7 +15,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "KnownStateAI",
-      "description": "AI Training and Consulting for Small Businesses in Brisbane",
+      "description": "AI Training and Consulting for Businesses in Brisbane",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Brisbane",
@@ -340,7 +340,15 @@
         }
         
         .content-left .problem-statement {
-            font-size: 1.5em;
+            font-size: 2.6em;
+            color: #022B3A;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .content-left .problem-punchline {
+            font-size: 1.3em;
             color: #666;
             margin-bottom: 40px;
             font-weight: 400;
@@ -839,6 +847,75 @@
             transform: translateX(0);
         }
 
+        /* Quick Links */
+        .quick-links {
+            padding: 60px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .quick-links h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 24px;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quick-link-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .quick-link-card:hover {
+            border-color: #1F7A8C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .quick-link-icon {
+            font-size: 1.6em;
+            flex-shrink: 0;
+        }
+
+        .quick-link-text h4 {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 4px;
+        }
+
+        .quick-link-text p {
+            font-size: 0.78em;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .quick-link-arrow {
+            margin-left: auto;
+            color: #ccc;
+            font-size: 1.2em;
+            transition: color 0.2s;
+        }
+
+        .quick-link-card:hover .quick-link-arrow {
+            color: #1F7A8C;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -859,7 +936,11 @@
             }
             
             .content-left .problem-statement {
-                font-size: 1.2em;
+                font-size: 1.8em;
+            }
+
+            .content-left .problem-punchline {
+                font-size: 1.1em;
             }
             
             .content-left .solution-intro {
@@ -889,8 +970,11 @@
             header {
                 justify-content: space-between;
             }
+
+            .quick-links { padding: 40px 30px; }
+            .quick-links-grid { grid-template-columns: 1fr; }
             
-            .footer-main {
+        .footer-main {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
@@ -1001,14 +1085,15 @@
             <section id="top" class="hero-section">
                 <h1>Brisbane AI Training That Actually Works</h1>
                 <p class="subtitle">Your team has ChatGPT, Copilot, and AI tools — but can you measure the results?</p>
+                <p class="subtitle" style="font-size: 0.95em; opacity: 0.85; margin-top: 8px;">Free learning resources. Expert implementation when you're ready.</p>
             </section>
             
             <!-- CONTENT SECTION -->
             <section class="content-section">
                 <div class="content-wrapper">
                     <div class="content-left reveal-left">
-                        <h2>AI Training & Consulting for Brisbane Small Businesses</h2>
-                        <p class="problem-statement">Most businesses didn't fail at AI. They were never set up to succeed.<br><strong>AI was added. Nothing changed.</strong></p>
+                        <p class="problem-statement">Most businesses didn't fail at AI. They were never set up to succeed.</p>
+                        <p class="problem-punchline"><strong>AI was added. Nothing changed.</strong></p>
                         <p class="solution-intro">We establish a knownstate.</p>
                     </div>
                     
@@ -1021,6 +1106,29 @@
                         </ul>
                         <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
                     </div>
+                </div>
+            </section>
+
+            <!-- QUICK LINKS -->
+            <section class="quick-links">
+                <h3 class="reveal">Explore our free resources</h3>
+                <div class="quick-links-grid">
+                    <a href="prompt-examples.html" class="quick-link-card reveal">
+                        <span class="quick-link-icon">✍️</span>
+                        <div class="quick-link-text">
+                            <h4>Prompt Examples</h4>
+                            <p>Before-and-after prompts across real business roles</p>
+                        </div>
+                        <span class="quick-link-arrow">→</span>
+                    </a>
+                    <a href="beyond-prompts.html" class="quick-link-card reveal">
+                        <span class="quick-link-icon">⚡</span>
+                        <div class="quick-link-text">
+                            <h4>Beyond Prompts</h4>
+                            <p>AI agents that automate entire workflows</p>
+                        </div>
+                        <span class="quick-link-arrow">→</span>
+                    </a>
                 </div>
             </section>
             
