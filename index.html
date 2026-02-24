@@ -271,21 +271,32 @@
             z-index: 90;
         }
         
+        .cta-pair {
+            display: flex;
+            gap: 12px;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
             font-family: 'Inter', sans-serif;
             background: #022B3A;
             color: white;
-            border: none;
-            padding: 18px 36px;
-            font-size: 1.1em;
+            border: 2px solid #022B3A;
+            padding: 16px 36px;
+            font-size: 1.05em;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.2;
         }
         
         .cta-button:hover {
             background: #1F7A8C;
+            border-color: #1F7A8C;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
         }
@@ -296,14 +307,15 @@
             background: transparent;
             color: #1F7A8C;
             border: 2px solid #1F7A8C;
-            padding: 16px 32px;
-            font-size: 1em;
+            padding: 16px 36px;
+            font-size: 1.05em;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
-            margin-top: 12px;
+            text-align: center;
+            line-height: 1.2;
         }
 
         .cta-button-secondary:hover {
@@ -1112,7 +1124,7 @@
             <!-- HERO SECTION -->
             <section id="top" class="hero-section">
                 <h1>Brisbane AI Training That Actually Works</h1>
-                <p class="subtitle">Your team has ChatGPT, Copilot, and AI tools — but can you measure the results?</p>
+                <p class="subtitle">Your team has ChatGPT, Copilot, and AI tools, but can you measure the results?</p>
                 <p class="subtitle" style="font-size: 0.95em; opacity: 0.85; margin-top: 8px;">Free learning resources. Expert implementation when you're ready.</p>
             </section>
             
@@ -1130,10 +1142,12 @@
                             <li>We assess how AI is actually being used in your business today</li>
                             <li>We identify what's reliable, what's assumed, and what's broken</li>
                             <li>We align AI usage to your real roles and responsibilities</li>
-                            <li>We improve it continuously — not once, not randomly</li>
+                            <li>We improve it continuously, not once, not randomly</li>
                         </ul>
-                        <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
-                        <a href="ai-maturity.html" class="cta-button-secondary">Assess Your AI Readiness</a>
+                        <div class="cta-pair">
+                            <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
+                            <a href="ai-maturity.html" class="cta-button-secondary">Assess Your AI Readiness</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1167,7 +1181,7 @@
                 <div class="problem-grid">
                     <div class="problem-card reveal">
                         <h3>No One Remembers What Doesn't Work</h3>
-                        <p>When AI prompts fail, people either keep tweaking until they're frustrated — or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
+                        <p>When AI prompts fail, people either keep tweaking until they're frustrated, or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
                     </div>
                     
                     <div class="problem-card reveal">
@@ -1192,7 +1206,7 @@
                     
                     <div class="problem-card reveal">
                         <h3>Tools Don't Match Roles</h3>
-                        <p>Your sales team, admin team, and operations team all need different AI solutions — but they're getting generic advice.</p>
+                        <p>Your sales team, admin team, and operations team all need different AI solutions, but they're getting generic advice.</p>
                     </div>
                 </div>
             </section>
@@ -1227,7 +1241,7 @@
                             <line x1="34" y1="24" x2="42" y2="24" stroke="#1F7A8C" stroke-width="2"/>
                         </svg>
                         <h3>2. IDENTIFY</h3>
-                        <p>We identify what's working, what's assumed, and what's broken. Not all AI usage delivers value — we find your wins and fix the gaps. Clear ROI tracking starts here.</p>
+                        <p>We identify what's working, what's assumed, and what's broken. Not all AI usage delivers value, we find your wins and fix the gaps. Clear ROI tracking starts here.</p>
                     </div>
                     
                     <div class="solution-card reveal">
@@ -1253,12 +1267,12 @@
                             <circle cx="40" cy="8" r="2" fill="#022B3A"/>
                         </svg>
                         <h3>4. IMPROVE</h3>
-                        <p>We improve continuously — not once, not randomly. Track time saved, quality improvements, and business impact. Refine prompts, scale what works, cut what doesn't.</p>
+                        <p>We improve continuously, not once, not randomly. Track time saved, quality improvements, and business impact. Refine prompts, scale what works, cut what doesn't.</p>
                     </div>
                 </div>
                 
                 <div class="philosophy-statement">
-                    Our philosophy is simple: <strong>if it's not known, we don't pretend it is.</strong> That's why every engagement starts by establishing your knownstate — your actual baseline for AI usage and outcomes.
+                    Our philosophy is simple: <strong>if it's not known, we don't pretend it is.</strong> That's why every engagement starts by establishing your knownstate, your actual baseline for AI usage and outcomes.
                 </div>
             </section>
 
