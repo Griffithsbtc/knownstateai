@@ -289,6 +289,29 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
         }
+
+        .cta-button-secondary {
+            font-family: 'Inter', sans-serif;
+            display: inline-block;
+            background: transparent;
+            color: #1F7A8C;
+            border: 2px solid #1F7A8C;
+            padding: 16px 32px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+
+        .cta-button-secondary:hover {
+            background: #1F7A8C;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
+        }
         
         /* ==================== HERO SECTION ==================== */
         
@@ -1077,7 +1100,6 @@
                     <div class="logo-text-option2">knownstateai</div>
                 </a>
                 <nav class="site-nav">
-                    <a href="#approach">Our Approach</a>
                     <a href="learn.html">Learn</a>
                     <a href="ai-maturity.html">AI Assessment</a>
                     <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
@@ -1111,6 +1133,7 @@
                             <li>We improve it continuously — not once, not randomly</li>
                         </ul>
                         <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
+                        <a href="ai-maturity.html" class="cta-button-secondary">Assess Your AI Readiness</a>
                     </div>
                 </div>
             </section>
@@ -1314,7 +1337,6 @@
             <span class="sidebar-brand">knownstateai</span>
         </a>
         <div class="sidebar-links">
-            <a href="#approach">Our Approach</a>
             <a href="learn.html">Learn</a>
             <a href="ai-maturity.html">AI Assessment</a>
         </div>
