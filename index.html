@@ -271,13 +271,6 @@
             z-index: 90;
         }
         
-        .cta-pair {
-            display: flex;
-            gap: 12px;
-            align-items: stretch;
-            flex-wrap: wrap;
-        }
-
         .cta-button {
             font-family: 'Inter', sans-serif;
             background: #022B3A;
@@ -301,29 +294,17 @@
             box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
         }
 
-        .cta-button-secondary {
-            font-family: 'Inter', sans-serif;
-            display: inline-block;
+        .cta-button.cta-outline {
             background: transparent;
             color: #1F7A8C;
-            border: 1.5px solid #1F7A8C;
-            padding: 16px 36px;
-            font-size: 1.05em;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            text-align: center;
-            line-height: 1.2;
+            border-color: #1F7A8C;
         }
 
-        .cta-button-secondary:hover {
+        .cta-button.cta-outline:hover {
             background: #1F7A8C;
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
         }
+
         
         /* ==================== HERO SECTION ==================== */
         
@@ -435,7 +416,6 @@
         
         .content-right .cta-button {
             align-self: flex-start;
-            margin-top: 10px;
         }
         
         .problem-section {
@@ -1139,12 +1119,15 @@
                     
                     <div class="content-right reveal-right">
                         <ul class="solution-points">
-                            <li>We assess how AI is actually being used in your business today</li>
+                            <li>We sit with you and assess how AI is actually being used in your business today</li>
                             <li>We identify what's reliable, what's assumed, and what's broken</li>
                             <li>We align AI usage to your real roles and responsibilities</li>
                             <li>We improve it continuously, not once, not randomly</li>
                         </ul>
-                        <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px;">
+                            <a href="#" class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</a>
+                            <a href="ai-maturity.html" class="cta-button cta-outline">Assess Your AI Readiness</a>
+                        </div>
                     </div>
                 </div>
             </section>
