@@ -3,262 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO OPTIMIZED META TAGS -->
-    <title>Brisbane AI Training That Actually Works | AI Consulting for Brisbane Businesses | KnownStateAI</title>
-    <meta name="description" content="Brisbane-based AI training and consulting for businesses. We help you implement ChatGPT, Copilot & AI tools with measurable outcomes. Expert AI implementation with proven ROI tracking.">
-    <meta name="keywords" content="AI training Brisbane, AI consultant Brisbane, ChatGPT training, Copilot implementation, business AI consulting, AI automation Brisbane, AI strategy Queensland, AI consultant Australia, AI training Australia">
+    <title>Learn AI — Free Resources for Business | KnownStateAI Brisbane</title>
+    <meta name="description" content="Free AI learning resources for Australian businesses. Prompt examples, curated videos, articles, and tools to help you get real results from AI — from KnownStateAI Brisbane.">
+    <meta name="keywords" content="free AI training Brisbane, learn AI for business, business AI resources, AI education Queensland">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Brisbane AI Training That Actually Works | KnownStateAI">
-    <meta property="og:description" content="Brisbane-based AI training and consulting for businesses. Free learning resources and expert implementation with measurable outcomes.">
+    <meta property="og:title" content="Learn AI — Free Resources for Business | KnownStateAI">
+    <meta property="og:description" content="Free AI learning resources for Australian businesses. Prompt examples, curated videos, articles, and tools to help you get real results from AI.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://knownstateai.com/">
-    
-    <!-- Local Business Schema for SEO -->
+    <meta property="og:url" content="https://knownstateai.com/learn.html">
+
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "KnownStateAI",
-      "description": "AI Training and Consulting for Businesses in Brisbane",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Brisbane",
-        "addressRegion": "QLD",
-        "addressCountry": "AU"
-      },
-      "areaServed": ["Brisbane", "Gold Coast", "Sunshine Coast", "Southeast Queensland"],
-      "serviceType": ["AI Training", "AI Consulting", "ChatGPT Training", "Copilot Implementation"],
-      "priceRange": "$$"
+      "@type": "WebPage",
+      "name": "Learn AI — Free Resources for Business",
+      "description": "Free AI learning resources for Australian businesses. Prompt examples, curated videos, articles, and tools to help you get real results from AI.",
+      "publisher": {
+        "@type": "ProfessionalService",
+        "name": "KnownStateAI",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Brisbane",
+          "addressRegion": "QLD",
+          "addressCountry": "AU"
+        }
+      }
     }
     </script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 160px; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #f5f5f5;
-            padding: 0;
+            color: #333;
         }
-        
+
         .page-wrapper {
             max-width: 1800px;
             margin: 0 auto;
             background: white;
         }
-        
-        
-        /* ==================== HEADER & LOGO ==================== */
-        
-        .logo-lockup {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-        }
-        
-        .site-nav {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        
-        .site-nav a {
-            color: #022B3A;
-            text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .site-nav a:hover {
-            color: #1F7A8C;
-        }
 
-        .site-nav .nav-cta {
-            background: #022B3A;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-size: 0.9em;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-
-        .site-nav .nav-cta:hover {
-            color: white;
-            background: #1F7A8C;
-        }
-
-        /* Hamburger menu - CSS only */
-        .menu-toggle {
-            display: none;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 110;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            min-width: 44px;
-            min-height: 44px;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2.5px;
-            background: #022B3A;
-            transition: all 0.3s;
-            border-radius: 2px;
-            pointer-events: none;
-        }
-
-        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        .mobile-sidebar {
-            position: fixed;
-            top: -400px;
-            left: 0;
-            right: 0;
-            background: white;
-            z-index: 89;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            transition: top 0.3s ease;
-            overflow: hidden;
-        }
-
-        .menu-toggle:checked ~ .mobile-sidebar {
-            top: 80px;
-        }
-
-        .sidebar-header {
-            display: none;
-        }
-
-        .sidebar-links {
-            padding: 8px 0;
-        }
-
-        .sidebar-links a {
-            display: block;
-            color: #333;
-            text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 500;
-            padding: 14px 24px;
-            transition: all 0.2s;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .sidebar-links a:last-child {
-            border-bottom: none;
-        }
-
-        .sidebar-links a:hover,
-        .sidebar-links a:active {
-            background: #f8f8f8;
-            color: #1F7A8C;
-        }
-
-        .sidebar-cta {
-            padding: 12px 24px 16px;
-            border-top: 1px solid #eee;
-        }
-
-        .sidebar-cta a {
-            display: block;
-            background: #022B3A;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 0.95em;
-            font-weight: 600;
-            text-align: center;
-            transition: background 0.2s;
-        }
-
-        .sidebar-cta a:hover {
-            background: #1F7A8C;
-        }
-
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.3);
-            z-index: 88;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .menu-toggle:checked ~ .menu-overlay {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        
-        .logo-with-tagline {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        
-
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-        }
-        
-        .logo-text-option2 {
-            font-size: 1.5em;
-            font-weight: 600;
-            color: #022B3A;
-            letter-spacing: -0.02em;
-            text-transform: lowercase;
-        }
-        
-        /* ==================== MAIN LAYOUT ==================== */
-        
+        /* ==================== HEADER ==================== */
         header {
             padding: 30px 60px;
             display: flex;
@@ -270,1104 +63,913 @@
             top: 0;
             z-index: 90;
         }
+
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .logo-icon { width: 50px; height: 50px; }
+
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #022B3A;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .site-nav a {
+            color: #022B3A;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .site-nav a:hover { color: #1F7A8C; }
+        .site-nav a.active { color: #1F7A8C; }
+
+        .site-nav .nav-cta {
+            background: #022B3A; color: white; padding: 10px 22px;
+            border-radius: 6px; font-size: 0.9em; font-weight: 600; transition: background 0.2s;
+        }
+        .site-nav .nav-cta:hover { color: white; background: #1F7A8C; }
+
+        .menu-toggle { display: none; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; z-index: 110; -webkit-tap-highlight-color: transparent; touch-action: manipulation; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+        .hamburger span { display: block; width: 24px; height: 2.5px; background: #022B3A; transition: all 0.3s; border-radius: 2px; pointer-events: none; }
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(2) { opacity: 0; }
+        .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-sidebar { position: fixed; top: -400px; left: 0; right: 0; background: white; z-index: 89; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.12); transition: top 0.3s ease; overflow: hidden; }
+        .menu-toggle:checked ~ .mobile-sidebar { top: 80px; }
+        .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 88; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .menu-toggle:checked ~ .menu-overlay { opacity: 1; pointer-events: auto; }
+        .sidebar-header { display: none; }
+        .sidebar-links { padding: 8px 0; }
+        .sidebar-links a { display: block; color: #333; text-decoration: none; font-size: 0.95em; font-weight: 500; padding: 14px 24px; transition: all 0.2s; border-bottom: 1px solid #f0f0f0; }
+        .sidebar-links a:last-child { border-bottom: none; }
+        .sidebar-links a:hover, .sidebar-links a:active { background: #f8f8f8; color: #1F7A8C; }
+        .sidebar-cta { padding: 12px 24px 16px; border-top: 1px solid #eee; }
+        .sidebar-cta a { display: block; background: #022B3A; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 0.95em; font-weight: 600; text-align: center; transition: background 0.2s; }
+        .sidebar-cta a:hover { background: #1F7A8C; }
         
-        .cta-button {
-            font-family: 'Inter', sans-serif;
-            background: #022B3A;
+        
+
+        /* ==================== PAGE HERO ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
             color: white;
-            border: 2px solid #022B3A;
-            padding: 16px 36px;
-            font-size: 1.05em;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-hero p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ==================== JUMP BAR ==================== */
+        .jump-bar {
+            position: sticky;
+            top: 91px;
+            z-index: 80;
+            background: white;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 14px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .jump-btn {
+            font-family: 'Inter', sans-serif;
+            padding: 8px 18px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 100px;
+            background: white;
+            color: #555;
+            font-size: 0.85em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .jump-btn:hover {
+            border-color: #1F7A8C;
+            color: #1F7A8C;
+            background: #f0f9f7;
+        }
+
+        /* ==================== SECTION LAYOUT ==================== */
+        .learn-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .learn-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em;
+            color: #1F7A8C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            font-size: 1em;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        /* ==================== PROMPT EXAMPLES LINK CARD ==================== */
+        .feature-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px;
+            background: #f0f9f7;
+            border: 1.5px solid #1F7A8C;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .feature-link:hover {
+            background: #e5f4f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(31, 122, 140, 0.15);
+        }
+
+        .feature-link-text h3 {
+            font-size: 1.2em;
+            color: #022B3A;
+            margin-bottom: 6px;
+        }
+
+        .feature-link-text p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .feature-link-arrow {
+            font-size: 1.5em;
+            color: #1F7A8C;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        /* ==================== VIDEO GRID ==================== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #eee;
+            transition: all 0.2s;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 16px 20px;
+        }
+
+        .video-info h4 {
+            font-size: 0.95em;
+            color: #022B3A;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .video-info .video-meta {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        /* ==================== RESOURCE LINKS ==================== */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .resource-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .resource-card:hover {
+            border-color: #1F7A8C;
+            background: #f8fcfb;
+        }
+
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2em;
+        }
+
+        .resource-icon.tool { background: #E8F4FD; }
+        .resource-icon.site { background: #E8F0E8; }
+        .resource-icon.guide { background: #FFF3E0; }
+
+        .resource-text h4 {
+            font-size: 0.95em;
+            color: #022B3A;
+            margin-bottom: 4px;
+        }
+
+        .resource-text p {
+            font-size: 0.82em;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        /* ==================== NEWS / ARTICLES ==================== */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-card {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+            align-items: flex-start;
+        }
+
+        .news-card:hover {
+            border-color: #1F7A8C;
+            background: #f8fcfb;
+        }
+
+        .news-date {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 56px;
+        }
+
+        .news-date .day {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #022B3A;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .news-content h4 {
+            font-size: 1em;
+            color: #022B3A;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .news-content p {
+            font-size: 0.88em;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .news-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .news-tag.article { background: #E8F4FD; color: #0B5394; }
+        .news-tag.video { background: #FCE4EC; color: #C62828; }
+        .news-tag.news { background: #E8F0E8; color: #38761D; }
+        .news-tag.tool { background: #FFF3E0; color: #E65100; }
+
+        /* ==================== HOW TO ADD TEMPLATE ==================== */
+        .template-note {
+            margin-top: 32px;
+            padding: 20px 24px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #1F7A8C;
+        }
+
+        .template-note p {
+            font-size: 0.85em;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .template-note code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #555;
+        }
+
+        /* ==================== CTA SECTION ==================== */
+        .page-cta {
+            padding: 80px 60px 40px;
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .page-cta h3 { font-size: 2em; margin-bottom: 16px; }
+
+        .page-cta p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-cta .cta-button {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #022B3A;
+            border: none;
+            padding: 18px 36px;
+            font-size: 1.1em;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            text-decoration: none;
-            text-align: center;
-            line-height: 1.2;
-        }
-        
-        .cta-button:hover {
-            background: #1F7A8C;
-            border-color: #1F7A8C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
         }
 
-        .cta-button.cta-outline {
-            background: transparent;
-            color: #1F7A8C;
-            border-color: #1F7A8C;
-        }
-
-        .cta-button.cta-outline:hover {
-            background: #1F7A8C;
-            color: white;
-        }
-
-        
-        /* ==================== HERO SECTION ==================== */
-        
-        .hero-section {
-            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
-            color: white;
-            padding: 80px 60px;
-            text-align: center;
-        }
-        
-        .hero-section h1 {
-            font-size: 3.5em;
-            font-weight: 600;
-            margin-bottom: 40px;
-            line-height: 1.2;
-        }
-        
-        .hero-section .subtitle {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            opacity: 0.95;
-        }
-        
-        .hero-section .location-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-bottom: 40px;
-        }
-        
-        /* ==================== CONTENT SECTION ==================== */
-        
-        .content-section {
-            padding: 80px 60px;
-            background: white;
-        }
-        
-        .content-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .content-left h2 {
-            font-size: 3em;
-            font-weight: 600;
-            color: #022B3A;
-            line-height: 1.2;
-            margin-bottom: 30px;
-        }
-        
-        .content-left .problem-statement {
-            font-size: 2.6em;
-            color: #022B3A;
-            margin-bottom: 16px;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .content-left .problem-punchline {
-            font-size: 1.3em;
-            color: #666;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-        
-        .content-left .solution-intro {
-            font-size: 2em;
-            color: #1F7A8C;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        
-        .solution-points {
-            list-style: none;
-            margin-bottom: 40px;
-            padding: 0;
-        }
-        
-        .solution-points li {
-            font-size: 1.1em;
-            color: #444;
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .solution-points li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1F7A8C;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        
-        
-        .content-right {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .content-right .cta-button {
-            align-self: flex-start;
-        }
-        
-        .problem-section {
-            padding: 80px 60px;
-            background: #f9f9f9;
-        }
-        
-        .problem-section h2 {
-            font-size: 2.5em;
-            color: #022B3A;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .problem-card {
-            background: white;
-            padding: 24px 28px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-left: 4px solid #1F7A8C;
-        }
-        
-        .problem-card h3 {
-            color: #022B3A;
-            font-size: 1.05em;
-            margin-bottom: 8px;
-        }
-        
-        .problem-card p {
-            color: #666;
-            line-height: 1.5;
-            font-size: 0.95em;
-        }
-        
-        
-        .solution-section {
-            padding: 80px 60px;
-            background: white;
-        }
-        
-        .solution-section h2 {
-            font-size: 2.5em;
-            color: #022B3A;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .solution-card {
-            text-align: center;
-            padding: 30px;
-        }
-        
-        .solution-icon {
-            margin-bottom: 20px;
-        }
-        
-        .solution-card h3 {
-            font-size: 1.5em;
-            color: #022B3A;
-            margin-bottom: 15px;
-        }
-        
-        .solution-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .philosophy-statement {
-            max-width: 900px;
-            margin: 50px auto 0;
-            text-align: center;
-            font-size: 1.3em;
-            color: #444;
-            line-height: 1.7;
-            padding: 40px;
-            background: #f9f9f9;
-            border-radius: 12px;
-            border-left: 4px solid #1F7A8C;
-        }
-        
-        .philosophy-statement strong {
-            color: #022B3A;
-        }
-        
-        
-        .cta-section {
-            padding: 100px 60px 40px;
-            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
-            text-align: center;
-            color: white;
-        }
-        
-        .cta-section h3 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-        
-        .cta-section .cta-button {
-            background: white;
-            color: #022B3A;
-        }
-        
-        .cta-section .cta-button:hover {
+        .page-cta .cta-button:hover {
             background: #BFDBF7;
+            transform: translateY(-2px);
         }
-        
-        /* ==================== FOOTER (inside CTA section) ==================== */
-        
+
         .footer-main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 0 0;
+            padding: 60px 0 0;
             margin-top: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(255,255,255,0.15);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .footer-brand {
             font-size: 1.3em;
             font-weight: 600;
             letter-spacing: -0.02em;
             text-transform: lowercase;
         }
-        
+
         .footer-contact {
             display: flex;
             gap: 32px;
             font-size: 0.95em;
         }
-        
+
         .footer-contact a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
             transition: color 0.2s;
         }
-        
-        .footer-contact a:hover {
-            color: white;
-        }
-        
-        .footer-contact span {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
+
+        .footer-contact a:hover { color: white; }
+        .footer-contact span { color: rgba(255,255,255,0.5); }
+
         .footer-bottom {
             padding: 12px 0 0;
             text-align: center;
             font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.3);
-        }
-        
-        /* ==================== TIMELINE SECTION ==================== */
-        .timeline-section {
-            padding: 80px 60px;
-            background: #fafafa;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+            color: rgba(255,255,255,0.3);
         }
 
-        .timeline-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .timeline-header h2 {
-            font-size: 2.2em;
-            font-weight: 600;
-            color: #022B3A;
-            margin-bottom: 12px;
-        }
-
-        .timeline-header p {
-            font-size: 1.05em;
-            color: #888;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0;
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 16.66%;
-            right: 16.66%;
-            height: 2px;
-            background: #e5e5e5;
-            z-index: 0;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step:nth-child(1) .step-number {
-            background: #f0f9f7;
-            border: 2px solid #1F7A8C;
-        }
-
-        .step:nth-child(2) .step-number {
-            background: #e5f4f0;
-            border: 2px solid #1F7A8C;
-        }
-
-        .step:nth-child(3) .step-number {
-            background: #022B3A;
-            border: 2px solid #022B3A;
-        }
-
-        .step-icon { font-size: 1.6em; }
-
-        .step-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65em;
-            color: #1F7A8C;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 8px;
-        }
-
-        .step h3 {
-            font-size: 1.15em;
-            font-weight: 600;
-            color: #022B3A;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .step p {
-            font-size: 0.88em;
-            color: #888;
-            line-height: 1.6;
-        }
-
-        .step-detail {
-            margin-top: 14px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72em;
-            color: #bbb;
-        }
-
-        .deliverable-tag {
-            display: inline-block;
-            background: #022B3A;
-            color: white;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65em;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-top: 12px;
-        }
-
-        /* ==================== HOW IT WORKS TIMELINE ==================== */
-        .timeline-section {
-            padding: 80px 60px;
-            background: #fafafa;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .timeline-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .timeline-header h2 {
-            font-size: 2.2em;
-            font-weight: 600;
-            color: #022B3A;
-            margin-bottom: 12px;
-        }
-
-        .timeline-header p {
-            font-size: 1.05em;
-            color: #888;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 16.66%;
-            right: 16.66%;
-            height: 2px;
-            background: #e5e5e5;
-            z-index: 0;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step:nth-child(1) .step-number { background: #f0f9f7; border: 2px solid #1F7A8C; }
-        .step:nth-child(2) .step-number { background: #e5f4f0; border: 2px solid #1F7A8C; }
-        .step:nth-child(3) .step-number { background: #022B3A; border: 2px solid #022B3A; }
-
-        .step-icon { font-size: 1.6em; }
-
-        .step-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65em;
-            color: #1F7A8C;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 8px;
-        }
-
-        .step h3 {
-            font-size: 1.15em;
-            font-weight: 600;
-            color: #022B3A;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .step p {
-            font-size: 0.88em;
-            color: #888;
-            line-height: 1.6;
-        }
-
-        .step-detail {
-            margin-top: 14px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72em;
-            color: #bbb;
-        }
-
-        .deliverable-tag {
-            display: inline-block;
-            background: #022B3A;
-            color: white;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65em;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-top: 12px;
-        }
-
-        /* ==================== SCROLL REVEAL ==================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Slide from left */
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Slide from right */
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Quick Links */
-        .quick-links {
-            padding: 60px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .quick-links h3 {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #022B3A;
-            margin-bottom: 24px;
-        }
-
-        .quick-links-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .quick-link-card {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 24px;
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .quick-link-card:hover {
-            border-color: #1F7A8C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-
-        .quick-link-icon {
-            font-size: 1.6em;
-            flex-shrink: 0;
-        }
-
-        .quick-link-text h4 {
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #022B3A;
-            margin-bottom: 4px;
-        }
-
-        .quick-link-text p {
-            font-size: 0.78em;
-            color: #888;
-            line-height: 1.4;
-        }
-
-        .quick-link-arrow {
-            margin-left: auto;
-            color: #ccc;
-            font-size: 1.2em;
-            transition: color 0.2s;
-        }
-
-        .quick-link-card:hover .quick-link-arrow {
-            color: #1F7A8C;
-        }
-
-        /* Responsive Design */
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 768px) {
-            header {
-                padding: 20px 30px;
-            }
-            
-            .content-section {
-                padding: 60px 30px;
-            }
-            
-            .content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .content-left h2 {
-                font-size: 2.2em;
-            }
-            
-            .content-left .problem-statement {
-                font-size: 1.8em;
+            header { padding: 20px 30px; justify-content: space-between; }
+            .site-nav { display: none; }
+            .hamburger { display: flex; }
+
+            .jump-bar {
+                padding: 12px 16px;
+                top: 71px;
+                gap: 6px;
             }
 
-            .content-left .problem-punchline {
-                font-size: 1.1em;
-            }
-            
-            .content-left .solution-intro {
-                font-size: 1.5em;
-            }
-            
-            .hero-section h1 {
-                font-size: 2.5em;
-            }
-            
-            .hero-section {
-                padding: 50px 30px;
-            }
-            
-            header .cta-button {
-                display: none;
-            }
-            
-            .site-nav {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
+            .jump-btn {
+                padding: 6px 14px;
+                font-size: 0.78em;
             }
 
-            header {
-                justify-content: space-between;
-            }
+            .page-hero { padding: 50px 30px; }
+            .page-hero h1 { font-size: 2em; }
 
-            .quick-links { padding: 40px 30px; }
-            .quick-links-grid { grid-template-columns: 1fr; }
-            
-        .footer-main {
+            .learn-section { padding: 40px 20px; }
+
+            .feature-link { flex-direction: column; gap: 12px; }
+            .feature-link-arrow { display: none; }
+
+            .video-grid { grid-template-columns: 1fr; }
+            .resource-grid { grid-template-columns: 1fr; }
+
+            .news-card { flex-direction: column; gap: 12px; }
+
+            .page-cta { padding: 60px 30px 30px; }
+
+            .footer-main {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
-                padding: 30px 30px;
             }
-            
+
             .footer-contact {
                 flex-direction: column;
                 gap: 12px;
-            }
-            
-            .footer-bottom {
-                padding: 16px 30px;
-            }
-            
-            .problem-section {
-                padding: 60px 30px;
-            }
-            
-            .timeline-section {
-                padding: 60px 30px;
-            }
-
-            .steps {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .steps::before {
-                top: 0;
-                bottom: 0;
-                left: 32px;
-                right: auto;
-                width: 2px;
-                height: auto;
-            }
-
-            .step {
-                text-align: left;
-                padding: 0 0 0 100px;
-            }
-
-            .step-number {
-                position: absolute;
-                left: 0;
-                top: 0;
-                margin: 0;
-                width: 64px;
-                height: 64px;
-            }
-
-            .solution-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-section { padding: 50px 30px; }
-
-            .steps {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .steps::before {
-                top: 0; bottom: 0; left: 40px; right: auto;
-                width: 2px; height: auto;
-            }
-
-            .step {
-                text-align: left;
-                padding: 0 0 0 100px;
-            }
-
-            .step-number {
-                position: absolute;
-                left: 0; top: 0;
-                margin: 0;
-                width: 64px; height: 64px;
             }
         }
     </style>
 </head>
 <body>
-    <input type="checkbox" id="menuToggle" class="menu-toggle">
-    <div class="page-wrapper">
-        
-        <header>
-                <a href="#top" class="logo-lockup">
-                    <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
-                        <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
-                        <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
-                        <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
-                        <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
-                    </svg>
-                    <div class="logo-text-option2">knownstateai</div>
-                </a>
-                <nav class="site-nav">
-                    <a href="learn.html">Learn</a>
-                    <a href="ai-maturity.html">AI Assessment</a>
-                    <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
-                </nav>
-                <label for="menuToggle" class="hamburger">
-                    <span></span><span></span><span></span>
-                </label>
-            </header>
-            
-            <!-- HERO SECTION -->
-            <section id="top" class="hero-section">
-                <h1>Brisbane AI Training That Actually Works</h1>
-                <p class="subtitle">Your team has ChatGPT, Copilot, and AI tools, but can you measure the results?</p>
-                <p class="subtitle" style="font-size: 0.95em; opacity: 0.85; margin-top: 8px;">Free learning resources. Hands-on implementation when you're ready.</p>
-            </section>
-            
-            <!-- CONTENT SECTION -->
-            <section class="content-section">
-                <div class="content-wrapper">
-                    <div class="content-left reveal-left">
-                        <p class="problem-statement">Most businesses didn't fail at AI. They were never set up to succeed.</p>
-                        <p class="problem-punchline"><strong>AI was added. Nothing changed.</strong></p>
-                        <p class="solution-intro">We establish a knownstate.</p>
-                    </div>
-                    
-                    <div class="content-right reveal-right">
-                        <ul class="solution-points">
-                            <li>We assess how AI is actually being used in your business today</li>
-                            <li>We identify what's reliable, what's assumed, and what's broken</li>
-                            <li>We align AI usage to your real roles and responsibilities</li>
-                            <li>We improve it continuously, not once, not randomly</li>
-                        </ul>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px;">
-                            <a href="#" class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</a>
-                            <a href="ai-maturity.html" class="cta-button cta-outline">Assess Your AI Readiness</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<input type="checkbox" id="menuToggle" class="menu-toggle">
+<div class="page-wrapper">
 
-            <!-- QUICK LINKS -->
-            <section class="quick-links">
-                <h3 class="reveal">Explore our free resources</h3>
-                <div class="quick-links-grid">
-                    <a href="prompt-examples.html" class="quick-link-card reveal">
-                        <span class="quick-link-icon">✍️</span>
-                        <div class="quick-link-text">
-                            <h4>Prompt Examples</h4>
-                            <p>Before-and-after prompts across real business roles</p>
-                        </div>
-                        <span class="quick-link-arrow">→</span>
-                    </a>
-                    <a href="beyond-prompts.html" class="quick-link-card reveal">
-                        <span class="quick-link-icon">⚡</span>
-                        <div class="quick-link-text">
-                            <h4>Beyond Prompts</h4>
-                            <p>AI agents that automate entire workflows</p>
-                        </div>
-                        <span class="quick-link-arrow">→</span>
-                    </a>
-                </div>
-            </section>
-            
-            <!-- PROBLEM SECTION (NEW - SEO-FOCUSED) -->
-            <section class="problem-section">
-                <h2 class="reveal">Sound Familiar?</h2>
-                <div class="problem-grid">
-                    <div class="problem-card reveal">
-                        <h3>No One Remembers What Doesn't Work</h3>
-                        <p>When AI prompts fail, people either keep tweaking until they're frustrated, or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
-                    </div>
-                    
-                    <div class="problem-card reveal">
-                        <h3>Can't Measure AI ROI</h3>
-                        <p>Your staff are using AI tools, but you can't track time saved, quality improvements, or actual business impact.</p>
-                    </div>
-                    
-                    <div class="problem-card reveal">
-                        <h3>Generic Training That Doesn't Stick</h3>
-                        <p>You've sent YouTube links or run one-off workshops, but nothing changes. No follow-up, no accountability.</p>
-                    </div>
-                    
-                    <div class="problem-card reveal">
-                        <h3>Shadow AI Usage</h3>
-                        <p>Employees are using ChatGPT and other AI tools without governance, creating compliance and quality risks.</p>
-                    </div>
-                    
-                    <div class="problem-card reveal">
-                        <h3>No Clear Strategy</h3>
-                        <p>You know AI could help, but which tools? For which teams? Where's the ROI? No one has answers.</p>
-                    </div>
-                    
-                    <div class="problem-card reveal">
-                        <h3>Tools Don't Match Roles</h3>
-                        <p>Your sales team, admin team, and operations team all need different AI solutions, but they're getting generic advice.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- SOLUTION SECTION -->
-            <section id="approach" class="solution-section">
-                <h2 class="reveal">The KnownState Method: Practical AI Implementation</h2>
-                
-                <div class="solution-grid">
-                    <div class="solution-card reveal">
-                        <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
-                            <!-- Assess icon: Magnifying glass over data -->
-                            <circle cx="18" cy="18" r="12" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
-                            <line x1="26" y1="26" x2="36" y2="36" stroke="#022B3A" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="14" y1="14" x2="22" y2="14" stroke="#1F7A8C" stroke-width="1.5"/>
-                            <line x1="14" y1="18" x2="20" y2="18" stroke="#1F7A8C" stroke-width="1.5"/>
-                            <line x1="14" y1="22" x2="22" y2="22" stroke="#1F7A8C" stroke-width="1.5"/>
-                        </svg>
-                        <h3>1. ASSESS</h3>
-                        <p>We assess how AI is actually being used in your business today. What tools are your teams using? ChatGPT? Microsoft Copilot? Custom prompts? We map your current state.</p>
-                    </div>
-                    
-                    <div class="solution-card reveal">
-                        <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
-                            <!-- Identify icon: Target/crosshair -->
-                            <circle cx="24" cy="24" r="18" fill="none" stroke="#BFDBF7" stroke-width="2"/>
-                            <circle cx="24" cy="24" r="12" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
-                            <circle cx="24" cy="24" r="4" fill="#022B3A"/>
-                            <line x1="24" y1="6" x2="24" y2="14" stroke="#1F7A8C" stroke-width="2"/>
-                            <line x1="24" y1="34" x2="24" y2="42" stroke="#1F7A8C" stroke-width="2"/>
-                            <line x1="6" y1="24" x2="14" y2="24" stroke="#1F7A8C" stroke-width="2"/>
-                            <line x1="34" y1="24" x2="42" y2="24" stroke="#1F7A8C" stroke-width="2"/>
-                        </svg>
-                        <h3>2. IDENTIFY</h3>
-                        <p>We identify what's working, what's assumed, and what's broken. Not all AI usage delivers value, we find your wins and fix the gaps. Clear ROI tracking starts here.</p>
-                    </div>
-                    
-                    <div class="solution-card reveal">
-                        <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
-                            <!-- Align icon: Overlapping squares/alignment -->
-                            <rect x="8" y="8" width="20" height="20" rx="3" fill="none" stroke="#BFDBF7" stroke-width="2"/>
-                            <rect x="20" y="20" width="20" height="20" rx="3" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
-                            <rect x="20" y="20" width="8" height="8" fill="#022B3A"/>
-                        </svg>
-                        <h3>3. ALIGN</h3>
-                        <p>We align AI usage to your actual business roles and responsibilities. Sales teams need different AI tools than admin. We match AI to real work, not generic training.</p>
-                    </div>
-                    
-                    <div class="solution-card reveal">
-                        <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
-                            <!-- Improve icon: Upward arrow with steps -->
-                            <polyline points="8,32 16,28 24,20 32,16 40,8" fill="none" stroke="#1F7A8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="32,8 40,8 40,16" fill="none" stroke="#022B3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="8" cy="32" r="2" fill="#BFDBF7"/>
-                            <circle cx="16" cy="28" r="2" fill="#BFDBF7"/>
-                            <circle cx="24" cy="20" r="2" fill="#1F7A8C"/>
-                            <circle cx="32" cy="16" r="2" fill="#1F7A8C"/>
-                            <circle cx="40" cy="8" r="2" fill="#022B3A"/>
-                        </svg>
-                        <h3>4. IMPROVE</h3>
-                        <p>We improve continuously, not once, not randomly. Track time saved, quality improvements, and business impact. Refine prompts, scale what works, cut what doesn't.</p>
-                    </div>
-                </div>
-                
-                <div class="philosophy-statement">
-                    Our philosophy is simple: <strong>if it's not known, we don't pretend it is.</strong> That's why every engagement starts by establishing your knownstate, your actual baseline for AI usage and outcomes.
-                </div>
-            </section>
-
-            <!-- HOW IT WORKS -->
-            <section class="timeline-section">
-                <div class="timeline-header reveal">
-                    <h2>How It Works</h2>
-                    <p>Three steps. No lock-in. A clear outcome at every stage.</p>
-                </div>
-
-                <div class="steps">
-                    <div class="step reveal">
-                        <div class="step-number">
-                            <span class="step-icon">💬</span>
-                        </div>
-                        <div class="step-label">Step 1</div>
-                        <h3>20-Minute Conversation</h3>
-                        <p>Over a coffee or video call, we look at how your business uses AI today, what's working, and what isn't.</p>
-                        <div class="step-detail">20 minutes</div>
-                    </div>
-
-                    <div class="step reveal">
-                        <div class="step-number">
-                            <span class="step-icon">🔍</span>
-                        </div>
-                        <div class="step-label">Step 2</div>
-                        <h3>AI Discovery Session</h3>
-                        <p>We sit with you and look at real workflows, real prompts, and real outputs across roles.</p>
-                        <div class="step-detail">Hands-on with your business</div>
-                    </div>
-
-                    <div class="step reveal">
-                        <div class="step-number">
-                            <span class="step-icon" style="filter: brightness(0) invert(1);">📋</span>
-                        </div>
-                        <div class="step-label">Step 3</div>
-                        <h3>The KnownState</h3>
-                        <p>Findings, recommendations, and a clear path forward.</p>
-                        <span class="deliverable-tag">Your deliverable</span>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- CTA SECTION -->
-            <section id="work-with-us" class="cta-section">
-                <h3 class="reveal">Start with a knownstate.</h3>
-                <p class="reveal">A 20-minute conversation about where AI fits in your business.</p>
-                <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
-                
-                <div class="footer-main">
-                    <div class="footer-brand">knownstateai</div>
-                    <div class="footer-contact">
-                        <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
-                        <span>Brisbane, QLD</span>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    &copy; 2025 KnownStateAI. All rights reserved.
-                </div>
-            </section>
-
-        </div>
-
-    <!-- Mobile overlay (tap to close) -->
-    <label for="menuToggle" class="menu-overlay"></label>
-
-    <!-- Mobile sidebar -->
-    <div class="mobile-sidebar">
-        <a href="index.html" class="sidebar-header" style="text-decoration:none;">
-            <svg viewBox="0 0 110 110">
+    <header>
+        <a href="index.html" class="logo-lockup">
+            <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
                 <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
                 <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
                 <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
                 <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
             </svg>
-            <span class="sidebar-brand">knownstateai</span>
+            <div class="logo-text">knownstateai</div>
         </a>
-        <div class="sidebar-links">
-            <a href="learn.html">Learn</a>
+        <nav class="site-nav">
+            <a href="learn.html" class="active">Learn</a>
             <a href="ai-maturity.html">AI Assessment</a>
+            <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
+        </nav>
+        <label for="menuToggle" class="hamburger">
+            <span></span><span></span><span></span>
+        </label>
+    </header>
+
+    <section class="page-hero">
+        <h1>Free AI Learning Resources</h1>
+        <p>Practical guides, real examples, and curated content to help you get genuine results from AI.</p>
+    </section>
+
+    <div class="jump-bar">
+        <button class="jump-btn" onclick="window.location.href='prompt-examples.html'">Prompt Examples</button>
+        <button class="jump-btn" onclick="window.location.href='beyond-prompts.html'">Beyond Prompts</button>
+        <button class="jump-btn" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">Videos</button>
+        <button class="jump-btn" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})">Resources</button>
+        <button class="jump-btn" onclick="document.getElementById('benchmarks').scrollIntoView({behavior:'smooth'})">Benchmarks</button>
+    </div>
+
+    <div class="learn-section" id="prompts">
+        <div class="section-header">
+            <div class="section-tag">Hands-on examples</div>
+            <h2>Prompt Examples</h2>
+            <p>Real before-and-after comparisons across finance, HR, operations, and executive roles.</p>
         </div>
-        <div class="sidebar-cta">
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
+
+        <a href="prompt-examples.html" class="feature-link">
+            <div class="feature-link-text">
+                <h3>View All Prompt Examples</h3>
+                <p>6 examples with time savings, structured prompts, and output mockups</p>
+            </div>
+            <span class="feature-link-arrow">→</span>
+        </a>
+    </div>
+
+    <div class="learn-section" id="agents">
+        <div class="section-header">
+            <div class="section-tag">The next level</div>
+            <h2>Beyond Prompts</h2>
+            <p>AI agents that run entire workflows — multiple steps, decisions, and systems, without you watching.</p>
+        </div>
+
+        <a href="beyond-prompts.html" class="feature-link">
+            <div class="feature-link-text">
+                <h3>Explore AI Agents</h3>
+                <p>6 real agent examples across productivity, finance, sales, HR, and operations — with live pipeline demos</p>
+            </div>
+            <span class="feature-link-arrow">→</span>
+        </a>
+    </div>
+
+    <div class="learn-section" id="videos">
+        <div class="section-header">
+            <div class="section-tag">Watch & learn</div>
+            <h2>Recommended Videos</h2>
+            <p>Curated content from people doing practical AI education well.</p>
+        </div>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/Z0wb0y5BVIY" title="AI for Business" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI for Business — Getting Started</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/0teZqotpqT8" title="AI Prompting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI Prompting Techniques</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/IXp9YJYIJ1M" title="AI Live Session" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>AI Live Session</h4>
+                    <div class="video-meta">YouTube</div>
+                </div>
+            </div>
+
         </div>
     </div>
-    
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Close sidebar when a link is clicked
-        document.querySelectorAll('.sidebar-links a, .sidebar-cta a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                document.getElementById('menuToggle').checked = false;
-            });
-        });
 
-        // Scroll reveal with row-aware stagger
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    // Find siblings in same parent that are also reveal elements
-                    const parent = entry.target.parentElement;
-                    const siblings = parent.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-                    let index = 0;
-                    siblings.forEach(function(sib, i) {
-                        if (sib === entry.target) index = i;
-                    });
-                    // Stagger: each sibling gets 0.12s more delay
-                    entry.target.style.transitionDelay = (index * 0.12) + 's';
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    <!-- SECTION 3: FREE GPTs -->
+    <!-- FREE GPTs - HIDDEN PENDING APPROVAL
+    <div class="learn-section" id="free-gpts">
+        <div class="section-header">
+            <div class="section-tag">Try them now</div>
+            <h2>Free GPTs</h2>
+            <p>Fully working AI agents you can use right now — no setup, no cost. Built by practitioners for real business tasks.</p>
+        </div>
 
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
-            observer.observe(el);
+        <div class="section-subheader">
+            <h3 style="font-size: 1.1em; color: #022B3A; margin-bottom: 6px;">Mike Parsons — GrowthBooks & ProductBooks</h3>
+            <p style="font-size: 0.9em; color: #888; margin-bottom: 20px; line-height: 1.5;">Mike Parsons builds free AI agents for B2B founders. His GPTs evaluate your business strategy and give structured, actionable feedback — powered by proven frameworks.</p>
+        </div>
+
+        <div class="resource-grid">
+            <a href="https://chatgpt.com/g/g-696980a7387881918b844a20ed0cce93-growthbooks-demand-reality-evaluator" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #E8F4FD;">📊</div>
+                <div class="resource-text">
+                    <h4>GrowthBooks — Demand Reality Evaluator</h4>
+                    <p>Evaluate whether real demand exists for your product or service</p>
+                </div>
+            </a>
+
+            <a href="https://b2bgrowthbooks.com/" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #E8F0E8;">📘</div>
+                <div class="resource-text">
+                    <h4>B2B GrowthBooks</h4>
+                    <p>The full GrowthBooks framework and resources</p>
+                </div>
+            </a>
+
+            <a href="https://chatgpt.com/g/g-696198865c8881919a6bd0479a4deb4c-productbooks-problem-solution-fit-evaluator" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #FCE4EC;">🎯</div>
+                <div class="resource-text">
+                    <h4>ProductBooks — Problem-Solution Fit Evaluator</h4>
+                    <p>Test whether your solution actually fits the problem you're solving</p>
+                </div>
+            </a>
+
+            <a href="https://www.b2bproductbooks.com/" target="_blank" class="resource-card">
+                <div class="resource-icon" style="background: #FFF3E0;">📙</div>
+                <div class="resource-text">
+                    <h4>B2B ProductBooks</h4>
+                    <p>The full ProductBooks framework and resources</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    END FREE GPTs -->
+
+    <!-- SECTION 4: TOOLS & RESOURCES -->
+    <div class="learn-section" id="resources">
+        <div class="section-header">
+            <div class="section-tag">Useful tools</div>
+            <h2>AI Tools & Resources</h2>
+            <p>The major AI platforms and where they each fit. Most offer free tiers.</p>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+            <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">AI Assistants</h3>
+            <div class="resource-grid">
+                <a href="https://chat.openai.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F4FD;">💬</div>
+                    <div class="resource-text">
+                        <h4>ChatGPT</h4>
+                        <p>OpenAI's flagship. Strong all-rounder for writing, analysis, and code. Free tier available.</p>
+                    </div>
+                </a>
+
+                <a href="https://claude.ai" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #FFF3E0;">🧠</div>
+                    <div class="resource-text">
+                        <h4>Claude</h4>
+                        <p>Anthropic's model. Excels at long documents, nuanced writing, and careful reasoning.</p>
+                    </div>
+                </a>
+
+                <a href="https://gemini.google.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F0E8;">✨</div>
+                    <div class="resource-text">
+                        <h4>Gemini</h4>
+                        <p>Google's AI. Best when integrated with Google Workspace — Docs, Sheets, Gmail.</p>
+                    </div>
+                </a>
+
+                <a href="https://copilot.microsoft.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F4FD;">🤖</div>
+                    <div class="resource-text">
+                        <h4>Microsoft Copilot</h4>
+                        <p>Built into Microsoft 365. Strongest if your business runs on Word, Excel, Teams.</p>
+                    </div>
+                </a>
+
+                <a href="https://x.com/i/grok" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #F3E5F5;">⚡</div>
+                    <div class="resource-text">
+                        <h4>Grok</h4>
+                        <p>xAI's model on X (Twitter). Real-time access to trending topics and social data.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+            <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">AI Builders</h3>
+            <div class="resource-grid">
+                <a href="https://lovable.dev" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #FCE4EC;">🏗️</div>
+                    <div class="resource-text">
+                        <h4>Lovable</h4>
+                        <p>Build working web apps from a text description. No code required.</p>
+                    </div>
+                </a>
+
+                <a href="https://aistudio.google.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F0E8;">🧪</div>
+                    <div class="resource-text">
+                        <h4>Google AI Studio</h4>
+                        <p>Prototype and test prompts against Google's Gemini models. Free to experiment.</p>
+                    </div>
+                </a>
+
+                <a href="https://midjourney.com" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #FFF3E0;">🎨</div>
+                    <div class="resource-text">
+                        <h4>Midjourney</h4>
+                        <p>AI image generation. Create visuals, mockups, and design concepts from text prompts.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="benchmarks">
+            <h3 style="font-size: 1em; color: #022B3A; margin-bottom: 16px;">Benchmarks & Comparisons</h3>
+            <div class="resource-grid">
+                <a href="https://lmarena.ai/" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F4FD;">📊</div>
+                    <div class="resource-text">
+                        <h4>LMSYS Chatbot Arena</h4>
+                        <p>Live rankings of AI models based on real user votes. The most trusted benchmark.</p>
+                    </div>
+                </a>
+
+                <a href="https://artificialanalysis.ai/" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #E8F0E8;">📈</div>
+                    <div class="resource-text">
+                        <h4>Artificial Analysis</h4>
+                        <p>Compare AI models on speed, cost, and quality. Useful for picking the right tool.</p>
+                    </div>
+                </a>
+
+                <a href="https://apolloadvisor.com/ai-tools-for-b2b-marketing" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: #F3E5F5;">🚀</div>
+                    <div class="resource-text">
+                        <h4>Apollo Advisor — AI Tools for B2B</h4>
+                        <p>Curated directory of AI tools specifically for B2B marketing teams.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEWS SECTION - HIDDEN UNTIL CONTENT READY
+    <div class="learn-section" id="news">
+        <div class="section-header">
+            <div class="section-tag">Latest updates</div>
+            <h2>News & Articles</h2>
+            <p>Curated articles and commentary on AI for business.</p>
+        </div>
+
+        <div class="news-list">
+
+            <a href="https://example.com/article-link" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">18</div>
+                    <div class="month">Feb 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>Why Most AI Training Fails — and What to Do Instead</h4>
+                    <p>A look at why generic AI workshops don't stick, and what assessment-driven implementation looks like in practice.</p>
+                    <span class="news-tag article">Article</span>
+                </div>
+            </a>
+
+            <a href="https://example.com/another-article" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">12</div>
+                    <div class="month">Feb 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>Microsoft Copilot Updates: What Changed in February 2025</h4>
+                    <p>Summary of the latest Copilot features and what they mean for business users.</p>
+                    <span class="news-tag news">News</span>
+                </div>
+            </a>
+
+            <a href="https://youtube.com/watch?v=example" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">05</div>
+                    <div class="month">Feb 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>Nate Jones: The Prompt Framework That Actually Works</h4>
+                    <p>Nate breaks down a structured approach to business prompting that mirrors what we teach in our sessions.</p>
+                    <span class="news-tag video">Video</span>
+                </div>
+            </a>
+
+            <a href="https://aicred.ai" target="_blank" class="news-card">
+                <div class="news-date">
+                    <div class="day">28</div>
+                    <div class="month">Jan 2025</div>
+                </div>
+                <div class="news-content">
+                    <h4>AICRED.AI — A Tool for Verifying AI Output</h4>
+                    <p>We've been testing AICRED.AI for checking AI-generated content. Here's how it works and when it's useful.</p>
+                    <span class="news-tag tool">Tool</span>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="template-note">
+            How to add a new post: Copy any news-card block above. Paste at the top of the news-list div. Update date, title, description, link, and tag type (article, video, news, or tool). Save and push.
+        </div>
+    </div>
+    END NEWS SECTION -->
+
+    <!-- CTA -->
+    <section class="page-cta">
+        <h3>Ready for a structured approach?</h3>
+        <p>A 20-minute conversation about where AI fits in your business.</p>
+        <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
+
+        <div class="footer-main">
+            <div class="footer-brand">knownstateai</div>
+            <div class="footer-contact">
+                <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
+                <span>Brisbane, QLD</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 KnownStateAI. All rights reserved.
+        </div>
+    </section>
+
+</div>
+
+<!-- Mobile overlay -->
+<label for="menuToggle" class="menu-overlay"></label>
+
+<!-- Mobile sidebar -->
+<div class="mobile-sidebar">
+    <a href="index.html" class="sidebar-header" style="text-decoration:none;">
+        <svg viewBox="0 0 110 110">
+            <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
+            <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
+            <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+            <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+        </svg>
+        <span class="sidebar-brand">knownstateai</span>
+    </a>
+    <div class="sidebar-links">
+        <a href="learn.html">Learn</a>
+        <a href="ai-maturity.html">AI Assessment</a>
+    </div>
+    <div class="sidebar-cta">
+        <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Work With Us</a>
+    </div>
+</div>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<script>
+    // Close mobile menu on link click
+    document.querySelectorAll('.sidebar-links a, .sidebar-cta a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('menuToggle').checked = false;
         });
-    </script>
+    });
+</script>
 </body>
 </html>
