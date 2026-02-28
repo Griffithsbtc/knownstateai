@@ -884,10 +884,71 @@
 
         .quick-links-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 20px;
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        /* FEATURED BANNER */
+        .featured-banner {
+            display: block;
+            background: #022B3A;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin: 0 auto 24px;
+            max-width: 900px;
+            text-decoration: none;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-banner:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(2,43,58,0.3); }
+        .featured-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 40%;
+            background: linear-gradient(135deg, transparent 0%, #1F7A8C 100%);
+            opacity: 0.3;
+        }
+        .featured-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #7dd3e8;
+            background: rgba(125,211,232,0.2);
+            padding: 4px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-banner h4 {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-banner p {
+            font-size: 0.82em;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-banner .fb-arrow {
+            position: absolute;
+            right: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1F7A8C;
+            font-size: 1.4em;
+            z-index: 1;
         }
 
         .quick-link-card {
@@ -994,6 +1055,8 @@
 
             .quick-links { padding: 40px 30px; }
             .quick-links-grid { grid-template-columns: 1fr; }
+            .featured-banner { margin: 0 0 20px; }
+            .featured-banner .fb-arrow { display: none; }
             
         .footer-main {
                 flex-direction: column;
@@ -1203,12 +1266,26 @@
             <!-- QUICK LINKS -->
             <section class="quick-links">
                 <h3 class="reveal">Explore our free resources</h3>
+                <a href="context-engineering.html" class="featured-banner reveal">
+                    <div class="featured-tag">February 2026</div>
+                    <h4>Prompting is now four different skills. Most people know one.</h4>
+                    <p>If you don't work with us, ensure you read this. The rules changed this month.</p>
+                    <span class="fb-arrow">→</span>
+                </a>
                 <div class="quick-links-grid">
                     <a href="prompt-examples.html" class="quick-link-card reveal">
                         <span class="quick-link-icon">✍️</span>
                         <div class="quick-link-text">
                             <h4>Prompt Examples</h4>
                             <p>Before-and-after prompts across real business roles</p>
+                        </div>
+                        <span class="quick-link-arrow">→</span>
+                    </a>
+                    <a href="context-engineering.html" class="quick-link-card reveal">
+                        <span class="quick-link-icon">🧠</span>
+                        <div class="quick-link-text">
+                            <h4>Context Engineering</h4>
+                            <p>The skill that separates 1x from 10x in 2026</p>
                         </div>
                         <span class="quick-link-arrow">→</span>
                     </a>
