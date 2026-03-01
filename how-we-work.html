@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How We Work — AI Consulting Process | KnownStateAI Brisbane</title>
-    <meta name="description" content="See exactly how KnownStateAI helps Brisbane businesses implement AI. From a 20-minute conversation to a full AI assessment — transparent process, clear deliverables.">
+    <meta name="description" content="See exactly how KnownStateAI helps Brisbane businesses implement AI. From a 30-minute conversation to a full AI assessment — transparent process, clear deliverables.">
     <meta name="keywords" content="AI consulting process, AI implementation Brisbane, AI assessment process, how AI consulting works, KnownStateAI">
 
     <!-- Open Graph -->
@@ -247,6 +247,18 @@
         .footer-links a { color: #666; text-decoration: none; font-size: 0.85em; transition: color 0.2s; }
         .footer-links a:hover { color: #1F7A8C; }
 
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header { padding: 20px 30px; }
@@ -292,10 +304,10 @@
         <!-- STEPS -->
         <div class="content">
 
-            <div class="step-block">
+            <div class="step-block reveal">
                 <div class="step-number">Step 1</div>
-                <h2>20-Minute Conversation</h2>
-                <p>We start with a short conversation about where AI sits in your business right now. What tools are your teams using? What's working? What isn't?</p>
+                <h2>30-Minute Conversation</h2>
+                <p>Over a coffee or video call, we start with a short conversation about where AI sits in your business right now. What tools are your teams using? What's working? What isn't?</p>
 
                 <div class="step-details">
                     <h4>What we cover</h4>
@@ -306,10 +318,10 @@
                 </div>
             </div>
 
-            <div class="step-block">
+            <div class="step-block reveal">
                 <div class="step-number">Step 2</div>
                 <h2>AI Discovery Session</h2>
-                <p>We look at the actual workflows, prompts, and outputs happening across roles. Not theoretical use cases. Real ones.</p>
+                <p>We sit with you and look at the actual workflows, prompts, and outputs happening across roles. Not theoretical use cases. Real ones.</p>
                 <p>We map what's being used, how it's being used, and where the gaps are. This gives you the data to build something useful.</p>
 
                 <div class="step-details">
@@ -322,10 +334,10 @@
                 </div>
             </div>
 
-            <div class="step-block">
+            <div class="step-block reveal">
                 <div class="step-number">Step 3</div>
                 <h2>The KnownState</h2>
-                <p>Your deliverable. A clear, actionable report that shows exactly where your business stands with AI, not where you think it stands. This becomes your baseline for every decision going forward.</p>
+                <p>Your deliverable. A clear, actionable assessment that shows exactly where your business stands with AI, not where you think it stands. This becomes your baseline for every decision going forward.</p>
 
                 <div class="deliverable-block">
                     <h4>Your deliverable includes</h4>
@@ -342,19 +354,19 @@
         <!-- WHAT HAPPENS NEXT -->
         <div class="next-section">
             <div class="next-inner">
-                <h2>What happens after the assessment?</h2>
-                <p>The KnownState report is yours. Most businesses want help acting on it. Here's what that can look like:</p>
+                <h2 class="reveal">What happens after the assessment?</h2>
+                <p>The KnownState is yours. Most businesses want help acting on it. Here's what that can look like:</p>
 
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <h4>AI Training</h4>
                         <p>Tailored workshops for your team, built from your actual workflows, not generic AI overviews.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <h4>Prompt Development</h4>
                         <p>Custom prompts and templates designed for your specific roles, tools, and business context.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <h4>Ongoing Support</h4>
                         <p>Monthly check-ins to track progress, refine what's working, and scale what delivers results.</p>
                     </div>
@@ -363,9 +375,9 @@
         </div>
 
         <!-- CTA -->
-        <div class="page-cta">
+        <div class="page-cta reveal">
             <h2>Start with a conversation.</h2>
-            <p>20 minutes. No obligation. Just a clear-eyed look at where AI fits in your business.</p>
+            <p>30 minutes. Just a clear-eyed look at where AI fits in your business.</p>
             <button class="cta-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
         </div>
 
@@ -396,6 +408,20 @@
     <script>
         document.querySelectorAll('.sidebar-links a, .sidebar-cta a').forEach(function(link) {
             link.addEventListener('click', function() { document.getElementById('menuToggle').checked = false; });
+        });
+
+        // Scroll reveal
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            observer.observe(el);
         });
     </script>
 

@@ -284,15 +284,14 @@
         .try-card p { font-size: 0.78em; color: #888; line-height: 1.5; }
         .try-card-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.55em; text-transform: uppercase; letter-spacing: 0.08em; color: #bbb; margin-top: 10px; display: block; }
 
+        .no-link { display: inline; }
+
         /* ==================== CTA ==================== */
         .agents-cta {
             text-align: center;
-            padding: 60px 20px 80px;
-            max-width: 600px;
-            margin: 0 auto;
+            padding: 70px 60px 40px;
+            background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
         }
-
-        .agents-cta { background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%); border-radius: 0; padding: 60px 40px; }
         .agents-cta h2 { font-size: 1.8em; font-weight: 600; color: white; margin-bottom: 12px; line-height: 1.2; }
         .agents-cta p { font-size: 0.95em; color: rgba(255,255,255,0.7); margin-bottom: 28px; line-height: 1.6; }
         .cta-btn { display: inline-block; background: #022B3A; color: white; text-decoration: none; padding: 16px 36px; border-radius: 8px; font-size: 1em; font-weight: 600; transition: all 0.2s; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
@@ -545,7 +544,7 @@
                     <div class="agent-terminal">
                         <div class="terminal-label">Running...</div>
                         <div class="t-lines">
-                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">New enquiry — <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="55263427343d15322730303b333c3039317b363a387b3420">[email&#160;protected]</a></span></div>
+                            <div class="t-line"><span class="t-icon">▸</span> <span class="t-trigger">New enquiry — sarah<span class="no-link">@</span>greenfield.com.au</span></div>
                             <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">Researching Greenfield Logistics...</span></div>
                             <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">45 employees, Brisbane HQ, transport & warehousing</span></div>
                             <div class="t-line"><span class="t-icon">▸</span> <span class="t-process">ICP score: 82/100 — strong match</span></div>
@@ -729,16 +728,15 @@
                 <div class="bp-divider"></div>
                 <button class="bp-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
             </div>
-        </div>
 
-        <!-- FOOTER -->
-        <div class="site-footer">
-            <span class="footer-brand">© 2025 KnownStateAI</span>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="learn.html">Learn</a>
-                <a href="ai-maturity.html">AI Assessment</a>
+            <div style="max-width: 1200px; margin: 40px auto 0; padding-top: 50px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 1.2em; font-weight: 600; letter-spacing: -0.02em; text-transform: lowercase; color: white;">knownstateai</span>
+                <div style="display: flex; gap: 28px; font-size: 0.9em;">
+                    <a href="mailto:hello@knownstateai.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">hello@knownstateai.com</a>
+                    <span style="color: rgba(255,255,255,0.5);">Brisbane, QLD</span>
+                </div>
             </div>
+            <div style="padding: 10px 0 0; text-align: center; font-size: 0.8em; color: rgba(255,255,255,0.3);">&copy; 2025 KnownStateAI. All rights reserved.</div>
         </div>
 
     </div>
@@ -754,7 +752,7 @@
     </div>
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <script>
         document.querySelectorAll('.sidebar-links a, .sidebar-cta a').forEach(function(link) {
@@ -801,4 +799,10 @@
             <p>25+ years in technology and service transformation, from infrastructure and virtualisation to continuous improvement. Ben has worked across public and private sectors, large enterprises, and startups, managing teams spanning Sydney, Melbourne, China, and Malaysia, and has lived and worked in London, Africa, and Brazil.</p>
             <p>After years researching Bitcoin, Blockchain, and digital assets, and consulting on the launch of a Blockchain streaming platform, he saw the same pattern emerging with AI: powerful technology, poor implementation.</p>
                         <div style="clear: both; padding-top: 16px;">
-                <button class="modal-cta" onclick="document.getEl
+                <button class="modal-cta" onclick="document.getElementById('bioModal').classList.remove('active');Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
