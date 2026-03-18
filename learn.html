@@ -432,6 +432,23 @@
         .news-tag.video { background: #FCE4EC; color: #C62828; }
         .news-tag.news { background: #E8F0E8; color: #38761D; }
         .news-tag.tool { background: #FFF3E0; color: #E65100; }
+        .news-tag.course { background: #EDE7F6; color: #5E35B1; }
+        .news-tag.insight { background: #E0F2F1; color: #00695C; }
+
+        .news-card .course-list {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .news-card .course-chip {
+            font-size: 0.72em;
+            background: #f0f0f0;
+            color: #555;
+            padding: 3px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
 
         /* ==================== HOW TO ADD TEMPLATE ==================== */
         .template-note {
@@ -677,12 +694,65 @@
     </section>
 
     <div class="jump-bar">
+        <button class="jump-btn" onclick="document.getElementById('whats-new').scrollIntoView({behavior:'smooth'})">What's New</button>
         <button class="jump-btn" onclick="window.location.href='prompt-examples.html'">Prompt Examples</button>
         <button class="jump-btn" onclick="window.location.href='context-engineering.html'">Context Engineering</button>
         <button class="jump-btn" onclick="window.location.href='beyond-prompts.html'">Beyond Prompts</button>
         <button class="jump-btn" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">Videos</button>
         <button class="jump-btn" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})">Resources</button>
         <button class="jump-btn" onclick="document.getElementById('benchmarks').scrollIntoView({behavior:'smooth'})">Benchmarks</button>
+    </div>
+
+    <!-- WHAT'S NEW -->
+    <div class="learn-section" id="whats-new">
+        <div class="section-header">
+            <div class="section-tag">Latest updates</div>
+            <h2>What's New</h2>
+            <p>Recent developments worth knowing about.</p>
+        </div>
+
+        <div class="news-list">
+
+            <a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener" class="news-card">
+                <div class="news-date">
+                    <div class="day">16</div>
+                    <div class="month">Mar 2026</div>
+                </div>
+                <div class="news-content">
+                    <h4>Anthropic Academy: Free Claude Courses</h4>
+                    <p>Anthropic has launched a full academy with free, self-paced courses covering everything from basic Claude usage to advanced agent development. Standout courses for business users include Claude 101 and AI Fluency. Developers get Claude Code in Action, the API course, and two MCP courses. There are also dedicated tracks for educators, students, and nonprofits.</p>
+                    <div class="course-list">
+                        <span class="course-chip">Claude 101</span>
+                        <span class="course-chip">AI Fluency</span>
+                        <span class="course-chip">Claude Code in Action</span>
+                        <span class="course-chip">Building with Claude API</span>
+                        <span class="course-chip">Intro to MCP</span>
+                        <span class="course-chip">MCP Advanced</span>
+                        <span class="course-chip">Agent Skills</span>
+                        <span class="course-chip">For Educators</span>
+                        <span class="course-chip">For Students</span>
+                        <span class="course-chip">For Nonprofits</span>
+                        <span class="course-chip">Amazon Bedrock</span>
+                        <span class="course-chip">Google Vertex AI</span>
+                        <span class="course-chip">Teaching AI Fluency</span>
+                    </div>
+                    <span class="news-tag course">Free Courses</span>
+                </div>
+            </a>
+
+            <a href="context-engineering.html" class="news-card">
+                <div class="news-date">
+                    <div class="day">01</div>
+                    <div class="month">Mar 2026</div>
+                </div>
+                <div class="news-content">
+                    <h4>Prompting Is Now Four Different Skills</h4>
+                    <p>Based on Nate B Jones' framework: prompt craft, context engineering, intent engineering, and specification engineering. The full breakdown of what changed in February 2026 and why it matters.</p>
+                    <span class="news-tag insight">Insight</span>
+                </div>
+            </a>
+
+        </div>
     </div>
 
     <div class="learn-section" id="prompts">
@@ -936,72 +1006,6 @@
         </div>
     </div>
 
-    <!-- NEWS SECTION - HIDDEN UNTIL CONTENT READY
-    <div class="learn-section" id="news">
-        <div class="section-header">
-            <div class="section-tag">Latest updates</div>
-            <h2>News & Articles</h2>
-            <p>Curated articles and commentary on AI for business.</p>
-        </div>
-
-        <div class="news-list">
-
-            <a href="https://example.com/article-link" target="_blank" class="news-card">
-                <div class="news-date">
-                    <div class="day">18</div>
-                    <div class="month">Feb 2025</div>
-                </div>
-                <div class="news-content">
-                    <h4>Why Most AI Training Fails — and What to Do Instead</h4>
-                    <p>A look at why generic AI workshops don't stick, and what assessment-driven implementation looks like in practice.</p>
-                    <span class="news-tag article">Article</span>
-                </div>
-            </a>
-
-            <a href="https://example.com/another-article" target="_blank" class="news-card">
-                <div class="news-date">
-                    <div class="day">12</div>
-                    <div class="month">Feb 2025</div>
-                </div>
-                <div class="news-content">
-                    <h4>Microsoft Copilot Updates: What Changed in February 2025</h4>
-                    <p>Summary of the latest Copilot features and what they mean for business users.</p>
-                    <span class="news-tag news">News</span>
-                </div>
-            </a>
-
-            <a href="https://youtube.com/watch?v=example" target="_blank" class="news-card">
-                <div class="news-date">
-                    <div class="day">05</div>
-                    <div class="month">Feb 2025</div>
-                </div>
-                <div class="news-content">
-                    <h4>Nate Jones: The Prompt Framework That Actually Works</h4>
-                    <p>Nate breaks down a structured approach to business prompting that mirrors what we teach in our sessions.</p>
-                    <span class="news-tag video">Video</span>
-                </div>
-            </a>
-
-            <a href="https://aicred.ai" target="_blank" class="news-card">
-                <div class="news-date">
-                    <div class="day">28</div>
-                    <div class="month">Jan 2025</div>
-                </div>
-                <div class="news-content">
-                    <h4>AICRED.AI — A Tool for Verifying AI Output</h4>
-                    <p>We've been testing AICRED.AI for checking AI-generated content. Here's how it works and when it's useful.</p>
-                    <span class="news-tag tool">Tool</span>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="template-note">
-            How to add a new post: Copy any news-card block above. Paste at the top of the news-list div. Update date, title, description, link, and tag type (article, video, news, or tool). Save and push.
-        </div>
-    </div>
-    END NEWS SECTION -->
-
     <!-- CTA -->
     <section class="page-cta">
         <h3>Ready for a structured approach?</h3>
@@ -1021,7 +1025,7 @@
         <div class="footer-main">
             <div class="footer-brand">knownstateai</div>
             <div class="footer-contact">
-                <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
+                <a href="/cdn-cgi/l/email-protection#a6cec3cacac9e6cdc8c9d1c8d5d2c7d2c3c7cf88c5c9cb"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa4a1a0b8a1bcbbaebbaaaea6e1aca0a2">[email&#160;protected]</span></a>
                 <span>Brisbane, QLD</span>
             </div>
         </div>
@@ -1056,7 +1060,7 @@
 </div>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 <script>
     // Close mobile menu on link click
@@ -1078,10 +1082,4 @@
             <p>25+ years in technology and service transformation, from infrastructure and virtualisation to continuous improvement. Ben has worked across public and private sectors, large enterprises, and startups, managing teams spanning Sydney, Melbourne, China, and Malaysia, and has lived and worked in London, Africa, and Brazil.</p>
             <p>After years researching Bitcoin, Blockchain, and digital assets, and consulting on the launch of a Blockchain streaming platform, he saw the same pattern emerging with AI: powerful technology, poor implementation.</p>
                         <div style="clear: both; padding-top: 16px;">
-                <button class="modal-cta" onclick="document.getElementById('bioModal').classList.remove('active');Calendly.initPopupWidget({url: 'https://calendly.com/griffithsben-pm/30min'});return false;">Start a Conversation</button>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+                <button class="modal-cta" onclick=
