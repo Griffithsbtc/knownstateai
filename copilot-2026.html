@@ -42,6 +42,28 @@
         .jump-btn { font-family: 'Inter', sans-serif; font-size: 0.78em; font-weight: 500; padding: 6px 16px; border: 1px solid #ddd; border-radius: 20px; background: white; color: #555; cursor: pointer; transition: all 0.2s; text-decoration: none; }
         .jump-btn:hover { border-color: #1F7A8C; color: #1F7A8C; }
 
+
+        /* SECTION BANDS */
+        .section-band { padding: 0; }
+        .section-band.s-white { background: white; }
+        .section-band.s-light { background: #f8fafb; }
+        .section-band.s-tint { background: #f0f6f8; }
+        .section-band .band-inner { max-width: 760px; margin: 0 auto; padding: 50px 30px 40px; }
+        .section-band:first-child .band-inner { padding-top: 50px; }
+        .band-inner h2 { font-size: 1.5em; font-weight: 700; color: #022B3A; margin: 0 0 18px; line-height: 1.3; }
+        .band-inner p { font-size: 1.02em; line-height: 1.8; color: #444; margin-bottom: 18px; }
+
+        .section-tag-dot {
+            display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+        }
+        .tag-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #1F7A8C; flex-shrink: 0;
+        }
+        .tag-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.1em; color: #1F7A8C;
+        }
+
         .content { max-width: 760px; margin: 0 auto; padding: 50px 30px; }
         .content h2 { font-size: 1.5em; font-weight: 700; color: #022B3A; margin: 50px 0 16px; line-height: 1.3; }
         .content h2:first-of-type { margin-top: 0; }
@@ -132,6 +154,8 @@
             .jump-bar { top: 65px; padding: 10px 16px; gap: 6px; }
             .jump-btn { font-size: 0.72em; padding: 5px 12px; }
             .content { padding: 35px 20px; }
+            .section-band .band-inner { padding: 35px 20px 30px; }
+            .band-inner h2 { font-size: 1.3em; }
             .content h2 { font-size: 1.3em; }
             .app-grid { grid-template-columns: 1fr; }
             .content div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
@@ -183,11 +207,12 @@
         <a href="#resources" class="jump-btn">Free resources</a>
     </div>
 
-    <div class="content">
+    <div class="section-band s-white">
+        <div class="band-inner">
+            <div class="section-tag-dot"><div class="tag-dot"></div><span class="tag-label">The basics</span></div>
+            <h2 id="what-it-does">What CoPilot actually does</h2>
 
-        <h2 id="what-it-does">What CoPilot actually does</h2>
-
-        <p>If your business runs Microsoft 365, there is a good chance CoPilot has already landed in your apps. Whether you are actively using it or ignoring the little icon in your sidebar, here is what it does.</p>
+            <p>If your business runs Microsoft 365, there is a good chance CoPilot has already landed in your apps. Whether you are actively using it or ignoring the little icon in your sidebar, here is what it does.</p>
 
         <p>CoPilot is AI built directly into the Microsoft 365 apps you already use. It is not a separate tool. It lives inside:</p>
 
@@ -202,7 +227,13 @@
 
         <p>The key difference from ChatGPT or Claude: CoPilot can see your emails, calendar, files, and Teams conversations. It is grounded in your organisation's data via Microsoft Graph, not just the open web.</p>
 
-        <h2 id="whats-new">What changed in 2026</h2>
+        </div>
+    </div>
+
+    <div class="section-band s-light">
+        <div class="band-inner">
+            <div class="section-tag-dot"><div class="tag-dot"></div><span class="tag-label">2026 updates</span></div>
+            <h2 id="whats-new">What changed in 2026</h2>
 
         <p>CoPilot has moved from "helpful sidebar" to something closer to an active collaborator. The major updates this year, sourced from the <a href="https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489" target="_blank" rel="noopener" style="color: #1F7A8C; text-decoration: none; font-weight: 500;">Microsoft 365 Blog</a> and <a href="https://www.hubsite365.com/en-ww/crm-pages/microsoft-365-copilot-notebooks-new-updates-for-2026-4c375883-82cb-4856-94e3-136b8c3734af.htm" target="_blank" rel="noopener" style="color: #1F7A8C; text-decoration: none; font-weight: 500;">HubSite365</a>:</p>
 
@@ -229,7 +260,13 @@
             </div>
         </div>
 
-        <h2 id="comparison">CoPilot vs Claude vs ChatGPT</h2>
+        </div>
+    </div>
+
+    <div class="section-band s-tint">
+        <div class="band-inner">
+            <div class="section-tag-dot"><div class="tag-dot"></div><span class="tag-label">Head to head</span></div>
+            <h2 id="comparison">CoPilot vs Claude vs ChatGPT</h2>
 
         <p>These are not competitors. They are different tools for different jobs.</p>
 
@@ -280,7 +317,13 @@
 
         <p>The honest take: most office workers would benefit from learning to prompt CoPilot well first (since it is already in their apps), then using Claude or ChatGPT for tasks that need deeper reasoning, longer documents, or work outside the Microsoft ecosystem.</p>
 
-        <h2 id="real-problem">The real problem is not the tool</h2>
+        </div>
+    </div>
+
+    <div class="section-band s-white">
+        <div class="band-inner">
+            <div class="section-tag-dot"><div class="tag-dot"></div><span class="tag-label">The real issue</span></div>
+            <h2 id="real-problem">The real problem is not the tool</h2>
 
         <p>Most organisations that deploy CoPilot see the same pattern: initial excitement, a few weeks of experimentation, then a drop-off because people do not know how to prompt it effectively. They type vague requests, get vague results, and conclude "AI does not work for my job."</p>
 
@@ -293,7 +336,13 @@
         </div>
 
         
-        <h2 id="videos">Worth watching</h2>
+        </div>
+    </div>
+
+    <div class="section-band s-light">
+        <div class="band-inner">
+            <div class="section-tag-dot"><div class="tag-dot"></div><span class="tag-label">Watch & learn</span></div>
+            <h2 id="videos">Worth watching</h2>
 
         <p>If you want to see CoPilot in action before trying it yourself, these are the best walkthroughs we have found.</p>
 
@@ -333,7 +382,13 @@
 
         </div>
 
-        <h2 id="resources">Free resources to get started</h2>
+        </div>
+    </div>
+
+    <div class="section-band s-tint">
+        <div class="band-inner">
+            <div class="section-tag-dot"><div class="tag-dot"></div><span class="tag-label">Get started</span></div>
+            <h2 id="resources">Free resources to get started</h2>
 
         <div class="resource-links">
             <a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener" class="resource-link">
@@ -372,6 +427,7 @@
             <div class="src-item"><a href="https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--january-2026/4488916" target="_blank" rel="noopener">Microsoft 365 Blog: What's New in Microsoft 365 Copilot, January 2026</a></div>
         </div>
 
+        </div>
     </div>
 
     <section class="page-cta">
