@@ -2304,15 +2304,12 @@
                 </div>
                 <div class="licence-option">
                     <h4>COPILOT PRO</h4>
-                    <p>~$20/month personal add-on. Adds Copilot inside Word, Excel, PowerPoint, Outlook for individuals.</p>
+                    <p>~$20/month personal add-on. Adds Copilot inside Word, Excel, PowerPoint, Outlook for individuals. <strong>Critical gap:</strong> no Microsoft Graph access, no organisational data, no Teams meeting summaries. Personal use only.</p>
                 </div>
                 <div class="licence-option">
                     <h4>M365 COPILOT</h4>
-                    <p>Enterprise add-on (~$30/user/month). Full organisational grounding via Microsoft Graph, Agents, Cowork, Researcher.</p>
+                    <p>Enterprise add-on (~$30/user/month). Full organisational grounding via Microsoft Graph (emails, files, Teams, calendars), Agents, Cowork, Researcher. <strong>This is the only tier that reads your org's data.</strong></p>
                 </div>
-            </div>
-            <div class="nfp-note">
-                <strong>Not-for-profit note:</strong> Microsoft offers discounted Copilot licensing for eligible charities and faith-based organisations through its Tech for Social Impact programme. If you are a registered NFP, check eligibility before buying at retail price.
             </div>
         </div>
 
@@ -2665,7 +2662,7 @@
                     <h4>Five-ingredient prompt, annotated</h4>
                     <p>Each colour shows what that part of the prompt does.</p>
 
-                    <div class="anatomy-prompt">"<span class="part part-role">Act as my comms manager.</span> <span class="part part-task">Draft an email announcing the new volunteer onboarding process</span> <span class="part part-context">to our 140 existing volunteers across all campuses, based on the rollout plan I shared.</span> <span class="part part-constraints">Keep it warm, under 200 words, and avoid corporate jargon.</span> <span class="part part-format">Give me three subject line options and the email body with a clear call-to-action button text."</span></div>
+                    <div class="anatomy-prompt">"<span class="part part-role">Act as my comms manager.</span> <span class="part part-task">Draft an email announcing the new employee onboarding process</span> <span class="part part-context">to our 150 staff across all offices, based on the rollout plan I shared.</span> <span class="part part-constraints">Keep it warm, under 200 words, and avoid corporate jargon.</span> <span class="part part-format">Give me three subject line options and the email body with a clear call-to-action button text."</span></div>
 
                     <div class="anatomy-legend">
                         <div class="anatomy-legend-item role">
@@ -2799,7 +2796,7 @@
                             </div>
                             <div class="mistake-row">
                                 <div class="mistake-label fix">Fix</div>
-                                <div class="mistake-text">"I want to write a LinkedIn post about the volunteer recognition event. Ask me questions first so we align on angle, tone, and audience."</div>
+                                <div class="mistake-text">"I want to write a LinkedIn post about our team's quarterly retrospective. Ask me questions first so we align on angle, tone, and audience."</div>
                             </div>
                             <p class="mistake-why">You do not need to guess what context matters. Let Copilot ask. Clicking answers is faster than writing a perfect prompt from scratch.</p>
                         </div>
@@ -2813,11 +2810,11 @@
                         <div class="mistake-body">
                             <div class="mistake-row">
                                 <div class="mistake-label bad">Bad</div>
-                                <div class="mistake-text">"Build me a spreadsheet to track volunteer hours."</div>
+                                <div class="mistake-text">"Build me a spreadsheet to track project time."</div>
                             </div>
                             <div class="mistake-row">
                                 <div class="mistake-label fix">Fix</div>
-                                <div class="mistake-text">"I want to track volunteer hours. Before you build anything, ask me about categories, approvals, reporting needs, who reviews it. Once we have aligned, then build."</div>
+                                <div class="mistake-text">"I want to track project time. Before you build anything, ask me about categories, approvals, reporting needs, who reviews it. Once we have aligned, then build."</div>
                             </div>
                             <p class="mistake-why">Build prompts lead to one wrong version that you then have to explain and re-explain. Plan prompts lead to the right version first time.</p>
                         </div>
@@ -2860,7 +2857,7 @@
                     <div class="workflow-step" data-animate>
                         <div class="workflow-step-num">1</div>
                         <div class="workflow-step-label">Ask</div>
-                        <div class="workflow-step-desc">"I need to track volunteer hours. Ask me questions."</div>
+                        <div class="workflow-step-desc">"I need to track project time. Ask me questions."</div>
                     </div>
                     <div class="workflow-step" data-animate>
                         <div class="workflow-step-num">2</div>
@@ -3018,8 +3015,8 @@
                 </div>
 
                 <div class="insight-box">
-                    <div class="insight-label">UCQ-relevant</div>
-                    <p>For faith-based and NFP organisations that handle sensitive information about members, donors, and staff, Work mode is a hard requirement - Web mode would leak context to public search. Set Work mode as the default and train staff to switch only when explicitly researching public topics.</p>
+                    <div class="insight-label">Worth knowing</div>
+                    <p>For any organisation handling sensitive information about customers, employees, or finances, Work mode is a hard requirement - Web mode would leak context to public search. Set Work mode as the default and train staff to switch only when explicitly researching public topics.</p>
                 </div>
             </div>
 
@@ -3042,7 +3039,7 @@
                         <div class="setup-step-num">2</div>
                         <div class="setup-step-body">
                             <h4>Select the reference you want</h4>
-                            <p>Example: <code>/Q4-budget.xlsx</code>, <code>/Pastoral-Care-team</code>, <code>/Member-Data-Policy</code>.</p>
+                            <p>Example: <code>/Q4-budget.xlsx</code>, <code>/Customer-Service-team</code>, <code>/Customer-Data-Policy</code>.</p>
                         </div>
                     </div>
                     <div class="setup-step">
@@ -3169,14 +3166,14 @@
             <!-- GOVERNANCE CHECKLIST -->
             <div class="content-block" data-animate>
                 <div class="block-title">Governance: the four-check pre-rollout list</div>
-                <p class="block-subtitle">Before Copilot goes live for all staff, walk through these four checks. This applies to any organisation handling sensitive member, donor, or staff data.</p>
+                <p class="block-subtitle">Before Copilot goes live for all staff, walk through these four checks. This applies to any organisation handling sensitive customer, employee, or financial data.</p>
 
                 <div class="setup-steps">
                     <div class="setup-step">
                         <div class="setup-step-num">1</div>
                         <div class="setup-step-body">
                             <h4>SharePoint permissions audit</h4>
-                            <p>Run a site-level permission review. Anything set to "Everyone in the org" will be surfaced by Copilot to everyone. Tighten sensitive sites (HR, finance, pastoral care, donor records) before enabling Copilot broadly.</p>
+                            <p>Run a site-level permission review. Anything set to "Everyone in the org" will be surfaced by Copilot to everyone. Tighten sensitive sites (HR, finance, customer records, financial data) before enabling Copilot broadly.</p>
                         </div>
                     </div>
                     <div class="setup-step">
@@ -3292,7 +3289,7 @@
                         <p>Formulas, pivot tables, chart suggestions, and data cleaning. Copilot reads the sheet you have open.</p>
                         <ul class="app-examples">
                             <li>"Suggest a formula to calculate running total by month."</li>
-                            <li>"Create a pivot table grouping donations by cause and quarter."</li>
+                            <li>"Create a pivot table grouping sales by product line and quarter."</li>
                             <li>"Highlight rows where budget variance is over 10%."</li>
                         </ul>
                     </div>
@@ -3388,7 +3385,7 @@
                         </tr>
                         <tr>
                             <td>Rewrite for audience</td>
-                            <td><code>Rewrite this paragraph for [volunteers / leadership / general public]. Plain English, no jargon.</code></td>
+                            <td><code>Rewrite this paragraph for [team members / leadership / customers]. Plain English, no jargon.</code></td>
                         </tr>
                         <tr>
                             <td>Add a summary</td>
@@ -3451,7 +3448,7 @@
             <!-- DEEP DIVE: POWERPOINT -->
             <div class="content-block" data-animate>
                 <div class="block-title">Deep dive: Copilot in PowerPoint</div>
-                <p class="block-subtitle">PowerPoint Copilot can build a full deck from a document. It is not great at design. Use it for structure, do polish yourself.</p>
+                <p class="block-subtitle">PowerPoint Copilot can build a full deck from a document. Reliable for structure, headlines, and speaker notes. Inconsistent on layout, visual hierarchy, and brand fidelity. Treat the first output as a draft skeleton, not a finished deck.</p>
 
                 <table class="comparison-table">
                     <tbody>
@@ -3519,7 +3516,7 @@
             <!-- DEEP DIVE: TEAMS -->
             <div class="content-block" data-animate>
                 <div class="block-title">Deep dive: Copilot in Teams</div>
-                <p class="block-subtitle">Meeting recaps and catch-ups. Underused because most people do not know it is there.</p>
+                <p class="block-subtitle">Meeting recaps and catch-ups. Underused because most people do not know it is there. Note: meeting recap only works if transcription was enabled before the meeting.</p>
 
                 <table class="comparison-table">
                     <tbody>
@@ -3649,7 +3646,7 @@
                         <ul class="example-list">
                             <li>"Draft a reply to this email, schedule a follow-up meeting, and create a Word summary."</li>
                             <li>"Find every email about the facilities project, archive them, and create a Teams channel."</li>
-                            <li>"When a new volunteer form is submitted, thank them by email and add them to the volunteer list."</li>
+                            <li>"When a new lead form is submitted, thank them by email and add them to the CRM."</li>
                             <li>"Summarise this week's leadership meeting and send the recap to the department heads."</li>
                         </ul>
                     </div>
@@ -3663,9 +3660,9 @@
                     <div class="automation-body">
                         <p>Build your own no-code agent that handles a recurring task. Describe the workflow in plain English, test it, publish it to your team. Best for things you (or your team) do over and over.</p>
                         <ul class="example-list">
-                            <li>A pastoral care agent that drafts member-contact notes from rough descriptions.</li>
+                            <li>A customer service agent that drafts customer-contact notes from rough descriptions.</li>
                             <li>A finance agent that checks invoice formats and flags errors before approval.</li>
-                            <li>An onboarding agent that walks new volunteers through orientation steps.</li>
+                            <li>An onboarding agent that walks new employees through orientation steps.</li>
                             <li>A reporting agent that builds the monthly board pack from standard templates.</li>
                         </ul>
                     </div>
@@ -3731,21 +3728,21 @@
                         <div class="setup-step-num">1</div>
                         <div class="setup-step-body">
                             <h4>Pick a small, annoying task</h4>
-                            <p>Examples: formatting volunteer sign-up confirmations, drafting weekly department updates from standing inputs, thanking donors by category. Not "run the whole programme", just one recurring chunk.</p>
+                            <p>Examples: formatting new lead confirmations, drafting weekly department updates from standing inputs, thanking customers by tier. Not "run the whole programme", just one recurring chunk.</p>
                         </div>
                     </div>
                     <div class="setup-step">
                         <div class="setup-step-num">2</div>
                         <div class="setup-step-body">
                             <h4>Describe it in plain English</h4>
-                            <p>"When a new volunteer form is submitted, draft a welcome email that mentions their campus and interests, and CC the campus coordinator. Send me the draft for approval."</p>
+                            <p>"When a new lead form is submitted, draft a welcome email that mentions their region and interests, and CC the regional account manager. Send me the draft for approval."</p>
                         </div>
                     </div>
                     <div class="setup-step">
                         <div class="setup-step-num">3</div>
                         <div class="setup-step-body">
                             <h4>Give it access to relevant data</h4>
-                            <p>Point it at the SharePoint list of campus coordinators, the volunteer database, your organisational tone guide. The agent grounds its output on those references.</p>
+                            <p>Point it at the SharePoint list of regional managers, the customer database, your organisational tone guide. The agent grounds its output on those references.</p>
                         </div>
                     </div>
                     <div class="setup-step">
@@ -3767,28 +3764,28 @@
 
             <div class="block-spacer"></div>
 
-            <!-- UCQ EXAMPLES -->
+            <!-- AGENT EXAMPLES -->
             <div class="content-block" data-animate>
-                <div class="block-title">Agent ideas for UCQ-style organisations</div>
-                <p class="block-subtitle">Practical agents that reliably save time in mixed admin, care, and volunteer contexts.</p>
+                <div class="block-title">Five agent ideas to spark your own</div>
+                <p class="block-subtitle">Practical agents that reliably save time across typical business workflows.</p>
 
                 <div class="automation-card">
                     <div class="automation-header">
                         <span class="automation-badge">High value</span>
-                        <h4>Pastoral care note drafter</h4>
+                        <h4>Client interaction note drafter</h4>
                     </div>
                     <div class="automation-body">
-                        <p>Staff describe a care interaction in two or three lines. The agent drafts a properly structured pastoral note: who, when, context, follow-up actions, flag for escalation if needed. Reduces admin burden while keeping records consistent.</p>
+                        <p>Staff describe a client interaction in two or three lines. The agent drafts a properly structured note: who, when, context, follow-up actions, flag for escalation if needed. Reduces admin burden while keeping records consistent.</p>
                     </div>
                 </div>
 
                 <div class="automation-card">
                     <div class="automation-header">
-                        <span class="automation-badge">Volunteer ops</span>
-                        <h4>Volunteer thank-you generator</h4>
+                        <span class="automation-badge">Customer ops</span>
+                        <h4>Customer thank-you generator</h4>
                     </div>
                     <div class="automation-body">
-                        <p>Pulls this month's volunteer hours from the tracking sheet, drafts personalised thank-you messages by category (regulars, new, milestones), sends to the coordinator for approval before dispatch.</p>
+                        <p>Pulls this month's customer activity from the CRM, drafts personalised thank-you messages by category (regulars, new, milestone purchases), sends to the account manager for approval before dispatch.</p>
                     </div>
                 </div>
 
@@ -3808,17 +3805,17 @@
                         <h4>Monthly board pack assembler</h4>
                     </div>
                     <div class="automation-body">
-                        <p>Gathers standard monthly inputs (attendance, giving, volunteer hours, pastoral data) from their source spreadsheets, formats them into the standing board template, drafts the narrative sections for review.</p>
+                        <p>Gathers standard monthly inputs (sales, headcount, project status, customer metrics) from their source spreadsheets, formats them into the standing board template, drafts the narrative sections for review.</p>
                     </div>
                 </div>
 
                 <div class="automation-card">
                     <div class="automation-header">
                         <span class="automation-badge">Onboarding</span>
-                        <h4>New volunteer walkthrough agent</h4>
+                        <h4>New employee onboarding agent</h4>
                     </div>
                     <div class="automation-body">
-                        <p>When a new volunteer signs up, the agent sends the orientation schedule, links policies to acknowledge, sets calendar invites for induction, and chases missing confirmations for up to two weeks.</p>
+                        <p>When a new employee starts, the agent sends the orientation schedule, links policies to acknowledge, sets calendar invites for induction, and chases missing confirmations for up to two weeks.</p>
                     </div>
                 </div>
             </div>
@@ -3904,7 +3901,7 @@
                     </div>
                     <div class="tip-row">
                         <div class="tip-name">Check the meeting recap</div>
-                        <div class="tip-desc">After any recorded Teams meeting, Copilot automatically generates action items, key decisions, and follow-ups. Most people don't realise it's there.</div>
+                        <div class="tip-desc">After any recorded Teams meeting, Copilot automatically generates action items, key decisions, and follow-ups. Most people don't realise it's there. <strong>Requires transcription to be enabled before the meeting</strong> - if transcription was off, Copilot has nothing to summarise.</div>
                     </div>
                     <div class="tip-row">
                         <div class="tip-name">Highlight then ask</div>
@@ -4134,13 +4131,6 @@
                             <div class="resource-desc">Microsoft's official Copilot community. Real users, real questions, fast answers from Microsoft engineers.</div>
                         </div>
                     </a>
-                    <a class="resource-link" href="https://www.microsoft.com/en-us/nonprofits" target="_blank" rel="noopener">
-                        <div class="resource-icon">🌱</div>
-                        <div>
-                            <div class="resource-title">Microsoft for Nonprofits</div>
-                            <div class="resource-desc">Discounted Copilot and M365 licensing for eligible charities, faith-based organisations, and NFPs.</div>
-                        </div>
-                    </a>
                     <a class="resource-link" href="guide.html">
                         <div class="resource-icon">📄</div>
                         <div>
@@ -4186,7 +4176,7 @@
     <!-- SITE CTA -->
     <section class="page-cta">
         <h3>Ready to get your team trained properly?</h3>
-        <p>Self-study takes you so far. The rest comes from working on real tasks with someone in the room. We run half-day and full-day workshops with UCQ-style teams.</p>
+        <p>Self-study takes you so far. The rest comes from working on real tasks with someone in the room. We run half-day and full-day workshops, tailored to your team's needs.</p>
 
         <div class="book-pill">
             <a class="bp-profile" onclick="document.getElementById('bioModal').classList.add('active')">
@@ -4275,7 +4265,7 @@
 const QUIZ_DATA = {
     s1: [
         {
-            q: "Your finance manager wants to analyse the church's donations spreadsheet. What's the right surface to open?",
+            q: "Your finance manager wants to analyse the quarterly sales spreadsheet. What's the right surface to open?",
             options: [
                 "Copilot Chat on the web",
                 "Copilot in Excel (in-app)",
@@ -4335,7 +4325,7 @@ const QUIZ_DATA = {
             q: "Which prompt is most likely to give usable output on the first try?",
             options: [
                 "\"Write a newsletter.\"",
-                "\"Write a 400-word monthly newsletter for volunteers with sections for updates, thanks, and what's coming up.\"",
+                "\"Write a 400-word monthly newsletter for employees with sections for updates, recognition, and what's coming up.\"",
                 "\"Write a really good detailed comprehensive newsletter.\"",
                 "\"Make me a newsletter, please make it good.\""
             ],
@@ -4422,7 +4412,7 @@ const QUIZ_DATA = {
             explain: "In Work mode, your data stays inside your Microsoft 365 tenant and is not used to train Microsoft's models. Crucially though - Copilot respects SharePoint permissions, so if a sensitive site is set to \"Everyone in the org,\" it will surface to everyone."
         },
         {
-            q: "UCQ wants to roll Copilot out to all staff. What should happen first?",
+            q: "Your organisation wants to roll Copilot out to all staff. What should happen first?",
             options: [
                 "Enable Copilot for every user immediately to move fast",
                 "Review SharePoint site permissions to make sure sensitive content isn't accidentally org-wide",
@@ -4430,7 +4420,7 @@ const QUIZ_DATA = {
                 "Delete old email to save storage"
             ],
             correct: 1,
-            explain: "Copilot will surface whatever it has permission to see. Before rollout, audit SharePoint permissions - especially pastoral care, HR, and donor-related content - to make sure \"Everyone in the org\" isn't set on anything sensitive."
+            explain: "Copilot will surface whatever it has permission to see. Before rollout, audit SharePoint permissions - especially HR, finance, and customer-related content - to make sure \"Everyone in the org\" isn't set on anything sensitive."
         },
         {
             q: "What is a Copilot Notebook best used for?",
@@ -4457,7 +4447,7 @@ const QUIZ_DATA = {
             explain: "Copilot in PowerPoint can generate a full deck from a referenced Word document. The / reference grounds it in the actual briefing content rather than inventing slides from the title."
         },
         {
-            q: "A volunteer has sent a long, complicated email thread. You need the gist fast. Best move?",
+            q: "A colleague has sent a long, complicated email thread. You need the gist fast. Best move?",
             options: [
                 "Forward it to Copilot Chat",
                 "Use Copilot in Outlook to summarise the thread",
@@ -4503,7 +4493,7 @@ const QUIZ_DATA = {
     ],
     s5: [
         {
-            q: "You have to clean 2,000 rows of messy donation data - inconsistent dates, split name columns, duplicates. Best approach?",
+            q: "You have to clean 2,000 rows of messy customer data - inconsistent dates, split name columns, duplicates. Best approach?",
             options: [
                 "Copilot Chat with a copy of the data",
                 "Agent Mode in Excel on the actual file",
@@ -4617,7 +4607,7 @@ const QUIZ_DATA = {
     ],
     s7: [
         {
-            q: "If a UCQ staff member has only ever used free Copilot Chat, which of these can they NOT yet experience?",
+            q: "If a staff member has only ever used free Copilot Chat, which of these can they NOT yet experience?",
             options: [
                 "Asking web research questions",
                 "Reading their own emails and documents via Copilot",
@@ -4628,7 +4618,7 @@ const QUIZ_DATA = {
             explain: "Free Copilot Chat doesn't connect to your M365 data. Reading emails, documents, Teams context requires Copilot Pro or M365 Copilot. This is the core licensing gotcha to know before rolling out."
         },
         {
-            q: "A volunteer wants to write a prompt that reliably gets usable output. Which single habit has the biggest effect?",
+            q: "An employee wants to write a prompt that reliably gets usable output. Which single habit has the biggest effect?",
             options: [
                 "Writing very long prompts",
                 "Ending with \"Ask me questions before you start\"",
@@ -4650,7 +4640,7 @@ const QUIZ_DATA = {
             explain: "Slash references (/ in the prompt box) pull a specific file, person, or SharePoint site into the conversation. Core habit for anyone working with org data."
         },
         {
-            q: "The best rollout strategy for Copilot in a mixed-audience org like UCQ is…",
+            q: "The best rollout strategy for Copilot in a mixed-audience organisation is…",
             options: [
                 "Enable it for everyone at once and hope for the best",
                 "Start with one department, one task, one agent - prove value, then expand",
@@ -4661,15 +4651,15 @@ const QUIZ_DATA = {
             explain: "Successful rollouts start narrow and grow. Pick a department with a clear pain point, an agent with a clear ROI. Prove it. Document it. Then expand. \"Everyone gets it on Monday\" rollouts usually stall."
         },
         {
-            q: "Microsoft's discounted Copilot licensing for charities and faith-based organisations is offered through…",
+            q: "You're rolling Copilot out to a team of 25 mixed-role staff. Which licensing tier should you start with?",
             options: [
-                "Microsoft Store",
-                "Microsoft for Nonprofits (Tech for Social Impact)",
-                "eBay",
-                "Copilot Pro personal plans"
+                "Microsoft 365 Copilot (full enterprise licence with Graph access)",
+                "Copilot Pro (consumer-grade, no business data access)",
+                "Free Copilot Chat (no data access at all)",
+                "It depends on whether they need Copilot inside Word, Excel, Outlook, and Teams with your org's data"
             ],
-            correct: 1,
-            explain: "Microsoft for Nonprofits (Tech for Social Impact) offers discounted M365 and Copilot licensing for eligible charities, faith-based organisations, and NFPs. For UCQ specifically, check eligibility before buying retail."
+            correct: 3,
+            explain: "The right licence depends on use case. If staff need Copilot in their daily M365 apps, grounded on org data, that's full Microsoft 365 Copilot. If they only need a chat assistant without org data, Copilot Pro or Free Chat may be enough. Don't buy the most expensive licence by default - match the licence to the task."
         }
     ]
 };
@@ -4941,13 +4931,13 @@ const prompts = {
         label: '15% Usable'
     },
     better: {
-        html: '"Create a pivot table showing <span class="highlight">Q4 donations by campaign and month</span>. Add <span class="highlight">conditional formatting</span>: green for over-target, red for under."',
+        html: '"Create a pivot table showing <span class="highlight">Q4 sales by product and region</span>. Add <span class="highlight">conditional formatting</span>: green for over-target, red for under."',
         quality: 60,
         color: 'var(--warning)',
         label: '60% Usable'
     },
     best: {
-        html: '<span class="context-tag">📎 /Q4-donations.xlsx referenced</span>\n\n"Create a pivot table showing Q4 donations by campaign and month. Add <span class="highlight">conditional formatting</span>: green for over-target, red for under. Include a <span class="highlight">YoY comparison column</span> and <span class="highlight">summary row with totals</span>.\n\nBefore you build, <span class="highlight">ask me questions</span> about any assumptions."',
+        html: '<span class="context-tag">📎 /Q4-sales.xlsx referenced</span>\n\n"Create a pivot table showing Q4 sales by product and region. Add <span class="highlight">conditional formatting</span>: green for over-target, red for under. Include a <span class="highlight">YoY comparison column</span> and <span class="highlight">summary row with totals</span>.\n\nBefore you build, <span class="highlight">ask me questions</span> about any assumptions."',
         quality: 92,
         color: 'var(--correct)',
         label: '92% Usable'
