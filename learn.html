@@ -225,6 +225,122 @@
             line-height: 1.6;
         }
 
+        /* ==================== PATHWAY CARDS (three learning paths) ==================== */
+        .pathways-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px 50px;
+            border-bottom: 1px solid #eee;
+        }
+        .pathways-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .pathways-header .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em;
+            color: #1F7A8C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .pathways-header h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #022B3A;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .pathways-header p {
+            font-size: 1em;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .pathways-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .pathway-card {
+            display: flex;
+            flex-direction: column;
+            background: #f0f9f7;
+            border: 1.5px solid #1F7A8C;
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .pathway-card:hover {
+            background: #e5f4f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(31,122,140,0.15);
+        }
+        .pathway-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62em;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #1F7A8C;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .pathway-card h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #022B3A;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .pathway-card .pathway-desc {
+            font-size: 0.88em;
+            color: #555;
+            line-height: 1.55;
+            margin-bottom: 14px;
+            flex-grow: 1;
+        }
+        .pathway-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .pathway-chip {
+            font-size: 0.7em;
+            color: #022B3A;
+            background: white;
+            border: 1px solid #BFDBF7;
+            padding: 3px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        .pathway-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #1F7A8C;
+            margin-top: auto;
+        }
+        .pathway-cta::after {
+            content: '→';
+            font-size: 1.1em;
+            transition: transform 0.2s ease;
+        }
+        .pathway-card:hover .pathway-cta::after {
+            transform: translateX(3px);
+        }
+        @media (max-width: 768px) {
+            .pathways-section { padding: 40px 20px 30px; }
+            .pathways-header h2 { font-size: 1.5em; }
+            .pathways-grid { grid-template-columns: 1fr; gap: 14px; }
+            .pathway-card { padding: 22px 20px; }
+        }
+
         /* ==================== PROMPT EXAMPLES LINK CARD ==================== */
         .feature-link {
             display: flex;
@@ -699,6 +815,7 @@
     </section>
 
     <div class="jump-bar">
+        <button class="jump-btn" onclick="document.getElementById('pathways').scrollIntoView({behavior:'smooth'})">Choose a Path</button>
         <button class="jump-btn" onclick="document.getElementById('whats-new').scrollIntoView({behavior:'smooth'})">What's New</button>
         <button class="jump-btn" onclick="window.location.href='prompt-examples.html'">Prompt Examples</button>
         <button class="jump-btn" onclick="window.location.href='context-engineering.html'">Context Engineering</button>
@@ -707,6 +824,54 @@
         <button class="jump-btn" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})">Resources</button>
         <button class="jump-btn" onclick="document.getElementById('benchmarks').scrollIntoView({behavior:'smooth'})">Benchmarks</button>
     </div>
+
+    <!-- THREE LEARNING PATHWAYS -->
+    <section class="pathways-section" id="pathways">
+        <div class="pathways-header">
+            <div class="section-tag">Three ways to learn</div>
+            <h2>Choose your learning path</h2>
+            <p>Read the reference guide, work through a self-paced course on the tool you actually use, or do both.</p>
+        </div>
+        <div class="pathways-grid">
+
+            <a href="guide.html" class="pathway-card">
+                <div class="pathway-label">Reference guide</div>
+                <h3>AI Guide</h3>
+                <p class="pathway-desc">Claude and Microsoft 365 Copilot side by side. Seven sections covering modes, prompts, workspace setup, building things, automation, power tips, and where to go deeper.</p>
+                <div class="pathway-meta">
+                    <span class="pathway-chip">Both tools</span>
+                    <span class="pathway-chip">7 sections</span>
+                    <span class="pathway-chip">Free</span>
+                </div>
+                <span class="pathway-cta">Open the guide</span>
+            </a>
+
+            <a href="course.html" class="pathway-card">
+                <div class="pathway-label">Self-paced course</div>
+                <h3>Course: Copilot</h3>
+                <p class="pathway-desc">Seven modules to go from "I have a Copilot button" to confident daily use. Quizzes, progress tracking, decision tools, and prompt patterns. Built for mixed teams.</p>
+                <div class="pathway-meta">
+                    <span class="pathway-chip">Microsoft 365</span>
+                    <span class="pathway-chip">35 quizzes</span>
+                    <span class="pathway-chip">~90 min</span>
+                </div>
+                <span class="pathway-cta">Start the Copilot course</span>
+            </a>
+
+            <a href="claude-course.html" class="pathway-card">
+                <div class="pathway-label">Self-paced course</div>
+                <h3>Course: Claude</h3>
+                <p class="pathway-desc">Seven modules covering Claude surfaces, prompting, workspace setup, Artifacts, automation with Cowork and MCP, power tips, and where to go deeper.</p>
+                <div class="pathway-meta">
+                    <span class="pathway-chip">Anthropic Claude</span>
+                    <span class="pathway-chip">35 quizzes</span>
+                    <span class="pathway-chip">~90 min</span>
+                </div>
+                <span class="pathway-cta">Start the Claude course</span>
+            </a>
+
+        </div>
+    </section>
 
     <!-- WHAT'S NEW -->
     <div class="learn-section" id="whats-new">
@@ -718,6 +883,18 @@
 
         <div class="news-list">
 
+
+            <a href="#pathways" class="news-card">
+                <div class="news-date">
+                    <div class="day">04</div>
+                    <div class="month">Jun 2026</div>
+                </div>
+                <div class="news-content">
+                    <h4>Two self-paced courses now live: Copilot in Practice and Claude in Practice</h4>
+                    <p>Seven modules each, with quizzes, progress tracking, decision tools, and prompt patterns. Pick the tool you actually use, or work through both. Free and self-paced.</p>
+                    <span class="news-tag course">New Courses</span>
+                </div>
+            </a>
 
             <a href="guide.html" class="news-card">
                 <div class="news-date">
@@ -1099,4 +1276,6 @@
             <div class="bio-modal-role">Founder</div>
             <a href="https://www.linkedin.com/in/ben-griffiths-89b7263a/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78em; color: rgba(191,219,247,0.5); text-decoration: none; margin-bottom: 14px; transition: color 0.2s;" onmouseover="this.style.color='#BFDBF7'" onmouseout="this.style.color='rgba(191,219,247,0.5)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
             <p>25+ years in technology and service transformation, from infrastructure and virtualisation to continuous improvement. Ben has worked across public and private sectors, large enterprises, and startups, managing teams spanning Sydney, Melbourne, China, and Malaysia. He's lived and worked in London, Africa, and Brazil, and is now based in Brisbane.</p>
-            <p>After years researching Bitcoin, Blockchain, and digital assets, and consulting on the la
+            <p>After years researching Bitcoin, Blockchain, and digital assets, and consulting on the launch of a Blockchain streaming platform, he saw the same pattern emerging with AI: powerful technology, poor implementation.</p>
+                        <div style="clear: both; padding-top: 16px;">
+                </div></div></div></body></html>
